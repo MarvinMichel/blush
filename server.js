@@ -7,4 +7,5 @@ app
   .set('view engine', 'ejs')
   .set('views', 'views')
   .use(express.static(__dirname + '/public'))
+  .use('/', require('./routes/index'))
   .listen(port, () => console.log(`Server is running on localhost:${port}`));
