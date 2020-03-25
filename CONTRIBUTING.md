@@ -15,3 +15,12 @@ Most of our style guides can be found in the ESLint config file. The first en fo
 * Variables: only use `let` or `const` and no ~~`var`~~
 * Quotes: use single quotes consistently
 * Semicolons: alway end lines of code with a semicolon
+
+## Commit, Pull requests and Pushing
+>Follow these steps to commit your code:
+1. Check your code for style errors with ESLint; run `npm run lint`
+2. Compare changes and check latest code to be valid
+3. Check for errors; no syntax errors or style error before next step
+4. Commit changes to seperate branch for feature
+
+Always let other contributors know what you're doing or working on. **Never immediatly push your changes!** Let (an)onther contributor always check the code. When given a go, push the changes to a seperate branch for feature and setup a pull request.
