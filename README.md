@@ -7,6 +7,6 @@ A Dating app, created with Node.js and Express. Blush is the result of Project T
 3. Go to your browser and visit `localhost:8000`.
 
 ## Development
->To see the npm scripts, check package.json
+>To see all npm scripts, check package.json
 * To check the styling: `npm run lint`
 * To run the dev-server: `npm run dev`
