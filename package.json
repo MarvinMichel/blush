@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
+    "build:style": "node-sass ./build/scss/main.scss ./public/styles/app.css -w",
     "lint": "eslint server.js routes/** public/scripts/**"
   },
   "repository": {

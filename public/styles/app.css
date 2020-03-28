@@ -1,0 +1,6 @@
+body[data-page='temp'] {
+  display: flex;
+  place-content: center;
+  background: #1d1d1b; }
+  body[data-page='temp'] h1 {
+    color: #f7f7f7; }
