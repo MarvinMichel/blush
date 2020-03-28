@@ -8,4 +8,5 @@ app
   .set('views', 'views')
   .use(express.static(__dirname + '/public'))
   .use('/', require('./routes/index'))
+  .use('/feed', require('./routes/feed'))
   .listen(port, () => console.log(`Server is running on localhost:${port}`));
