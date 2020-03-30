@@ -1,3 +1,4 @@
+// Setup modules
 const express = require('express');
 const app = express();
 const port = 8000;
@@ -6,7 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// Connect to database trough Mongoose
+// Connect to database through Mongoose
 mongoose.connect(
   process.env.DB_CONNECTION,
   {
@@ -21,6 +22,23 @@ mongoose.connect(
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
+// Create user model
+const userSchema = require('./routes/Schemas/users');
+const Users = mongoose.model('users', userSchema, 'users');
+
+// Function to create user instance in database
+const createUser = (firstName, lastName, age, email) => {
+  Users.create({
+    name: {
+      firstName: firstName,
+      lastName: lastName
+    },
+    age: age,
+    email: email
+  })
+};
+
+// Middleware
 app
   .set('view engine', 'ejs')
   .set('views', 'views')
@@ -29,4 +47,7 @@ app
   .use('/feed', require('./routes/feed'))
   .listen(port, () => console.log(`Server is running on localhost:${port}`));
 
+// Exports
 exports.urlencodedParser = urlencodedParser;
+exports.db = db;
+exports.createUser = createUser;
