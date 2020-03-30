@@ -12,3 +12,4 @@ A Dating app, created with Node.js and Express. Blush is the result of Project T
 >To see all npm scripts, check package.json
 * To check the styling: `$ npm run lint`
 * To run the dev-server: `$ npm run dev`
+* To compile Sass to CSS: `$ npm run build:style`
