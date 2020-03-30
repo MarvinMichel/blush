@@ -48,7 +48,11 @@ app
   .use('/feed', require('./routes/feed'))
   .listen(port, () => console.log(`Server is running on localhost:${port}`));
 
-// Exports
-exports.urlencodedParser = urlencodedParser;
+// Export variables and arrays
 exports.db = db;
+exports.profiles = profiles;
+
+// Export functions
+exports.urlencodedParser = urlencodedParser;
 exports.createUser = createUser;
+exports.renderProfiles = renderProfiles;
