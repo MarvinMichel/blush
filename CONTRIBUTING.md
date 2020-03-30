@@ -23,4 +23,4 @@ Most of our style guides can be found in the [ESLint config file](https://github
 3. Check for errors; no syntax errors or style error before next step
 4. Commit changes to seperate branch for feature
 
-Always let other contributors know what you're doing or working on. **Never immediatly push your changes!** Let (an)other contributor(s) always check the code. When given a go, push the changes to a seperate branch for feature and setup a pull request.
+Always let other contributors know what you're doing or working on. **Never immediatly push your changes!** Let (an)other contributor(s) always check the code. When given a go, push the changes to a seperate branch for feature and setup a pull request for further code review.
