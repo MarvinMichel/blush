@@ -27,14 +27,15 @@ const userSchema = require('./routes/Schemas/users');
 const Users = mongoose.model('users', userSchema, 'users');
 
 // Function to create user instance in database
-const createUser = (firstName, lastName, age, email) => {
+const createUser = (firstName, lastName, age, email, password) => {
   Users.create({
     name: {
       firstName: firstName,
       lastName: lastName
     },
     age: age,
-    email: email
+    email: email,
+    password: password
   })
 };
 
