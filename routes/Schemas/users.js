@@ -7,6 +7,7 @@ let userSchema = new Schema({
     lastName: String
   },
   age: Number,
+  gender: String,
   preferences: Array,
   likes: Array
 }, {
