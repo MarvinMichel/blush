@@ -1,3 +1,18 @@
+// Variables
+/* Made by Inge */
+$fontRegular: 'Open Sans', sans-serif;
+$fontHeader1: 'Playfair Display', serif;
+$darkBlue: #1e1e3a;
+$green: #59B6AE;
+$lightblue: #1cbfd8;
+$backgroundGrey: #e9e9e9;
+$placehoderGrey: #e4e4e4;
+$ghostwhite: ghostwhite;
+$pinkishRed: #e84b60;
+$checkGreen: yellowgreen;
+$gradientButton: linear-gradient(225deg, rgba(28, 191, 216, 1) 0%, rgba(89, 182, 174, 1) 100%);
+/* End by Inge */
+
 // Lay-out for temporary home screen
 body[data-page='temp'] {
   display: flex;
@@ -7,4 +22,117 @@ body[data-page='temp'] {
   h1 {
     color: #f7f7f7;
   }
+}
+
+
+/*****************************
+             FORMULIER
+******************************/
+
+form[data-page="form"] {
+  min-width: 90vw;
+  min-height: 70vh;
+  background-color: white;
+  margin: auto;
+  margin-left: 5vw;
+  margin-top: 13vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: absolute;
+  -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+  box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+  fieldset {
+      border: none;
+      padding-top: 1em;
+      color: white;
+      margin: 0;
+      padding: 1em 2em 1em;
+  label {
+      color: $darkBlue;
+      font-size: 0.9em;
+      font-weight: normal;
+      padding-bottom: 0.3em;
+  input,select,textarea {
+      width: 100%;
+      padding: 0.3em 1em;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9em;
+      background-color: $backgroundGrey;
+      border: none;
+      margin: 0em 0em 0em;
+      display: block;
+  select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      /* Removes default arrow */
+      background-image: url(../images/backback-green.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+  input:required {
+      border: 2px solid white;
+  input:valid {
+      border: solid 1px $checkGreen;
+      background-image: url(../images/check-yellowgreen.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+  input:invalid {
+      border: 0px solid white;
+  input:focus:active {
+      border: 1px solid #FFDB68;
+  placeholder {
+      color: $placehoderGrey;
+  input[type=submit] {
+      background: $gradientButton;
+      width: 100%;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 1.5em;
+      padding: 0.75em;
+      position: absolute;
+      bottom: -1em;
+  input[type=radio] {
+    opacity: none ;
+    display: none;
+  .geslacht label  {
+    border: 1px solid $darkblue;
+    padding: 0.4em 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    background-color: $backgroundGrey;
+    border: none;
+    margin: 0em 0em 0em;
+    display: block;
+    border: 1px solid $backgroundGrey;
+  .geslacht  {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2em 0em;
+  .geslacht input[type="radio"]:checked + label {
+      border: 1px solid $checkGreen;
+      border: solid 1px $checkGreen;
+      background-image: url(../images/check-yellowgreen.svg);
+      background-repeat: no-repeat;
+      background-position: 3px ;
+      background-size: 2em;
+  input[type="radio"] {
+    position: relative;
+    left: -100px;
+  input[type=password] {
+      color: $checkGreen;
+    }
+}
+
+@media screen (min-width: 620px) {
+    form {
+        min-width: 375px;
+        min-height: 75vh;
+        margin-top: 3em;
+        margin-left: 10em;
+        object-fit: cover;
+    }
+    input {
+        width: 100%;
+    }
 }
