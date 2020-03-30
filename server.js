@@ -36,7 +36,7 @@ const createUser = (firstName, lastName, age, email, password) => {
     age: age,
     email: email,
     password: password
-  })
+  });
 };
 
 // Middleware
@@ -50,9 +50,7 @@ app
 
 // Export variables and arrays
 exports.db = db;
-exports.profiles = profiles;
 
 // Export functions
 exports.urlencodedParser = urlencodedParser;
 exports.createUser = createUser;
-exports.renderProfiles = renderProfiles;
