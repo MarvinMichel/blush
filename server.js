@@ -27,15 +27,21 @@ const userSchema = require('./routes/Schemas/users');
 const Users = mongoose.model('users', userSchema, 'users');
 
 // Function to create user instance in database
-const createUser = (firstName, lastName, age, email, password) => {
+const createUser = (email, password, firstName, lastName, age, gender, pets, smoke, kids) => {
   Users.create({
-    name: {
-      firstName: firstName,
-      lastName: lastName
-    },
-    age: age,
     email: email,
-    password: password
+    password: password,
+    profile: {
+      name: {
+        firstName: firstName,
+        lastName: lastName
+      },
+      age: age,
+      gender: gender,
+      pets: pets,
+      smoke: smoke,
+      kids: kids
+    }
   });
 };
 
@@ -50,6 +56,7 @@ app
 
 // Export variables and arrays
 exports.db = db;
+exports.Users = Users;
 
 // Export functions
 exports.urlencodedParser = urlencodedParser;
