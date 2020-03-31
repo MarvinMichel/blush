@@ -206,17 +206,16 @@ section[data-page="filter"] {
     opacity: 1.0;
   }
 }
-
-button {
-  padding: 20px;
-  transition: 400ms;
-}
-
-button.away {
-  opacity: 0.0;
-}
-
-body {
-  background-color: #e6e5e1;
-}
 /* End by Jade */
+
+// Button for displaying the filter function
+body[data-page='feed'] {
+  background-color: #e6e5e1;
+  button {
+    padding: 20px;
+    transition: 400ms;
+  }
+  button.away {
+    opacity: 0.0;
+  }
+}
