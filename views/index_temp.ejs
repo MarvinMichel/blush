@@ -3,8 +3,30 @@
 
 <%- include('./partials/head') %>
 
-<body data-page="temp">
-  <h1>Welcome to Blush!👋</h1>
+
+<body data-page="banner-home">
+
+  <form action="/signup" method="post" data-page="form">
+    <legend>Sign up</legend>
+    <fieldset>
+      <label for="firstName">Firstname</label>
+      <input type="text" name="firstName" required>
+      <br>
+      <label for="lastName">Lastname</label>
+      <input type="text" name="lastName" required>
+      <br>
+      <label from='email'>E-mail</label>
+      <input type="email" required>
+      <br>
+      <label from='password'>Password</label>
+      <input type="password" pattern=".{8,}" required title='8 characters minimum' required>
+      <p id='password-min8'>Use a minimal of 8 characters</p>
+      <br>
+      <p id='login'>Already have an account? <a href="/login">Login</a></p>
+
+    </fieldset>
+    <input type='submit' value='Sign me up!'>
+  </form>
 
   <script src="/scripts/index.js"></script>
 </body>

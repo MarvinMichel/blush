@@ -1,44 +1,118 @@
-// Variables
-/* Made by Inge */
+/*****************************
+      VARIABLES  (Inge)
+******************************/
 $fontRegular: 'Open Sans', sans-serif;
 $fontHeader1: 'Playfair Display', serif;
 $darkBlue: #1e1e3a;
-$green: #59B6AE;
-$lightblue: #1cbfd8;
+$gradientGreen: #59B6AE;
+$gradientLightblue: #1cbfd8;
 $backgroundGrey: #e9e9e9;
 $placehoderGrey: #e4e4e4;
 $ghostwhite: ghostwhite;
 $pinkishRed: #e84b60;
 $checkGreen: yellowgreen;
 $gradientButton: linear-gradient(225deg, rgba(28, 191, 216, 1) 0%, rgba(89, 182, 174, 1) 100%);
-/* End by Inge */
-
-// Lay-out for temporary home screen
-body[data-page='temp'] {
-  display: flex;
-  place-content: center;
-  background: #1d1d1b;
-
-  h1 {
-    color: #f7f7f7;
-  }
-}
-
+$breakpoint-mobile: 620px;
 
 /*****************************
-             FORMULIER
+         FONTS  (Inge)
 ******************************/
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Roboto+Slab:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Playfair+Display:400,900&display=swap');
 
+/*****************************
+         GERERAL (Inge)
+******************************/
+* {
+  font-family: $fontRegular;
+  transition-delay: 150ms;
+  padding: 0;
+  line-height: 1.4em;
+  transition: width 0.2s;
+}
+
+body {
+  background-color: $pinkishRed;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: left;
+  margin-top: 2.5em;
+  font-family: $fontHeader1;
+  font-weight: 700;
+  font-size: 2em;
+  color: $darkBlue;
+  position: absolute;
+}
+
+h2 {
+  color: #1e1e3a;
+  font-size: 1.5em;
+}
+
+h3 {
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  color: $darkBlue;
+  position: absolute;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 1.2em;
+  text-align: left;
+  color: $darkBlue;
+  position: absolute;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+  color: $darkBlue;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+  color: $darkBlue;
+}
+
+/*****************************
+       BANNER (Inge)
+******************************/
+body[data-page="banner-home"] {
+  background-color: $pinkishRed;
+  background-image: url('images/banner.jpg');
+  max-width: 100vw;
+  max-height: 100vh;
+  background-position: center top;
+  background-size: cover;
+  padding: 3em;
+}
+
+/*****************************
+      FORMULIER (Inge)
+******************************/
 form[data-page="form"] {
-  min-width: 90vw;
-  min-height: 70vh;
-  background-color: white;
-  margin: auto;
-  margin-left: 5vw;
-  margin-top: 13vh;
+  min-width: 385px;
+  min-height: 80vh;
+  right: 10em;
+  // min-width: 90vw; // voor media queries
+  // min-height: 70vh;
+  // margin: auto;
+  // margin-left: 5vw;
+  // margin-right: 5vw;
+  margin-top: 3vh;
   margin-bottom: 0;
   padding-bottom: 0;
   position: absolute;
+  background-color: rgba(255, 255, 255, 1);
   -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
   box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
   fieldset {
@@ -47,20 +121,35 @@ form[data-page="form"] {
       color: white;
       margin: 0;
       padding: 1em 2em 1em;
+    }
+  legend {
+      padding: 0.1em 1.5em 0.3em;
+      margin: 0;
+      margin-top: 0.75em;
+      margin-bottom: 0.5em;
+      text-align: center;
+      font-family: 'Asap', sans-serif;
+      font-weight: 400;
+      color: $gradientLightblue;
+      font-size: 1.5em;
+      border-bottom: 1px solid ghostwhite;
+  }
   label {
       color: $darkBlue;
       font-size: 0.9em;
       font-weight: normal;
-      padding-bottom: 0.3em;
+      padding-bottom: 0.2em;
+    }
   input,select,textarea {
-      width: 100%;
-      padding: 0.3em 1em;
+      width: 90%;
+      padding: 0.4em 1em;
       font-family: 'Open Sans', sans-serif;
       font-size: 0.9em;
       background-color: $backgroundGrey;
       border: none;
       margin: 0em 0em 0em;
       display: block;
+    }
   select {
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -69,19 +158,22 @@ form[data-page="form"] {
       background-image: url(../images/backback-green.svg);
       background-repeat: no-repeat;
       background-position: right;
+    }
   input:required {
-      border: 2px solid white;
+      border: 1px solid white;
+    }
   input:valid {
       border: solid 1px $checkGreen;
       background-image: url(../images/check-yellowgreen.svg);
       background-repeat: no-repeat;
       background-position: right;
+    }
   input:invalid {
-      border: 0px solid white;
+      border: 1px solid white;
+    }
   input:focus:active {
       border: 1px solid #FFDB68;
-  placeholder {
-      color: $placehoderGrey;
+    }
   input[type=submit] {
       background: $gradientButton;
       width: 100%;
@@ -92,11 +184,14 @@ form[data-page="form"] {
       padding: 0.75em;
       position: absolute;
       bottom: -1em;
+      font-size: 1em;
+    }
   input[type=radio] {
     opacity: none ;
     display: none;
+  }
   .geslacht label  {
-    border: 1px solid $darkblue;
+    border: 1px solid $darkBlue;
     padding: 0.4em 2em;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.9em;
@@ -105,34 +200,51 @@ form[data-page="form"] {
     margin: 0em 0em 0em;
     display: block;
     border: 1px solid $backgroundGrey;
+  }
   .geslacht  {
     display: flex;
     justify-content: space-between;
     padding: 0.2em 0em;
+  }
   .geslacht input[type="radio"]:checked + label {
-      border: 1px solid $checkGreen;
-      border: solid 1px $checkGreen;
-      background-image: url(../images/check-yellowgreen.svg);
-      background-repeat: no-repeat;
-      background-position: 3px ;
-      background-size: 2em;
+    border: 1px solid $checkGreen;
+    border: solid 1px $checkGreen;
+    background-image: url(../images/check-yellowgreen.svg);
+    background-repeat: no-repeat;
+    background-position: 3px ;
+    background-size: 2em;
+  }
   input[type="radio"] {
     position: relative;
     left: -100px;
+  }
   input[type=password] {
-      color: $checkGreen;
-    }
+    color: $checkGreen;
+  }
+  #login {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 0.3em 1em;
+    width: 90%;
+    color: $darkBlue;
+  }
+  p > a {
+    color: $gradientLightblue;
+  }
+  #password-min8{
+    font-size: 0.75em;
+    font-weight: normal;
+    color: grey;
+    text-align: right;
+    margin-top: 1em;
+  }
 }
 
-@media screen (min-width: 620px) {
-    form {
-        min-width: 375px;
-        min-height: 75vh;
-        margin-top: 3em;
-        margin-left: 10em;
-        object-fit: cover;
-    }
-    input {
-        width: 100%;
-    }
+@media only screen and (min-width: $breakpoint-mobile) {
+  form {
+    min-width: 375px;
+    min-height: 75vh;
+    margin-top: 3em;
+    margin-left: 10em;
+  }
 }
