@@ -23,11 +23,11 @@ const db = mongoose.connection;                                                 
 db.on('error', console.error.bind(console, 'connection error:'));
 
 // Create user model
-const userSchema = require('./routes/Schemas/users');
-const Users = mongoose.model('users', userSchema, 'users');
+const userSchema = require('./routes/Schemas/users');                             // Marvin
+const Users = mongoose.model('users', userSchema, 'users');                       // Marvin
 
 // Function to create user instance in database
-const createUser = (email, password, firstName, lastName, age, gender, pets, smoke, kids) => {
+const createUser = (email, password, firstName, lastName, age, gender) => {       // Marvin
   Users.create({
     email: email,
     password: password,
@@ -37,10 +37,7 @@ const createUser = (email, password, firstName, lastName, age, gender, pets, smo
         lastName: lastName
       },
       age: age,
-      gender: gender,
-      pets: pets,
-      smoke: smoke,
-      kids: kids
+      gender: gender
     }
   });
 };
@@ -55,7 +52,7 @@ app
   .use('/', require('./routes/signup'))                                           // Marvin
   .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/login', require('./routes/login'))                                       // Marvin
-  .post('/login',
+  .post('/login',                                                                 // Inge
     passport.authenticate('local', { failureRedirect: '/login' }),
     (req, res) => {
       res.redirect('/feed');

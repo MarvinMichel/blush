@@ -1,31 +1,10 @@
-/*****************************
-      VARIABLES  (Inge)
-******************************/
-$fontRegular: 'Open Sans',
-sans-serif;
-$fontHeader1: 'Playfair Display',
-serif;
-$darkBlue: #1e1e3a;
-$gradientGreen: #59B6AE;
-$gradientLightblue: #1cbfd8;
-$backgroundGrey: #e9e9e9;
-$placehoderGrey: #e4e4e4;
-$ghostwhite: ghostwhite;
-$pinkishRed: #e84b60;
-$checkGreen: yellowgreen;
+@import './colors.scss';
+@import './fonts.scss';
+
+
 $gradientButton: linear-gradient(225deg, rgba(28, 191, 216, 1) 0%, rgba(89, 182, 174, 1) 100%);
 $breakpoint-mobile: 620px;
 
-/*****************************
-         FONTS  (Inge)
-******************************/
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Roboto+Slab:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Playfair+Display:400,900&display=swap');
-
-/*****************************
-         GERERAL (Inge)
-******************************/
 * {
   font-family: $fontRegular;
   transition-delay: 150ms;
@@ -86,7 +65,7 @@ h6 {
 }
 
 /*****************************
-       BANNER (Inge)
+       BANNER SIGN-UP
 ******************************/
 body[data-page="banner-home"] {
   background-color: $pinkishRed;
@@ -99,17 +78,12 @@ body[data-page="banner-home"] {
 }
 
 /*****************************
-      FORMULIER (Inge)
+      FORMULIER SIGN-UP
 ******************************/
 form[data-page="form"] {
   min-width: 385px;
   min-height: 80vh;
   right: 10em;
-  // min-width: 90vw; // voor media queries
-  // min-height: 70vh;
-  // margin: auto;
-  // margin-left: 5vw;
-  // margin-right: 5vw;
   margin-top: 3vh;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -264,10 +238,31 @@ form[data-page="form"] {
 }
 
 @media only screen and (min-width: $breakpoint-mobile) {
-  form {
+  form[data-page="form"] {
     min-width: 375px;
     min-height: 75vh;
     margin-top: 3em;
     margin-left: 10em;
+  }
+}
+
+/*****************************
+      FEED PROFILES
+******************************/
+.profile {
+
+  &--info {
+    background: #e9e9e9;
+    display: flex;
+    justify-content: space-between;
+    min-width: 20rem;
+    max-width: 20vw;
+  }
+
+  &--matching {
+
+    input[type="text"] {
+      display: none;
+    }
   }
 }

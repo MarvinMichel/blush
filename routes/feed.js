@@ -3,20 +3,24 @@ const router = express.Router();
 const server = require('../server');
 
 let profiles = [];
-const renderProfiles = (userID) => {
-  server.Users.findOne({ _id: userID }, async () => {
-    profiles = await server.Users.find({
-      'profile.age': preferences.age,
-      'profile.gender': preferences.gender,
-      'profile.pets': preferences.pets,
-      'profile.smoke': preferences.smoke,
-      'profile.kids': preferences.kids
-    });
-  });
-};
+// const renderProfiles = async (userID) => {
+//   const user = server.Users.findById(userID);
+//   if (user.preferences) {
+//     profiles = await server.Users.find({
+//       'profile.age': user.preferences.age,
+//       'profile.gender': user.preferences.gender,
+//       'profile.pets': user.preferences.pets,
+//       'profile.smoke': user.preferences.smoke,
+//       'profile.kids': user.preferences.kids
+//     });
+//   } else {
+//     profiles = await server.Users.find();
+//   }
+// };
 
-router.get('/', (req, res) => {
-  res.render('feed');
+router.get('/', async (req, res) => {
+  profiles = await server.Users.find();
+  res.render('feed', { profiles });
 });
 
 router.post('/', (req, res) => {

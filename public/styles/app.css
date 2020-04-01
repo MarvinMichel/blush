@@ -1,15 +1,6 @@
-/*****************************
-      VARIABLES  (Inge)
-******************************/
-/*****************************
-         FONTS  (Inge)
-******************************/
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Roboto+Slab:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Playfair+Display:400,900&display=swap");
-/*****************************
-         GERERAL (Inge)
-******************************/
 * {
   font-family: "Open Sans", sans-serif;
   transition-delay: 150ms;
@@ -62,7 +53,7 @@ h6 {
   color: #1e1e3a; }
 
 /*****************************
-       BANNER (Inge)
+       BANNER SIGN-UP
 ******************************/
 body[data-page="banner-home"] {
   background-color: #e84b60;
@@ -74,7 +65,7 @@ body[data-page="banner-home"] {
   padding: 3em; }
 
 /*****************************
-      FORMULIER (Inge)
+      FORMULIER SIGN-UP
 ******************************/
 form[data-page="form"] {
   min-width: 385px;
@@ -109,7 +100,9 @@ form[data-page="form"] {
     font-size: 0.9em;
     font-weight: normal;
     padding-bottom: 0.2em; }
-  form[data-page="form"] input, form[data-page="form"] select, form[data-page="form"] textarea {
+  form[data-page="form"] input,
+  form[data-page="form"] select,
+  form[data-page="form"] textarea {
     width: 90%;
     padding: 0.4em 1em;
     font-family: 'Open Sans', sans-serif;
@@ -193,8 +186,21 @@ form[data-page="form"] {
     margin-top: 1em; }
 
 @media only screen and (min-width: 620px) {
-  form {
+  form[data-page="form"] {
     min-width: 375px;
     min-height: 75vh;
     margin-top: 3em;
     margin-left: 10em; } }
+
+/*****************************
+      FEED PROFILES
+******************************/
+.profile--info {
+  background: #e9e9e9;
+  display: flex;
+  justify-content: space-between;
+  min-width: 20rem;
+  max-width: 20vw; }
+
+.profile--matching input[type="text"] {
+  display: none; }
