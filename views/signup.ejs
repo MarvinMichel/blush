@@ -5,21 +5,21 @@
 
 <body data-page="banner-home">
 
-<!-- Made by Inge -->
-  <form action="/add-profile" method="post"  data-page="form">
+  <!-- Made by Inge -->
+  <form action="/feed" method="post" data-page="form">
     <legend>Make a profile</legend>
     <fieldset>
       <label for='geslacht'>Gender</label>
-        <div class="geslacht">
-          <input type="radio" id="male" name="gender" value="male">
-          <label for="male">Male</label>
-          <br>
-          <input type="radio" id="female" name="gender" value="female">
-          <label for="female">Female</label>
-          <br>
-          <input type="radio" id="other" name="gender" value="other">
-          <label for="other">Other</label>
-        </div>
+      <div class="geslacht">
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      </div>
       <br>
       <label for='datum'>Birthday</label>
       <input name='jaar' id='datum' type="number" required>
@@ -36,7 +36,7 @@
     </fieldset>
     <input type='submit' value='Add my profile and start dating!'>
   </form>
-<!-- End by Inge -->
+  <!-- End by Inge -->
 
   <script src="/scripts/index.js"></script>
 </body>
