@@ -1,8 +1,10 @@
 /*****************************
       VARIABLES  (Inge)
 ******************************/
-$fontRegular: 'Open Sans', sans-serif;
-$fontHeader1: 'Playfair Display', serif;
+$fontRegular: 'Open Sans',
+sans-serif;
+$fontHeader1: 'Playfair Display',
+serif;
 $darkBlue: #1e1e3a;
 $gradientGreen: #59B6AE;
 $gradientLightblue: #1cbfd8;
@@ -115,82 +117,96 @@ form[data-page="form"] {
   background-color: rgba(255, 255, 255, 1);
   -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
   box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+
   fieldset {
-      border: none;
-      padding-top: 1em;
-      color: white;
-      margin: 0;
-      padding: 1em 2em 1em;
-    }
-  legend {
-      padding: 0.1em 1.5em 0.3em;
-      margin: 0;
-      margin-top: 0.75em;
-      margin-bottom: 0.5em;
-      text-align: center;
-      font-family: 'Asap', sans-serif;
-      font-weight: 400;
-      color: $gradientLightblue;
-      font-size: 1.5em;
-      border-bottom: 1px solid ghostwhite;
+    border: none;
+    padding-top: 1em;
+    color: white;
+    margin: 0;
+    padding: 1em 2em 1em;
   }
+
+  legend {
+    padding: 0.1em 1.5em 0.3em;
+    margin: 0;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-weight: 400;
+    color: $gradientLightblue;
+    font-size: 1.5em;
+    border-bottom: 1px solid ghostwhite;
+  }
+
   label {
-      color: $darkBlue;
-      font-size: 0.9em;
-      font-weight: normal;
-      padding-bottom: 0.2em;
-    }
-  input,select,textarea {
-      width: 90%;
-      padding: 0.4em 1em;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 0.9em;
-      background-color: $backgroundGrey;
-      border: none;
-      margin: 0em 0em 0em;
-      display: block;
-    }
+    color: $darkBlue;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding-bottom: 0.2em;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 90%;
+    padding: 0.4em 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    background-color: $backgroundGrey;
+    border: none;
+    margin: 0em 0em 0em;
+    display: block;
+  }
+
   select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      /* Removes default arrow */
-      background-image: url(../images/backback-green.svg);
-      background-repeat: no-repeat;
-      background-position: right;
-    }
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Removes default arrow */
+    background-image: url(../images/backback-green.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
   input:required {
-      border: 1px solid white;
-    }
+    border: 1px solid white;
+  }
+
   input:valid {
-      border: solid 1px $checkGreen;
-      background-image: url(../images/check-yellowgreen.svg);
-      background-repeat: no-repeat;
-      background-position: right;
-    }
+    border: solid 1px $checkGreen;
+    background-image: url(../images/check-yellowgreen.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
   input:invalid {
-      border: 1px solid white;
-    }
+    border: 1px solid white;
+  }
+
   input:focus:active {
-      border: 1px solid #FFDB68;
-    }
+    border: 1px solid #FFDB68;
+  }
+
   input[type=submit] {
-      background: $gradientButton;
-      width: 100%;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 1.5em;
-      padding: 0.75em;
-      position: absolute;
-      bottom: -1em;
-      font-size: 1em;
-    }
+    background: $gradientButton;
+    width: 100%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5em;
+    padding: 0.75em;
+    position: absolute;
+    bottom: -1em;
+    font-size: 1em;
+  }
+
   input[type=radio] {
-    opacity: none ;
+    opacity: none;
     display: none;
   }
-  .geslacht label  {
+
+  .geslacht label {
     border: 1px solid $darkBlue;
     padding: 0.4em 2em;
     font-family: 'Open Sans', sans-serif;
@@ -201,26 +217,31 @@ form[data-page="form"] {
     display: block;
     border: 1px solid $backgroundGrey;
   }
-  .geslacht  {
+
+  .geslacht {
     display: flex;
     justify-content: space-between;
     padding: 0.2em 0em;
   }
-  .geslacht input[type="radio"]:checked + label {
+
+  .geslacht input[type="radio"]:checked+label {
     border: 1px solid $checkGreen;
     border: solid 1px $checkGreen;
     background-image: url(../images/check-yellowgreen.svg);
     background-repeat: no-repeat;
-    background-position: 3px ;
+    background-position: 3px;
     background-size: 2em;
   }
+
   input[type="radio"] {
     position: relative;
     left: -100px;
   }
+
   input[type=password] {
     color: $checkGreen;
   }
+
   #login {
     font-size: 0.8em;
     text-align: center;
@@ -228,10 +249,12 @@ form[data-page="form"] {
     width: 90%;
     color: $darkBlue;
   }
-  p > a {
+
+  p>a {
     color: $gradientLightblue;
   }
-  #password-min8{
+
+  #password-min8 {
     font-size: 0.75em;
     font-weight: normal;
     color: grey;
