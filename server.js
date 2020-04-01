@@ -1,14 +1,14 @@
-// Setup modules
-const express = require('express');
-const app = express();
-const port = 8000;
-const bodyParser = require('body-parser');
-const urlencodedParser = bodyParser.urlencoded({ extended: true });
-const mongoose = require('mongoose');
-require('dotenv').config();
+const express = require('express');                                               // Marvin
+const app = express();                                                            // Marvin
+const port = 8000;                                                                // Marvin
+const bodyParser = require('body-parser');                                        // Marvin
+const urlencodedParser = bodyParser.urlencoded({ extended: true });               // Marvin
+const mongoose = require('mongoose');                                             // Marvin
+const passport = require('passport');                                             // Inge
+require('dotenv').config();                                                       // Marvin
 
-// Connect to database through Mongoose
-mongoose.connect(
+// Connect to database trough Mongoose
+mongoose.connect(                                                                 // Marvin
   process.env.DB_CONNECTION,
   {
     useNewUrlParser: true,
@@ -19,7 +19,7 @@ mongoose.connect(
 );
 
 // Create Mongoose connection
-const db = mongoose.connection;
+const db = mongoose.connection;                                                   // Marvin
 db.on('error', console.error.bind(console, 'connection error:'));
 
 // Create user model
@@ -47,12 +47,20 @@ const createUser = (email, password, firstName, lastName, age, gender, pets, smo
 
 // Middleware
 app
-  .set('view engine', 'ejs')
-  .set('views', 'views')
-  .use(express.static(__dirname + '/public'))
-  .use('/', require('./routes/index'))
-  .use('/feed', require('./routes/feed'))
-  .listen(port, () => console.log(`Server is running on localhost:${port}`));
+  .set('view engine', 'ejs')                                                      // Marvin
+  .set('views', 'views')                                                          // Marvin
+  .use(express.static(__dirname + '/public'))                                     // Marvin
+  .use(passport.initialize())                                                     // Inge
+  .use(passport.session())                                                        // Inge
+  .use('/', require('./routes/signup'))                                           // Marvin
+  .use('/feed', require('./routes/feed'))                                         // Marvin
+  .use('/login', require('./routes/login'))                                       // Marvin
+  .post('/login',
+    passport.authenticate('local', { failureRedirect: '/login' }),
+    (req, res) => {
+      res.redirect('/feed');
+    })
+  .listen(port, () => console.log(`Server is running on localhost:${port}`));     // Marvin
 
 // Export variables and arrays
 exports.db = db;

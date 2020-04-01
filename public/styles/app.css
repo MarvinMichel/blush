@@ -1,6 +1,200 @@
-body[data-page='temp'] {
-  display: flex;
-  place-content: center;
-  background: #1d1d1b; }
-  body[data-page='temp'] h1 {
-    color: #f7f7f7; }
+/*****************************
+      VARIABLES  (Inge)
+******************************/
+/*****************************
+         FONTS  (Inge)
+******************************/
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Roboto+Slab:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Playfair+Display:400,900&display=swap");
+/*****************************
+         GERERAL (Inge)
+******************************/
+* {
+  font-family: "Open Sans", sans-serif;
+  transition-delay: 150ms;
+  padding: 0;
+  line-height: 1.4em;
+  transition: width 0.2s; }
+
+body {
+  background-color: #e84b60;
+  width: 100vw;
+  overflow-x: hidden; }
+
+h1 {
+  text-align: left;
+  margin-top: 2.5em;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2em;
+  color: #1e1e3a;
+  position: absolute; }
+
+h2 {
+  color: #1e1e3a;
+  font-size: 1.5em; }
+
+h3 {
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  color: #1e1e3a;
+  position: absolute; }
+
+h4 {
+  font-weight: normal;
+  font-size: 1.2em;
+  text-align: left;
+  color: #1e1e3a;
+  position: absolute; }
+
+h5 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+  color: #1e1e3a; }
+
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+  color: #1e1e3a; }
+
+/*****************************
+       BANNER (Inge)
+******************************/
+body[data-page="banner-home"] {
+  background-color: #e84b60;
+  background-image: url("images/banner.jpg");
+  max-width: 100vw;
+  max-height: 100vh;
+  background-position: center top;
+  background-size: cover;
+  padding: 3em; }
+
+/*****************************
+      FORMULIER (Inge)
+******************************/
+form[data-page="form"] {
+  min-width: 385px;
+  min-height: 80vh;
+  right: 10em;
+  margin-top: 3vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: absolute;
+  background-color: white;
+  -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+  box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34); }
+  form[data-page="form"] fieldset {
+    border: none;
+    padding-top: 1em;
+    color: white;
+    margin: 0;
+    padding: 1em 2em 1em; }
+  form[data-page="form"] legend {
+    padding: 0.1em 1.5em 0.3em;
+    margin: 0;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-weight: 400;
+    color: #1cbfd8;
+    font-size: 1.5em;
+    border-bottom: 1px solid ghostwhite; }
+  form[data-page="form"] label {
+    color: #1e1e3a;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding-bottom: 0.2em; }
+  form[data-page="form"] input, form[data-page="form"] select, form[data-page="form"] textarea {
+    width: 90%;
+    padding: 0.4em 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    background-color: #e9e9e9;
+    border: none;
+    margin: 0em 0em 0em;
+    display: block; }
+  form[data-page="form"] select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Removes default arrow */
+    background-image: url(../images/backback-green.svg);
+    background-repeat: no-repeat;
+    background-position: right; }
+  form[data-page="form"] input:required {
+    border: 1px solid white; }
+  form[data-page="form"] input:valid {
+    border: solid 1px yellowgreen;
+    background-image: url(../images/check-yellowgreen.svg);
+    background-repeat: no-repeat;
+    background-position: right; }
+  form[data-page="form"] input:invalid {
+    border: 1px solid white; }
+  form[data-page="form"] input:focus:active {
+    border: 1px solid #FFDB68; }
+  form[data-page="form"] input[type=submit] {
+    background: linear-gradient(225deg, #1cbfd8 0%, #59b6ae 100%);
+    width: 100%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5em;
+    padding: 0.75em;
+    position: absolute;
+    bottom: -1em;
+    font-size: 1em; }
+  form[data-page="form"] input[type=radio] {
+    opacity: none;
+    display: none; }
+  form[data-page="form"] .geslacht label {
+    border: 1px solid #1e1e3a;
+    padding: 0.4em 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    background-color: #e9e9e9;
+    border: none;
+    margin: 0em 0em 0em;
+    display: block;
+    border: 1px solid #e9e9e9; }
+  form[data-page="form"] .geslacht {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2em 0em; }
+  form[data-page="form"] .geslacht input[type="radio"]:checked + label {
+    border: 1px solid yellowgreen;
+    border: solid 1px yellowgreen;
+    background-image: url(../images/check-yellowgreen.svg);
+    background-repeat: no-repeat;
+    background-position: 3px;
+    background-size: 2em; }
+  form[data-page="form"] input[type="radio"] {
+    position: relative;
+    left: -100px; }
+  form[data-page="form"] input[type=password] {
+    color: yellowgreen; }
+  form[data-page="form"] #login {
+    font-size: 0.8em;
+    text-align: center;
+    padding: 0.3em 1em;
+    width: 90%;
+    color: #1e1e3a; }
+  form[data-page="form"] p > a {
+    color: #1cbfd8; }
+  form[data-page="form"] #password-min8 {
+    font-size: 0.75em;
+    font-weight: normal;
+    color: grey;
+    text-align: right;
+    margin-top: 1em; }
+
+@media only screen and (min-width: 620px) {
+  form {
+    min-width: 375px;
+    min-height: 75vh;
+    margin-top: 3em;
+    margin-left: 10em; } }

@@ -1,221 +1,273 @@
-// Variables
-/* Made by Inge */
-$fontRegular: 'Open Sans', sans-serif;
-$fontHeader1: 'Playfair Display', serif;
+/*****************************
+      VARIABLES  (Inge)
+******************************/
+$fontRegular: 'Open Sans',
+sans-serif;
+$fontHeader1: 'Playfair Display',
+serif;
 $darkBlue: #1e1e3a;
-$green: #59B6AE;
-$lightblue: #1cbfd8;
+$gradientGreen: #59B6AE;
+$gradientLightblue: #1cbfd8;
 $backgroundGrey: #e9e9e9;
 $placehoderGrey: #e4e4e4;
 $ghostwhite: ghostwhite;
 $pinkishRed: #e84b60;
 $checkGreen: yellowgreen;
 $gradientButton: linear-gradient(225deg, rgba(28, 191, 216, 1) 0%, rgba(89, 182, 174, 1) 100%);
-/* End by Inge */
+$breakpoint-mobile: 620px;
 
-// Lay-out for temporary home screen
-body[data-page='temp'] {
-  display: flex;
-  place-content: center;
-  background: #1d1d1b;
+/*****************************
+         FONTS  (Inge)
+******************************/
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Roboto+Slab:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Playfair+Display:400,900&display=swap');
 
-  h1 {
-    color: #f7f7f7
-  }
+/*****************************
+         GERERAL (Inge)
+******************************/
+* {
+  font-family: $fontRegular;
+  transition-delay: 150ms;
+  padding: 0;
+  line-height: 1.4em;
+  transition: width 0.2s;
 }
 
-// Lay-out for filter function
-/* Made by Jade */
-section[data-page="filter"] {
-  font-family: 'Spartan', serif;
-  margin-top: 1em;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px 60px;
-  width: 280px;
-  height: 755px;
-  border-radius: 20px;
-  box-shadow: 2px 3px 18px #888888;
-  h1 {
-    text-align: center;
-    font-family: $fontHeader1;
-    color: $lightblue;
-  }
-  h2 {
-    margin-top: 2.5em;
-    padding-right: 2.5px;
-    margin-bottom: -2em;
-    text-align: right;
-    font-size: 13px;
-    color: #b0aca8;
-  }
-  button {
-    margin: 3em auto 2.5em auto;
-    display: block;
-    width: 150px;
-    padding: 1.5em;
-    background-color: black;
+body {
+  background-color: $pinkishRed;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: left;
+  margin-top: 2.5em;
+  font-family: $fontHeader1;
+  font-weight: 700;
+  font-size: 2em;
+  color: $darkBlue;
+  position: absolute;
+}
+
+h2 {
+  color: #1e1e3a;
+  font-size: 1.5em;
+}
+
+h3 {
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  color: $darkBlue;
+  position: absolute;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 1.2em;
+  text-align: left;
+  color: $darkBlue;
+  position: absolute;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+  color: $darkBlue;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+  color: $darkBlue;
+}
+
+/*****************************
+       BANNER (Inge)
+******************************/
+body[data-page="banner-home"] {
+  background-color: $pinkishRed;
+  background-image: url('images/banner.jpg');
+  max-width: 100vw;
+  max-height: 100vh;
+  background-position: center top;
+  background-size: cover;
+  padding: 3em;
+}
+
+/*****************************
+      FORMULIER (Inge)
+******************************/
+form[data-page="form"] {
+  min-width: 385px;
+  min-height: 80vh;
+  right: 10em;
+  // min-width: 90vw; // voor media queries
+  // min-height: 70vh;
+  // margin: auto;
+  // margin-left: 5vw;
+  // margin-right: 5vw;
+  margin-top: 3vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+  box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+
+  fieldset {
+    border: none;
+    padding-top: 1em;
     color: white;
-    font-weight: 900;
-    border-radius: 10px;
+    margin: 0;
+    padding: 1em 2em 1em;
   }
+
+  legend {
+    padding: 0.1em 1.5em 0.3em;
+    margin: 0;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-weight: 400;
+    color: $gradientLightblue;
+    font-size: 1.5em;
+    border-bottom: 1px solid ghostwhite;
+  }
+
   label {
+    color: $darkBlue;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding-bottom: 0.2em;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 90%;
+    padding: 0.4em 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    background-color: $backgroundGrey;
+    border: none;
+    margin: 0em 0em 0em;
     display: block;
-    padding: 1.5em 0 1em 0;
-    font-size: 13px;
-    font-weight: bold;
   }
-  input[type=range] {
-    width: 280px;
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Removes default arrow */
+    background-image: url(../images/backback-green.svg);
+    background-repeat: no-repeat;
+    background-position: right;
   }
+
+  input:required {
+    border: 1px solid white;
+  }
+
+  input:valid {
+    border: solid 1px $checkGreen;
+    background-image: url(../images/check-yellowgreen.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  input:invalid {
+    border: 1px solid white;
+  }
+
+  input:focus:active {
+    border: 1px solid #FFDB68;
+  }
+
+  input[type=submit] {
+    background: $gradientButton;
+    width: 100%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5em;
+    padding: 0.75em;
+    position: absolute;
+    bottom: -1em;
+    font-size: 1em;
+  }
+
   input[type=radio] {
-    padding: 20px;
+    opacity: none;
     display: none;
   }
-  input[type=range] {
-    -webkit-appearance: none;
+
+  .geslacht label {
+    border: 1px solid $darkBlue;
+    padding: 0.4em 2em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    background-color: $backgroundGrey;
+    border: none;
+    margin: 0em 0em 0em;
+    display: block;
+    border: 1px solid $backgroundGrey;
   }
-  input[type=range]:focus {
-    outline: none;
-  }
-  input[type=range]::-webkit-slider-runnable-track {
-    height: 5px;
-    background: #dbdbdb;
-    border-radius: 5px;
-  }
-  input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 0px 3px #dbdbdb;
-    height: 15px;
-    width: 15px;
-    border-radius: 50px;
-    background: #FF2764;
-    -webkit-appearance: none;
-    margin-top: -5px;
-  }
-  .options label {
-    text-align: center;
-    width: 97px;
-    padding: 15px 0;
-    background-color: #FFfff;
-    font-family: 'Spartan', serif;
-    border-radius: 5px;
-    border: 0.5px solid lightgrey;
-    box-shadow: 0px 0px 1.5px #888888;
-    font-weight: normal;
-    font-size: 12px;
-  }
-  .options label:hover {
-    background-color: #ff2764;
-    outline: none;
-    color: white;
-  }
-  .options input[type=radio]:checked + label {
-    background-color: #ff2764;
-    color: white;
-  }
-  .options  {
+
+  .geslacht {
     display: flex;
     justify-content: space-between;
+    padding: 0.2em 0em;
   }
-  .filters {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
+
+  .geslacht input[type="radio"]:checked+label {
+    border: 1px solid $checkGreen;
+    border: solid 1px $checkGreen;
+    background-image: url(../images/check-yellowgreen.svg);
+    background-repeat: no-repeat;
+    background-position: 3px;
+    background-size: 2em;
   }
-  .result {
-    display: flex;
-    justify-content: space-around;
-    background-color: grey;
-    font-size: 10.5px;
-    padding: 0px 4px;
-    margin: 3px 2.5px;
-    width: 80px;
+
+  input[type="radio"] {
+    position: relative;
+    left: -100px;
+  }
+
+  input[type=password] {
+    color: $checkGreen;
+  }
+
+  #login {
+    font-size: 0.8em;
     text-align: center;
-    background-color: lightgrey;
-    color: black;
-    border-radius: 5px;
-    box-shadow: 0px 0px 1.5px #888888;
+    padding: 0.3em 1em;
+    width: 90%;
+    color: $darkBlue;
   }
-  .adjustFilters {
-    background-color: white;
-    padding: 2px;
-    border: none;
-    width: 280px;
-    font-size: 12px;
-    text-decoration: none;
-    margin: 15px 2.3px;
+
+  p>a {
+    color: $gradientLightblue;
+  }
+
+  #password-min8 {
+    font-size: 0.75em;
+    font-weight: normal;
+    color: grey;
     text-align: right;
-    color: #ff2764;
-    font-family: 'Spartan', serif;
-  }
-  .adjustFilters:hover {
-    background-color: white;
-    color: lightgrey;
-  }
-  button:focus, button:hover, button:checked {
-    background-color: #ff2764;
-    outline: none;
-    color: white;
-  }
-  .aside p {
-    margin: 0px;
-    padding-left: 5px;
-  }
-  .aside {
-    font-size: 12px;
-    display: flex;
-    padding-top: 5px;
-    padding-left: 240px;
-    color: #b0aca8;
-  }
-  section.away {
-    opacity 0.0;
-    margin-top: -3em;
-    transform: translateX(1200px);
-    transition: 600ms transform;
-    transition-timing-function: ease-in-out;
-  }
-  section.apear {
-    transform: translateX(0);
-  }
-  .basics.away {
-    opacity: 0.0;
-  }
-
-  .basics.apear {
-    transition: 4000ms;
-    opacity: 1.0;
-  }
-
-  .extra.away {
-    opacity: 0.0;
-  }
-
-  .extra.apear {
-    transition: 7000ms;
-    opacity: 1.0;
-  }
-
-  h1.away {
-    opacity: 0.0;
-  }
-
-  h1.apear {
-    transition: 3000ms;
-    opacity: 1.0;
+    margin-top: 1em;
   }
 }
-/* End by Jade */
 
-// Button for displaying the filter function
-body[data-page='feed'] {
-  background-color: #e6e5e1;
-  button {
-    padding: 20px;
-    transition: 400ms;
-  }
-  button.away {
-    opacity: 0.0;
+@media only screen and (min-width: $breakpoint-mobile) {
+  form {
+    min-width: 375px;
+    min-height: 75vh;
+    margin-top: 3em;
+    margin-left: 10em;
   }
 }
