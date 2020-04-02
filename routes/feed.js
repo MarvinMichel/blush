@@ -24,7 +24,8 @@ router.get('/', async (req, res) => {
   res.render('feed.ejs', { profiles });
 });
 
-// router.post('/feed-filter', (req, res) => {
+// functie die weer aangezet moet worden als GET gefixt is van regel 48 hieronder
+// router.post('/filter-feed', (req, res) => {
 //   db.collection('filters').insertOne({
 //     geslacht: req.body.geslacht,
 //     leeftijd: req.body.leeftijd,
