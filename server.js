@@ -1,3 +1,4 @@
+require('dotenv').config();                                                       // Marvin
 const express = require('express');                                               // Marvin
 const app = express();                                                            // Marvin
 const port = 8000;                                                                // Marvin
@@ -5,7 +6,11 @@ const bodyParser = require('body-parser');                                      
 const urlencodedParser = bodyParser.urlencoded({ extended: true });               // Marvin
 const mongoose = require('mongoose');                                             // Marvin
 const passport = require('passport');                                             // Inge
-require('dotenv').config();                                                       // Marvin
+const bcrypt = require('bcrypt');                                                 // Jade
+const saltRounds = 10;                                                            // Jade
+const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
+const someOtherPlaintextPassword = 'not_bacon';                                   // Jade 
+
 
 // Connect to database trough Mongoose
 mongoose.connect(                                                                 // Marvin
