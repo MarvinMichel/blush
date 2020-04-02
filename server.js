@@ -46,7 +46,6 @@ const createUser = (email, password, firstName, lastName, age, gender) => {     
 app
   .set('view engine', 'ejs')                                                      // Marvin
   .set('views', 'views')                                                          // Marvin
-  .use('/public', express.static('./public/'))                                    // Jade
   .use(express.static(__dirname + '/public'))                                     // Marvin
   .use(passport.initialize())                                                     // Inge
   .use(passport.session())                                                        // Inge
