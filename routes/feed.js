@@ -18,13 +18,36 @@ let profiles = [];
 //   }
 // };
 
+
 router.get('/', async (req, res) => {
   // profiles = await server.Users.find();
   res.render('feed.ejs', { profiles });
 });
 
-router.post('/', (req, res) => {
+// router.post('/feed-filter', (req, res) => {
+//   db.collection('filters').insertOne({
+//     geslacht: req.body.geslacht,
+//     leeftijd: req.body.leeftijd,
+//     afstand: req.body.afstand,
+//     roken: req.body.roken,
+//     kinderen: req.body.kinderen,
+//     lengte: req.body.lengte,
+//   }, done)
+//
+//   function done(err, data) {
+//     if (err) {
+//       next(err)
+//     } else {
+//       res.redirect('/' + data.insertedId)
+//     }
+//   }
+// });
+
+
+// hoezo zegt ie cannot POST /filter-feed terwijl als ik '/' en action '/' doe kan ie wel posten. mis ik iets?
+router.post('/filter-feed', (req, res) => {
   res.render('feed');
 });
+
 
 module.exports = router;

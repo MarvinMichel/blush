@@ -47,6 +47,8 @@ app
   .set('view engine', 'ejs')                                                      // Marvin
   .set('views', 'views')                                                          // Marvin
   .use(express.static(__dirname + '/public'))                                     // Marvin
+  // deze moet blijven anders gaat er iets fout met js
+  .use('/public', express.static('./public/'))                                    // Jade
   .use(passport.initialize())                                                     // Inge
   .use(passport.session())                                                        // Inge
   .use('/', require('./routes/signup'))                                           // Marvin
