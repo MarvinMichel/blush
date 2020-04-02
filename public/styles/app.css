@@ -204,3 +204,160 @@ form[data-page="form"] {
 
 .profile--matching input[type="text"] {
   display: none; }
+
+/*****************************
+        FORMULIER SIGN-UP
+******************************/
+body[data-page=feed] {
+  background-color: #e6e5e1; }
+  body[data-page=feed] button {
+    padding: 20px;
+    transition: 400ms; }
+  body[data-page=feed] button.away {
+    opacity: 0; }
+  body[data-page=feed] section.away {
+    opacity: 0;
+    margin-top: -3em;
+    transform: translateX(1200px);
+    transition: 600ms transform;
+    transition-timing-function: ease-in-out; }
+  body[data-page=feed] section.apear {
+    transform: translateX(0); }
+
+section[data-page=filter] {
+  font-family: "Spartan", serif;
+  margin-top: 1em;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 60px;
+  width: 280px;
+  height: 755px;
+  border-radius: 20px;
+  box-shadow: 2px 3px 18px #888888; }
+  section[data-page=filter] h1 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    color: #1cbfd8; }
+  section[data-page=filter] h2 {
+    margin-top: 2.5em;
+    padding-right: 2.5px;
+    margin-bottom: -2em;
+    text-align: right;
+    font-size: 13px;
+    color: #b0aca8; }
+  section[data-page=filter] button {
+    margin: 3em auto 2.5em auto;
+    display: block;
+    width: 150px;
+    padding: 1.5em;
+    background-color: black;
+    color: white;
+    font-weight: 900;
+    border-radius: 10px; }
+  section[data-page=filter] label {
+    display: block;
+    padding: 1.5em 0 1em 0;
+    font-size: 13px;
+    font-weight: bold; }
+  section[data-page=filter] input[type=range] {
+    width: 280px; }
+  section[data-page=filter] input[type=radio] {
+    padding: 20px;
+    display: none; }
+  section[data-page=filter] input[type=range] {
+    -webkit-appearance: none; }
+  section[data-page=filter] input[type=range]:focus {
+    outline: none; }
+  section[data-page=filter] input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #dbdbdb;
+    border-radius: 5px; }
+  section[data-page=filter] input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 3px #dbdbdb;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background: #FF2764;
+    -webkit-appearance: none;
+    margin-top: -5px; }
+  section[data-page=filter] .options label {
+    text-align: center;
+    width: 97px;
+    padding: 15px 0;
+    background-color: #FFfff;
+    font-family: "Spartan", serif;
+    border-radius: 5px;
+    border: 0.5px solid lightgrey;
+    box-shadow: 0px 0px 1.5px #888888;
+    font-weight: normal;
+    font-size: 12px; }
+  section[data-page=filter] .options label:hover {
+    background-color: #ff2764;
+    outline: none;
+    color: white; }
+  section[data-page=filter] .options input[type=radio]:checked + label {
+    background-color: #ff2764;
+    color: white; }
+  section[data-page=filter] .options {
+    display: flex;
+    justify-content: space-between; }
+  section[data-page=filter] section[data-page=filter] .filters {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap; }
+  section[data-page=filter] .result {
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+    font-size: 10.5px;
+    padding: 0px 4px;
+    margin: 3px 2.5px;
+    width: 80px;
+    text-align: center;
+    background-color: lightgrey;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1.5px #888888; }
+  section[data-page=filter] .adjustFilters {
+    background-color: white;
+    padding: 2px;
+    border: none;
+    width: 280px;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 15px 2.3px;
+    text-align: right;
+    color: #ff2764;
+    font-family: "Spartan", serif; }
+  section[data-page=filter] .adjustFilters:hover {
+    background-color: white;
+    color: lightgrey; }
+  section[data-page=filter] button:focus, section[data-page=filter] section[data-page=filter] button:hover, section[data-page=filter] section[data-page=filter] button:checked {
+    background-color: #ff2764;
+    outline: none;
+    color: white; }
+  section[data-page=filter] .aside p {
+    margin: 0px;
+    padding-left: 5px; }
+  section[data-page=filter] .aside {
+    font-size: 12px;
+    display: flex;
+    padding-top: 5px;
+    padding-left: 240px;
+    color: #b0aca8; }
+  section[data-page=filter] .basics.away {
+    opacity: 0; }
+  section[data-page=filter] .basics.apear {
+    transition: 4000ms;
+    opacity: 1; }
+  section[data-page=filter] .extra.away {
+    opacity: 0; }
+  section[data-page=filter] .extra.apear {
+    transition: 7000ms;
+    opacity: 1; }
+  section[data-page=filter] h1.away {
+    opacity: 0; }
+  section[data-page=filter] h1.apear {
+    transition: 3000ms;
+    opacity: 1; }

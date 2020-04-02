@@ -4,9 +4,81 @@
 <%- include('./partials/head') %>
 
 <body data-page='feed'>
-  <%- include('./partials/profile') %>
 
-  <script src="/scripts/index.js"></script>
+  <button type="button" name="button">Filters</button>
+  <section data-page="filter">
+    <h1>Filters</h1>
+      <div class="basics">
+        <!-- <form class="filter" action="/add-movie" method="post"> -->
+        <h2>Basics</h2>
+        <label for="gender">Ik zoek</label>
+        <div class="options">
+          <input type="radio" id="man" name="geslacht" value="man">
+          <label for="man">man</label>
+          <input type="radio" id="vrouw" name="geslacht" value="vrouw">
+          <label for="vrouw">vrouw</label>
+          <input type="radio" id="anders" name="geslacht" value="man/vrouw">
+          <label for="anders">beide</label>
+        </div>
+
+        <div class="sliders">
+          <label for="leeftijd" id="leeftijd">leeftijd</label>
+          <input type="range" min=18 max="100" name="leeftijd" value="20">
+          <div class="aside">
+            <span class="range-slider-value">25</span>
+            <p>jr.</p>
+          </div>
+        </div>
+
+        <div class="sliders">
+        <label for="maximale afstand">Maximale afstand</label>
+          <input type="range" min="1" max="80" value="50" name="afstand">
+          <div class="aside">
+            <span class="range-slider-value">20</span>
+            <p>km</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="extra">
+        <h2>Extra</h2>
+        <label for="roken">Rookt</label>
+        <div class="options">
+          <input type="radio" id="jaroken" name="roken" value="wel">
+          <label for="jaroken">ja</label>
+          <input type="radio" id="neeroken" name="roken" value="niet">
+          <label for="neeroken">nee</label>
+          <input type="radio" id="maaktnietuitroken" name="roken" value="mag">
+          <label for="maaktnietuitroken">alles prima</label>
+        </div>
+        <label for="kinderen">Kinderen</label>
+        <div class="options">
+          <input type="radio" id="jakinderen" name="kinderen" value="ja">
+          <label for="jakinderen">ja</label>
+          <input type="radio" id="neekinderen" name="kinderen" value="nee">
+          <label for="neekinderen">nee</label>
+          <input type="radio" id="maaktnietuitkinderen" name="kinderen" value="mag">
+          <label for="maaktnietuitkinderen">alles prima</label>
+        </div>
+
+        <div class="sliders">
+          <label for="lengte" id="lengte">lengte</label>
+          <input type="range" min="140" max="220" name="lengte" value="10">
+          <div class="aside">
+            <span class="range-slider-value">175</span>
+            <p>cm</p>
+          </div>
+        </div>
+        <button>Zoek mijn match</button>
+
+      </div>
+
+      </form>
+    </section>
+
+  <script  type="text/javascript" src="/public/scripts/index.js"></script>
 </body>
+  <script  type="text/javascript" src="/public/scripts/index.js"></script>
 
 </html>
