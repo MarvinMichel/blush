@@ -21,45 +21,40 @@ body {
 
 h1 {
   text-align: left;
-  margin-top: 2.5em;
   font-family: $fontHeader1;
   font-weight: 700;
   font-size: 2em;
   color: $darkBlue;
-  position: absolute;
 }
 
 h2 {
-  color: #1e1e3a;
+  text-align: left;
+  font-family: $fontHeader1;
   font-size: 1.5em;
+  color: $darkBlue;
 }
 
 h3 {
   text-align: left;
-  font-family: 'Playfair Display', serif;
+  font-family: $fontHeader1;
   font-size: 1.5em;
   color: $darkBlue;
-  position: absolute;
 }
 
 h4 {
-  font-weight: normal;
-  font-size: 1.2em;
   text-align: left;
+  font-size: 1.2em;
   color: $darkBlue;
-  position: absolute;
 }
 
 h5 {
-  font-size: 1em;
-  font-weight: normal;
+  font-size: 1.2em;
   text-align: left;
   color: $darkBlue;
 }
 
 h6 {
   font-size: 1em;
-  font-weight: normal;
   text-align: left;
   color: $darkBlue;
 }
