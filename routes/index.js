@@ -9,8 +9,9 @@ router.get('/', (req, res) => {                                                 
   res.render('index');
 });
 
-router.post('/', (req, res) => {                                                 // Inge
-  res.redirect('signup');
+router.post('/', (req, res) => {
+  console.log('De post werkt');
+  res.redirect('signup');                                               // Inge
 });
 
 // router.post('/', upload.single('cover'), (req, res) => {                      // Inge post session- work in progress

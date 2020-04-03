@@ -8,7 +8,7 @@ router.get('/', (req, res) => {                                                 
 
 router.post('/', (req, res) => {                                                 // Inge
   console.log('De post werkt!!!');
-  res.render('feed');
+  res.redirect('feed');
 });
 
 module.exports = router;

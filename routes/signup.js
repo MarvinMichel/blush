@@ -6,9 +6,9 @@ router.get('/', (req, res) => {                                                 
   res.render('signup');
 });
 
-router.post('/', (req, res) => {                                                 // Inge
-  console.log('De post werkt!!!');
-  res.render('feed');
+router.post('/', (req, res) => {
+  console.log('De post werkt hier ook');                                               // Inge
+  res.redirect('feed');
 });
 
 module.exports = router;
