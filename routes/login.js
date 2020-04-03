@@ -6,4 +6,9 @@ router.get('/', (req, res) => {                                                 
   res.render('login');
 });
 
+router.post('/', (req, res) => {                                                 // Inge
+  console.log('De post werkt!!!');
+  res.render('feed');
+});
+
 module.exports = router;
