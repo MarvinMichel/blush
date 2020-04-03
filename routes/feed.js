@@ -18,14 +18,13 @@ let profiles = [];
 //   }
 // };
 
-
 router.get('/', async (req, res) => {
   // profiles = await server.Users.find();
   res.render('feed.ejs', { profiles });
 });
 
 // functie die weer aangezet moet worden als GET gefixt is van regel 48 hieronder
-// router.post('/filter-feed', (req, res) => {
+// router.post('/', (req, res) => {
 //   db.collection('filters').insertOne({
 //     geslacht: req.body.geslacht,
 //     leeftijd: req.body.leeftijd,
@@ -44,9 +43,8 @@ router.get('/', async (req, res) => {
 //   }
 // });
 
-
 // hoezo zegt ie cannot POST /filter-feed terwijl als ik '/' en action '/' doe kan ie wel posten. mis ik iets?
-router.post('/filter-feed', (req, res) => {
+router.post('/', (req, res) => {
   res.render('feed');
 });
 

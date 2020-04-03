@@ -9,7 +9,7 @@ const passport = require('passport');                                           
 const bcrypt = require('bcrypt');                                                 // Jade
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
-const someOtherPlaintextPassword = 'not_bacon';                                   // Jade 
+const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
 
 
 // Connect to database trough Mongoose
@@ -52,8 +52,6 @@ app
   .set('view engine', 'ejs')                                                      // Marvin
   .set('views', 'views')                                                          // Marvin
   .use(express.static(__dirname + '/public'))                                     // Marvin
-  // deze moet blijven anders gaat er iets fout met js
-  .use('/public', express.static('./public/'))                                    // Jade
   .use(passport.initialize())                                                     // Inge
   .use(passport.session())                                                        // Inge
   .use('/', require('./routes/signup'))                                           // Marvin
