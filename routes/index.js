@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('index_temp');
+
+router.get('/', (req, res) => {                                               // Inge
+  res.render('index');
 });
 
 module.exports = router;
