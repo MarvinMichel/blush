@@ -6,7 +6,7 @@
 <!-- Inge -->
 <body data-page="banner-home">
 
-  <form action="/feed" method="post" data-page="form">
+  <form action="/" method="post" data-page="form" enctype= "multipart/form-data">
     <legend>Make a profile</legend>
     <fieldset>
       <label for='geslacht'>Gender</label>
@@ -21,8 +21,8 @@
         <label for="other">Other</label>
       </div>
       <br>
-      <label for='datum'>Birthday</label>
-      <input name='jaar' id='datum' type="number" required>
+      <label for='birthday'>Birthday</label>
+      <input name='birthday' id='datum' type="number" required>
       <br>
       <label for='place'>Place</label>
       <input type="text" name="place" placeholder="Where do you come from?" required>
@@ -30,8 +30,8 @@
       <label for="file"> Upload Image</label>
       <input name="cover" type="file" accept="image/*" required>
       <br>
-      <label for="biografie">About me</label>
-      <textarea name="biografie" placeholder="Tell us something about you"></textarea>
+      <label for="biography">About me</label>
+      <textarea name="biography" placeholder="Tell us something about you"></textarea>
       <br>
     </fieldset>
     <input type='submit' value='Add my profile and start dating!'>
