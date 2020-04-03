@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+<body data-page="chats">
+  <h1>Chats</h1>
+
+  <section class="userContainer">
+    <figure>
+      <img class="profile--picture" src="/images/Mae.jpg" alt="Profile picture">
+    </figure>
+    <div>
+      <h3>Username</h3>
+      <p>
+        This is a summary of the chat that's been going on...
+      </p>
+    </div>
+  </section>
+  <section class="chatbox">
+    <div id="messages">
+
+    </div>
+    <form action="#">
+      <input type="text" name="message">
+      <input type="submit" value="Send">
+    </form>
+  </section>
+
+  <script src="/scripts/index.js"></script>
+</body>
+
+</html>

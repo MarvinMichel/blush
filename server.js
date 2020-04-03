@@ -54,7 +54,8 @@ app
   .use(express.static(__dirname + '/public'))                                     // Marvin
   .use(passport.initialize())                                                     // Inge
   .use(passport.session())                                                        // Inge
-  .use('/', require('./routes/signup'))                                           // Marvin
+  .use('/', require('./routes/signup'))
+  .use('/chats', require('./routes/chats'))                                          // Marvin
   .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/login', require('./routes/login'))                                       // Marvin
   .post('/login',                                                                 // Inge
