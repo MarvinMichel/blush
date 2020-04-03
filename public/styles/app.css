@@ -397,8 +397,15 @@ body[data-page="chats"] section {
     flex-direction: column;
     place-items: center; }
     body[data-page="chats"] section.chatbox #messages {
-      height: 90%;
-      background: #fff;
+      height: 92%;
       width: 90%; }
     body[data-page="chats"] section.chatbox form input[type="text"] {
-      border: 1px solid #1e1e3a; }
+      width: 40vw;
+      height: 5vh;
+      font-size: 1em; }
+    body[data-page="chats"] section.chatbox form button {
+      border: none;
+      background: #1e1e3a;
+      color: #fff;
+      width: 8.5vw;
+      height: 5vh; }

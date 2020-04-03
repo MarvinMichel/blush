@@ -545,14 +545,23 @@ body[data-page="chats"] {
       place-items: center;
 
       #messages {
-        height: 90%;
-        background: #fff;
+        height: 92%;
         width: 90%;
       }
 
       form {
         input[type="text"] {
-          border: 1px solid $darkBlue;
+          width: 40vw;
+          height: 5vh;
+          font-size: 1em;
+        }
+
+        button {
+          border: none;
+          background: $darkBlue;
+          color: #fff;
+          width: 8.5vw;
+          height: 5vh;
         }
       }
     }
