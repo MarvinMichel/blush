@@ -4,6 +4,7 @@ const app = express();                                                          
 const port = 8000;                                                                // Marvin
 const mongoose = require('mongoose');                                             // Marvin
 const session = require('express-session');                                       // Marvin
+const multer = require('multer');
 const bcrypt = require('bcrypt');                                                 // Jade
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
@@ -30,7 +31,7 @@ const userSchema = require('./routes/Schemas/users');                           
 const Users = mongoose.model('users', userSchema, 'users');                       // Marvin
 
 // Function to create user instance in database
-const createUser = (email, password, firstName, lastName, age, gender) => {       // Marvin
+const createUser = (email, password, firstName, lastName, age, gender, picture) => {       // Marvin
   Users.create({
     email: email,
     password: password,
@@ -40,7 +41,8 @@ const createUser = (email, password, firstName, lastName, age, gender) => {     
         lastName: lastName
       },
       age: age,
-      gender: gender
+      gender: gender,
+      picture: picture
     }
   });
 };
@@ -53,7 +55,7 @@ app
   .use(session({                                                                  // Marvin
     secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
-    resave: false
+    resave: true
   }))
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
