@@ -2,9 +2,8 @@ require('dotenv').config();                                                     
 const express = require('express');                                               // Marvin
 const app = express();                                                            // Marvin
 const port = 8000;                                                                // Marvin
-const bodyParser = require('body-parser');                                        // Marvin
-const urlencodedParser = bodyParser.urlencoded({ extended: true });               // Marvin
 const mongoose = require('mongoose');                                             // Marvin
+const session = require('express-session');                                       // Marvin
 const bcrypt = require('bcrypt');                                                 // Jade
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
@@ -51,8 +50,13 @@ app
   .set('view engine', 'ejs')                                                      // Marvin
   .set('views', 'views')                                                          // Marvin
   .use(express.static(__dirname + '/public'))                                     // Marvin
+  .use(session({                                                                  // Marvin
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: true,
+    resave: false
+  }))
   .use('/', require('./routes/index'))                                            // Inge
-  .use('/feed', require('./routes/feed'))                                         // Inge
+  .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/signup', require('./routes/signup'))                                     // Inge
   .use('/login', require('./routes/login'))                                       // Inge
   .listen(port, () => console.log(`Server is running on localhost:${port}`));     // Marvin
@@ -62,5 +66,4 @@ exports.db = db;
 exports.Users = Users;
 
 // Export functions
-exports.urlencodedParser = urlencodedParser;
 exports.createUser = createUser;
