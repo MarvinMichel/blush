@@ -2,13 +2,14 @@ require('dotenv').config();                                                     
 const express = require('express');                                               // Marvin
 const app = express();                                                            // Marvin
 const port = 8000;                                                                // Marvin
-const mongoose = require('mongoose');                                             // Marvin
 const session = require('express-session');                                       // Marvin
-const multer = require('multer');
+const mongoose = require('mongoose');                                             // Marvin
+const passport = require('passport');
 const bcrypt = require('bcrypt');                                                 // Jade
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
 const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
+require('./passport-config')(passport);
 
 
 // Connect to database trough Mongoose
@@ -33,16 +34,16 @@ const Users = mongoose.model('users', userSchema, 'users');                     
 // Function to create user instance in database
 const createUser = (email, password, firstName, lastName, age, gender, picture) => {       // Marvin
   Users.create({
-    email: email,
-    password: password,
+    email,
+    password,
     profile: {
       name: {
-        firstName: firstName,
-        lastName: lastName
+        firstName,
+        lastName
       },
-      age: age,
-      gender: gender,
-      picture: picture
+      age,
+      gender,
+      picture
     }
   });
 };
@@ -57,6 +58,8 @@ app
     saveUninitialized: true,
     resave: true
   }))
+  .use(passport.initialize())                                                     // Marvin
+  .use(passport.session())                                                        // Marvin
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/signup', require('./routes/signup'))                                     // Inge

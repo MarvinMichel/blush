@@ -29,7 +29,7 @@ const storage = cloudinaryStorage({
 });
 const parser = multer({ storage: storage });
 
-router.get('/', (req, res) => {                                                   // Inge
+router.get('/', async (req, res) => {                                                   // Inge
   res.render('signup');
 });
 

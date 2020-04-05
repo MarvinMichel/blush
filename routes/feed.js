@@ -20,7 +20,7 @@ let profiles = [];
 
 router.get('/', async (req, res) => {
   // profiles = await server.Users.find();
-  res.render('feed.ejs', { profiles });
+  res.render('feed', { profiles });
 });
 
 // functie die weer aangezet moet worden als GET gefixt is van regel 48 hieronder
