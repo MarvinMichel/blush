@@ -26,6 +26,7 @@ const storage = cloudinaryStorage({
   allowedFormats: ['jpg', 'png'],
   transformation: [{ width: 500, height: 500, crop: 'limit' }]
 });
+
 const parser = multer({ storage: storage });
 
 router.get('/', async (req, res) => {
@@ -43,7 +44,8 @@ router.post('/', parser.single('file'), (req, res) => {
     req.body.gender,
     req.file.url
   );
-  res.redirect('feed');
+  req.flash('succes', 'Account succesfully created');
+  res.redirect('login');
 });
 
 module.exports = router;
