@@ -9,6 +9,8 @@ const bcrypt = require('bcrypt');                                               
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
 const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
+const ObjectId = mongoose.Types.ObjectId;                                         // Jade
+const passport = require('passport');                                             // Inge
 
 
 // Connect to database trough Mongoose
@@ -50,6 +52,8 @@ const createUser = (email, password, firstName, lastName, age, gender) => {     
 app
   .set('view engine', 'ejs')                                                      // Marvin
   .set('views', 'views')                                                          // Marvin
+  .use(bodyParser.json())                                                         // Jade
+  .use(bodyParser.urlencoded({ extended: true }))                                 // Jade
   .use(express.static(__dirname + '/public'))                                     // Marvin
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Inge
@@ -58,9 +62,10 @@ app
   .listen(port, () => console.log(`Server is running on localhost:${port}`));     // Marvin
 
 // Export variables and arrays
-exports.db = db;
-exports.Users = Users;
+exports.ObjectId = ObjectId;                                                      // Jade
+exports.db = db;                                                                  // Marvin
+exports.Users = Users;                                                            // Marvin
 
 // Export functions
-exports.urlencodedParser = urlencodedParser;
-exports.createUser = createUser;
+exports.urlencodedParser = urlencodedParser;                                      // Marvin
+exports.createUser = createUser;                                                  // Marvin

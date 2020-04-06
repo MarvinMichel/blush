@@ -23,30 +23,29 @@ router.get('/', async (req, res) => {
   res.render('feed.ejs', { profiles });
 });
 
-// functie die weer aangezet moet worden als GET gefixt is van regel 48 hieronder
-// router.post('/', (req, res) => {
-//   db.collection('filters').insertOne({
-//     geslacht: req.body.geslacht,
-//     leeftijd: req.body.leeftijd,
-//     afstand: req.body.afstand,
-//     roken: req.body.roken,
-//     kinderen: req.body.kinderen,
-//     lengte: req.body.lengte,
-//   }, done)
-//
-//   function done(err, data) {
-//     if (err) {
-//       next(err)
-//     } else {
-//       res.redirect('/' + data.insertedId)
-//     }
-//   }
-// });
 
-// hoezo zegt ie cannot POST /filter-feed terwijl als ik '/' en action '/' doe kan ie wel posten. mis ik iets?
+// Function made by Jade. Function puts preferences in database
 router.post('/', (req, res) => {
-  res.render('feed');
+  console.log(server.Users);
+  const id =  server.ObjectId('5e88a6f27a795bf6d07f694c');
+  console.log(id);
+  server.Users.findOneAndUpdate(
+    {_id: id},
+    { preferences: {
+      gender: req.body.gender,
+      age: req.body.age,
+      distance: req.body.distance,
+      smoke: req.body.smoke,
+      kids: req.body.kids,
+      hight: req.body.hight }},
+    ((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        console.log('preferences zijn succesvol in database (veranderd)');
+        res.render('feed');
+      }
+    }));
 });
-
 
 module.exports = router;

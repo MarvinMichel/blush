@@ -15,13 +15,14 @@ let userSchema = new Schema({
     smoke: Boolean,
     kids: Boolean,
   },
-  preferences: [{
-    age: Number,
+  preferences: {
     gender: String,
-    pets: String,
-    smoke: Boolean,
-    kids: Boolean
-  }],
+    age: Number,
+    distance: Number,
+    smoke: String,
+    kids: String,
+    hight: Number
+  },
   likes: Array
 }, {
   collection: 'users'
