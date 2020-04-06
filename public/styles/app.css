@@ -307,6 +307,19 @@ form[data-page="form"] {
     margin-left: 10em; } }
 
 /*****************************
+       LOGIN MESSAGES
+******************************/
+.msg {
+  display: flex;
+  width: 75%;
+  justify-content: center;
+  margin: 0 auto; }
+  .msg--error {
+    color: #e84b60; }
+  .msg--succes {
+    color: yellowgreen; }
+
+/*****************************
       FEED PROFILES
 ******************************/
 .profile--info {
