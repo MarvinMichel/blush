@@ -1,7 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 
-const Users = require('./routes/Schemas/users');
+const Users = require('../routes/Schemas/users');
 
 module.exports = (passport) => {
   passport.use(

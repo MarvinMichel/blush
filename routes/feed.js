@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const server = require('../server');
+const { ensureAuthenticated } = require('../config/oath');
 
 const Users = require('./Schemas/users');
 
@@ -20,7 +21,7 @@ let profiles = [];
 //   }
 // };
 
-router.get('/', async (req, res) => {
+router.get('/', ensureAuthenticated, async (req, res) => {
   // profiles = await server.Users.find();
   res.render('feed', { profiles });
 });
