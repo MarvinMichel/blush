@@ -16,7 +16,6 @@ body {
   margin: 0; }
 
 h1 {
-  text-align: left;
   font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 2em;
@@ -29,8 +28,6 @@ h2 {
   color: #1e1e3a; }
 
 h3 {
-  text-align: left;
-  font-family: "Playfair Display", serif;
   font-size: 1.5em;
   color: #1e1e3a; }
 
@@ -376,7 +373,7 @@ section[data-page=filter] {
     text-align: center;
     width: 97px;
     padding: 15px 0;
-    background-color: #FFfff;
+    background-color: #fff;
     font-family: "Spartan", serif;
     border-radius: 5px;
     border: 0.5px solid lightgrey;
@@ -424,7 +421,9 @@ section[data-page=filter] {
   section[data-page=filter] .adjustFilters:hover {
     background-color: white;
     color: lightgrey; }
-  section[data-page=filter] button:focus, section[data-page=filter] section[data-page=filter] button:hover, section[data-page=filter] section[data-page=filter] button:checked {
+  section[data-page=filter] button:focus,
+  section[data-page=filter] section[data-page=filter] button:hover,
+  section[data-page=filter] section[data-page=filter] button:checked {
     background-color: #ff2764;
     outline: none;
     color: white; }
@@ -452,3 +451,54 @@ section[data-page=filter] {
   section[data-page=filter] h1.apear {
     transition: 3000ms;
     opacity: 1; }
+
+/*****************************
+        CHATS - PREVIEW
+******************************/
+body[data-page="chats"] section {
+  border: 1px solid #1e1e3a;
+  background: #e9e9e9;
+  margin: 2.5vw; }
+  body[data-page="chats"] section.userContainer {
+    display: flex;
+    width: 40vw; }
+    body[data-page="chats"] section.userContainer figure {
+      border-radius: 50%;
+      border: 1px solid #1e1e3a;
+      width: 5rem;
+      height: 5rem;
+      overflow: hidden;
+      margin: .8rem; }
+      body[data-page="chats"] section.userContainer figure img {
+        width: 100%;
+        height: auto; }
+    body[data-page="chats"] section.userContainer div {
+      display: flex;
+      flex-direction: column;
+      place-content: center; }
+      body[data-page="chats"] section.userContainer div h3 {
+        margin: 0; }
+      body[data-page="chats"] section.userContainer div p {
+        margin: 1rem 0; }
+  body[data-page="chats"] section.chatbox {
+    height: 80vh;
+    width: 50vw;
+    position: fixed;
+    right: 0;
+    top: 7.5vh;
+    display: flex;
+    flex-direction: column;
+    place-items: center; }
+    body[data-page="chats"] section.chatbox #messages {
+      height: 92%;
+      width: 90%; }
+    body[data-page="chats"] section.chatbox form input[type="text"] {
+      width: 40vw;
+      height: 5vh;
+      font-size: 1em; }
+    body[data-page="chats"] section.chatbox form button {
+      border: none;
+      background: #1e1e3a;
+      color: #fff;
+      width: 8.5vw;
+      height: 5vh; }
