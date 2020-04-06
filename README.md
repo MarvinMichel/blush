@@ -42,7 +42,7 @@ _The npm run lint script checkes for styling errors with linters. You can see an
 Curious to what kind of **research** we dit? Check out our [WIKI](https://github.com/MarvinMichel/blush/wiki)  
 
 ## Thanks to
-We want to thank everyone who helped us create this dating app. The teachers at Hoge school van Amsterdam helped us very good with the project. Most of the things were very clear and despite of that the assignment was a bit hard, we liked doing it.
+We want to thank everyone who helped us create this dating app. The teachers at Hogeschool van Amsterdam helped us very good with the project. Most of the things were very clear and despite of that the assignment was a bit hard, we liked doing it.
 
 <p align="right" font-weight="italic"> Marvin, Inge & Jade </p>
 
