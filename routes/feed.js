@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const server = require('../server');
 
+const Users = require('./Schemas/users');
+
 let profiles = [];
 // const renderProfiles = async (userID) => {
-//   const user = server.Users.findById(userID);
+//   const user = Users.findById(userID);
 //   if (user.preferences) {
 //     profiles = await server.Users.find({
 //       'profile.age': user.preferences.age,
@@ -19,25 +21,27 @@ let profiles = [];
 // };
 
 router.get('/', async (req, res) => {
-  // profiles = await server.Users.find();
+  // profiles = await Users.find();
   res.render('feed.ejs', { profiles });
 });
 
 
 // Function made by Jade. Function puts preferences in database
 router.post('/', (req, res) => {
-  console.log(server.Users);
-  const id =  server.ObjectId('5e88a6f27a795bf6d07f694c');
+  const id = server.ObjectId('5e88a6f27a795bf6d07f694c');
   console.log(id);
-  server.Users.findOneAndUpdate(
-    {_id: id},
-    { preferences: {
-      gender: req.body.gender,
-      age: req.body.age,
-      distance: req.body.distance,
-      smoke: req.body.smoke,
-      kids: req.body.kids,
-      hight: req.body.hight }},
+  Users.findOneAndUpdate(
+    { _id: id },
+    {
+      preferences: {
+        gender: req.body.gender,
+        age: req.body.age,
+        distance: req.body.distance,
+        smoke: req.body.smoke,
+        kids: req.body.kids,
+        hight: req.body.hight
+      }
+    },
     ((err, result) => {
       if (err) {
         res.send(err);
