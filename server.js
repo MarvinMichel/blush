@@ -72,6 +72,7 @@ app
   .use('/signup2', require('./routes/signup2'))                                   // Inge
   .use('/login', require('./routes/login'))                                       // Inge
   .listen(port, () => console.log(`Starting server at ${port}`));                 // Inge
+
 // Export variables
 exports.ObjectId = ObjectId;                                                      // Jade
 exports.db = db;                                                                  // Marvin
