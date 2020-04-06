@@ -11,7 +11,7 @@ const saltRounds = 10;                                                          
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
 const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
 
-require('./passport-config')(passport);
+require('./config/passport-config')(passport);
 const ObjectId = mongoose.Types.ObjectId;                                         // Jade
 
 
@@ -71,6 +71,7 @@ app
   .use('/signup1', require('./routes/signup1'))                                   // Inge
   .use('/signup2', require('./routes/signup2'))                                   // Inge
   .use('/login', require('./routes/login'))                                       // Inge
+  .use('/logout', require('./routes/logout'))
   .listen(port, () => console.log(`Starting server at ${port}`));                 // Inge
 
 // Export variables
