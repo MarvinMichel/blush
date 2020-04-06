@@ -54,6 +54,7 @@ app
   .set('view engine', 'ejs')                                                      // Marvin
   .set('views', 'views')                                                          // Marvin
   .use(express.static(__dirname + '/public'))                                     // Marvin
+  .use(express.urlencoded({ extended: true }))                                    // Marvin
   .use(session({                                                                  // Marvin
     secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
