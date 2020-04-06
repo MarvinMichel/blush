@@ -1,13 +1,14 @@
-const express = require('express');                                               // Marvin
-const router = express.Router();                                                  // Marvin
-const bodyParser = require('body-parser');                                        // Marvin
-const urlencodedParser = bodyParser.urlencoded({ extended: true });               // Marvin
+/* Marvin */
+const express = require('express');
+const router = express.Router();
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 const cloudinaryStorage = require('multer-storage-cloudinary');
-const server = require('../server');                                              // Marvin
+const server = require('../server');
 
-// Convert birthday to age                                                        // Marvin
+// Convert birthday to age
 const getAge = (birth) => {
   const today = new Date();
   return Math.floor((today - birth) / (365.25 * 24 * 60 * 60 * 1000));
@@ -29,7 +30,7 @@ const storage = cloudinaryStorage({
 });
 const parser = multer({ storage: storage });
 
-router.get('/', async (req, res) => {                                                   // Inge
+router.get('/', async (req, res) => {
   res.render('signup');
 });
 

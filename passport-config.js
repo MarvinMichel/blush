@@ -1,36 +1,39 @@
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
-const server = require('./server');
+
+const Users = require('./routes/Schemas/users');
 
 module.exports = (passport) => {
   passport.use(
-    new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-      server.Users.findOne({ email: email }, (err, user) => {
+    new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
+      await Users.findOne({ email: email }, (err, user) => {
+        console.log(0)
         if (err) {
           console.log('Something went wrong');
           return done(err);
         }
         if (!user) {
-          console.log('Incorrect email');
-          return done(null, false);
+          console.log(1);
+          return done(null, false, { message: 'No user with that email found' });
         }
         if (!user.verifyPassword(password)) {
-          console.log('Incorrect password');
-          return done(null, false);
+          console.log(2);
+          return done(null, false, { message: 'Incorrect password' });
         }
-        console.log(`The user: ${user}`);
+        console.log(3);
         return done(null, user);
       });
     })
   );
 
   passport.serializeUser((user, done) => {
+    console.log(4);
     done(null, user.id);
   });
 
-  passport.deserializeUser((id, done) => {
-    server.Users.findById(id, (err, user) => {
+  passport.deserializeUser(async (id, done) => {
+    await Users.findById(id, (err, user) => {
       done(err, user);
-    })
+    });
   });
-}
+};

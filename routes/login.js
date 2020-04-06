@@ -1,5 +1,6 @@
-const express = require('express');                                               // Marvin
-const router = express.Router();                                                  // Marvin
+/* Marvin */
+const express = require('express');
+const router = express.Router();
 const passport = require('passport');
 
 router.get('/', (req, res) => {

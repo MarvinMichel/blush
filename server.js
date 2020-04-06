@@ -5,6 +5,7 @@ const port = 8000;                                                              
 const session = require('express-session');                                       // Marvin
 const mongoose = require('mongoose');                                             // Marvin
 const passport = require('passport');
+const flash = require('express-flash');
 const bcrypt = require('bcrypt');                                                 // Jade
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
@@ -27,9 +28,9 @@ mongoose.connect(                                                               
 const db = mongoose.connection;                                                   // Marvin
 db.on('error', console.error.bind(console, 'connection error:'));
 
-// Create user model
-const userSchema = require('./routes/Schemas/users');                             // Marvin
-const Users = mongoose.model('users', userSchema, 'users');                       // Marvin
+// // Create user model
+// const userSchema = require('./routes/Schemas/users');                             // Marvin
+// const Users = mongoose.model('users', userSchema, 'users');                       // Marvin
 
 // Function to create user instance in database
 const createUser = (email, password, firstName, lastName, age, gender, picture) => {       // Marvin
@@ -60,6 +61,7 @@ app
   }))
   .use(passport.initialize())                                                     // Marvin
   .use(passport.session())                                                        // Marvin
+  .use(flash())
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/signup', require('./routes/signup'))                                     // Inge
@@ -68,7 +70,7 @@ app
 
 // Export variables and arrays
 exports.db = db;
-exports.Users = Users;
+// exports.Users = Users;
 
 // Export functions
 exports.createUser = createUser;
