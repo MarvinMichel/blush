@@ -1,8 +1,6 @@
 /* Marvin */
 const express = require('express');
 const router = express.Router();
-const bodyParser = require('body-parser');
-const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 const cloudinaryStorage = require('multer-storage-cloudinary');
@@ -34,7 +32,7 @@ router.get('/', async (req, res) => {
   res.render('signup');
 });
 
-router.post('/', urlencodedParser, parser.single('file'), (req, res) => {
+router.post('/', parser.single('file'), (req, res) => {
   const age = getAge(new Date(req.body.birthday));
   server.createUser(
     req.session.user.email,
