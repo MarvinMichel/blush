@@ -44,7 +44,7 @@ router.post('/', parser.single('file'), (req, res) => {
     req.body.gender,
     req.file.url
   );
-  req.flash('succes', 'Account succesfully created');
+  req.flash('succes', 'Profile created! You can now login.');
   res.redirect('login');
 });
 
