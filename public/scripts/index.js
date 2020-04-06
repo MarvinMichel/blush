@@ -7,8 +7,8 @@ const extraFilters = document.querySelector('.extra');
 const basicFilters = document.querySelector('.basics');
 const titel = document.querySelector('h1');
 
-Array.prototype.forEach.call(sliders, (slider) =>{
-  slider.querySelector('input').addEventListener('input', (event) =>{
+Array.prototype.forEach.call(sliders, (slider) => {
+  slider.querySelector('input').addEventListener('input', (event) => {
     slider.querySelector('span').innerHTML = event.target.value;
   });
 });
