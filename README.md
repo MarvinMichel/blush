@@ -1,17 +1,17 @@
 ## <img src="https://user-images.githubusercontent.com/24520560/78538453-4d8aff00-77f1-11ea-8a43-c44e01509558.jpeg" alt="alt text" width="200px" height="whatever">  
 
-A Dating app, created with Node.js and Express. Blush is the result of Project Tech's team assignment, commissioned by Amsterdam University of Applied Sciences. We combined our individual use cases and developed a dating app. The user can sign in or create an account. The database is designed with Mongoose Models and Schemas and corresponds with mongoDB Atlas.
+A Dating app, created with Node.js and Express. Blush is the result of Project Tech's team assignment, commissioned by Amsterdam University of Applied Sciences. We combined our individual use cases and developed a dating app. The user can sign in or create an account. This is done with Passport.js for user authentication and Bcrypt for password hashing. The database is designed with Mongoose Models and Schemas and corresponds with mongoDB Atlas.
 
 ## How did we do it?
 <img src="https://user-images.githubusercontent.com/24520560/78539618-246b6e00-77f3-11ea-8115-fb1c71cb8311.png" alt="alt text" width="" align="right" height="250x">
 <img src="https://user-images.githubusercontent.com/24520560/78539620-259c9b00-77f3-11ea-825c-861b8be8196a.png" alt="alt text" width="" align="right" height="250px">
 
-We worked together on the project using github.
-We've created multiple branches from the cloned branch 'feed'. Eventually at the end we merged this into the master branch.
+We worked together on the project using GitHub.
+We've created multiple branches for features and bug fixes. Eventually at the end we merged these into the master branch.
 
-When someone was finished with a branch, he/she would create a pull request so that everything came together.
+When someone was finished with a branch, he/she would create a pull request so that everything came together. For more information about our workflow ommit merging and pushing, see [CONTRIBUTING.md](https://github.com/MarvinMichel/blush/blob/master/CONTRIBUTING.md)
 
-Also we made a lot of issues for every little feature we made, so we could easily see what everyone was doing. This so that we could create an overview for ourselves
+Also, we made a lot of issues for every little feature we made, so we could easily see what everyone was doing. This so that we could create an overview for ourselves
 
 ## Installation 🦾
 Would you like to try our dating app? You should follow the following steps:
@@ -42,7 +42,7 @@ _The npm run lint script checkes for styling errors with linters. You can see an
 Curious to what kind of **research** we dit? Check out our [WIKI](https://github.com/MarvinMichel/blush/wiki)  
 
 ## Thanks to
-We want to thank everyone who helped us create this dating app. The teachers at Hogeschool van Amsterdam helped us very good with the project. Most of the things were very clear and despite of that the assignment was a bit hard, we liked doing it.
+We want to thank everyone who helped us create this dating app. The teachers at Amsterdam University of Applied Sciences  tought us very well and supported us throughout the project. Most of the things were very clear and despite of the assignment being a bit hard, we enjoyed every bit of it.
 
 <p align="right" font-weight="italic"> Marvin, Inge & Jade </p>
 
