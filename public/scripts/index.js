@@ -3,15 +3,15 @@
 const filterButton = document.querySelector('button');
 const sliders = document.querySelectorAll('.sliders');
 const section = document.querySelector('section');
-const extraFilters = document.querySelector(".extra");
-const basicFilters = document.querySelector(".basics");
+const extraFilters = document.querySelector('.extra');
+const basicFilters = document.querySelector('.basics');
 const titel = document.querySelector('h1');
 
-Array.prototype.forEach.call(sliders, (slider) => {
-  slider.querySelector('input').addEventListener('input', (event) => {
-    slider.querySelector('span').innerHTML = event.target.value;
-  });
-});
+// Array.prototype.forEach.call(sliders, (slider) => {
+//   slider.querySelector('input').addEventListener('input', (event) => {
+//     slider.querySelector('span').innerHTML = event.target.value;
+//   });
+// });
 
 section.classList.add('away');
 extraFilters.classList.add('away');
@@ -26,17 +26,17 @@ filterButton.addEventListener('click', () => {
   extraFilters.classList.toggle('apear');
   basicFilters.classList.toggle('apear');
   titel.classList.toggle('apear');
-  console.log("yeaaahh");
-})
+  console.log('yeaaahh');
+});
 
 showButton();
 
 function showButton() {
-  const test = document.querySelector("input[id=man]");
+  const test = document.querySelector('input[id=man]');
   test.checked = true;
-  const tesT = document.querySelector("input[id=neeroken]");
+  const tesT = document.querySelector('input[id=neeroken]');
   tesT.checked = true;
-  const tesTT = document.querySelector("input[id=maaktnietuitkinderen]");
+  const tesTT = document.querySelector('input[id=maaktnietuitkinderen]');
   tesTT.checked = true;
 }
 /* Made by Jade */

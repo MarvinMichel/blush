@@ -4,26 +4,34 @@
 <%- include('./partials/head') %>
 
 <body data-page='feed'>
+  <nav>
+    <ul>
+      <li><img id="logo" src="images/logo-blush.png" alt=""></li>
+      <li>Ella van Damme</li>
+      <li><img class="uploadedImgHeader" src="/images/no-profilephoto.jpg" alt=""></li>
+      <li><a class="outline" href="" action="" method="post">Log out</a></li>
+    </ul>
+  </nav>
 
   <button type="button" name="button">Filters</button>
   <section data-page="filter">
     <h1>Filters</h1>
     <div class="basics">
-      <form class="filter" action="#" method="POST">
+      <form class="filter" action="" method="POST">
       <h2>Basics</h2>
       <label for="gender">Ik zoek</label>
       <div class="options">
-        <input type="radio" id="man" name="geslacht" value="man">
+        <input type="radio" id="man" name="gender" value="man">
         <label for="man">man</label>
-        <input type="radio" id="vrouw" name="geslacht" value="vrouw">
+        <input type="radio" id="vrouw" name="gender" value="vrouw">
         <label for="vrouw">vrouw</label>
-        <input type="radio" id="anders" name="geslacht" value="man/vrouw">
+        <input type="radio" id="anders" name="gender" value="man/vrouw">
         <label for="anders">beide</label>
       </div>
 
       <div class="sliders">
         <label for="leeftijd" id="leeftijd">leeftijd</label>
-        <input type="range" min=18 max="100" name="leeftijd" value="20">
+        <input type="range" min=18 max="100" name="age" value="25">
         <div class="aside">
           <span class="range-slider-value">25</span>
           <p>jr.</p>
@@ -32,9 +40,9 @@
 
       <div class="sliders">
         <label for="maximale afstand">Maximale afstand</label>
-        <input type="range" min="1" max="80" value="50" name="afstand">
+        <input type="range" min="1" max="80" value="40" name="distance">
         <div class="aside">
-          <span class="range-slider-value">20</span>
+          <span class="range-slider-value">40</span>
           <p>km</p>
         </div>
       </div>
@@ -45,26 +53,26 @@
       <h2>Extra</h2>
       <label for="roken">Rookt</label>
       <div class="options">
-        <input type="radio" id="jaroken" name="roken" value="wel">
+        <input type="radio" id="jaroken" name="smoke" value="wel">
         <label for="jaroken">ja</label>
-        <input type="radio" id="neeroken" name="roken" value="niet">
+        <input type="radio" id="neeroken" name="smoke" value="niet">
         <label for="neeroken">nee</label>
-        <input type="radio" id="maaktnietuitroken" name="roken" value="mag">
+        <input type="radio" id="maaktnietuitroken" name="smoke" value="mag">
         <label for="maaktnietuitroken">alles prima</label>
       </div>
       <label for="kinderen">Kinderen</label>
       <div class="options">
-        <input type="radio" id="jakinderen" name="kinderen" value="ja">
+        <input type="radio" id="jakinderen" name="kids" value="ja">
         <label for="jakinderen">ja</label>
-        <input type="radio" id="neekinderen" name="kinderen" value="nee">
+        <input type="radio" id="neekinderen" name="kids" value="nee">
         <label for="neekinderen">nee</label>
-        <input type="radio" id="maaktnietuitkinderen" name="kinderen" value="mag">
+        <input type="radio" id="maaktnietuitkinderen" name="kids" value="mag">
         <label for="maaktnietuitkinderen">alles prima</label>
       </div>
 
       <div class="sliders">
         <label for="lengte" id="lengte">lengte</label>
-        <input type="range" min="140" max="220" name="lengte" value="10">
+        <input type="range" min="140" max="220" name="hight" value="175">
         <div class="aside">
           <span class="range-slider-value">175</span>
           <p>cm</p>

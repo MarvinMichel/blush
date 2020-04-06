@@ -10,7 +10,10 @@ const bcrypt = require('bcrypt');                                               
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
 const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
+
 require('./passport-config')(passport);
+const ObjectId = mongoose.Types.ObjectId;                                         // Jade
+
 
 
 // Connect to database trough Mongoose
@@ -28,12 +31,11 @@ mongoose.connect(                                                               
 const db = mongoose.connection;                                                   // Marvin
 db.on('error', console.error.bind(console, 'connection error:'));
 
-// // Create user model
-// const userSchema = require('./routes/Schemas/users');                             // Marvin
-// const Users = mongoose.model('users', userSchema, 'users');                       // Marvin
+// Import user model
+const Users = require('./routes/Schemas/users');                                   // Marvin
 
 // Function to create user instance in database
-const createUser = (email, password, firstName, lastName, age, gender, picture) => {       // Marvin
+const createUser = (email, password, firstName, lastName, age, gender, picture) => {
   Users.create({
     email,
     password,
@@ -53,6 +55,7 @@ const createUser = (email, password, firstName, lastName, age, gender, picture) 
 app
   .set('view engine', 'ejs')                                                      // Marvin
   .set('views', 'views')                                                          // Marvin
+  .use(express.urlencoded({ extended: true }))                                    // Jade
   .use(express.static(__dirname + '/public'))                                     // Marvin
   .use(express.urlencoded({ extended: true }))                                    // Marvin
   .use(session({                                                                  // Marvin
@@ -69,9 +72,9 @@ app
   .use('/login', require('./routes/login'))                                       // Inge
   .listen(port, () => console.log(`Server is running on localhost:${port}`));     // Marvin
 
-// Export variables and arrays
-exports.db = db;
-// exports.Users = Users;
+// Export variables
+exports.ObjectId = ObjectId;                                                      // Jade
+exports.db = db;                                                                  // Marvin
 
 // Export functions
-exports.createUser = createUser;
+exports.createUser = createUser;                                                  // Marvin
