@@ -5,12 +5,12 @@ const port = 8000;                                                              
 const bodyParser = require('body-parser');                                        // Marvin
 const urlencodedParser = bodyParser.urlencoded({ extended: true });               // Marvin
 const mongoose = require('mongoose');                                             // Marvin
-const ObjectId = mongoose.Types.ObjectId;                                         // Jade
-const passport = require('passport');                                             // Inge
 const bcrypt = require('bcrypt');                                                 // Jade
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
 const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
+const ObjectId = mongoose.Types.ObjectId;                                         // Jade
+const passport = require('passport');                                             // Inge
 
 
 // Connect to database trough Mongoose
