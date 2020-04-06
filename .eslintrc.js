@@ -11,7 +11,7 @@ module.exports = {
     'SharedArrayBuffer': 'readonly'
   },
   'parserOptions': {
-    'ecmaVersion': 6
+    'ecmaVersion': 9
   },
   'rules': {
     'comma-spacing': [
@@ -22,7 +22,7 @@ module.exports = {
       }
     ],
     'implicit-arrow-linebreak': [
-      'error',
+      'warn',
       'beside'
     ],
     'eqeqeq': [
@@ -30,7 +30,7 @@ module.exports = {
       'smart'
     ],
     'func-style': [
-      'warn',
+      'error',
       'expression'
     ],
     'indent': [

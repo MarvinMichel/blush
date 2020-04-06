@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+<body data-page='feed'>
+  <p> <%= data.geslacht %> </p>
+  <p> <%= data.leeftijd %> jaar</p>
+  <p> <%= data.afstand %> km</p>
+  <p> roken:  <%= data.roken %> </p>
+  <p> kids: <%= data.kinderen %> </p>
+  <p> <%= data.lengte %> cm </p>
+        <a class="adjustFilters" href="/adjust-filters/ <%= id %>">pas filters aan</a>
+</body>
+
+<script type="text/javascript" src="/public/scripts/index.js"></script>
+
+</html>
