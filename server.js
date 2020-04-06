@@ -2,12 +2,18 @@ require('dotenv').config();                                                     
 const express = require('express');                                               // Marvin
 const app = express();                                                            // Marvin
 const port = 8000;                                                                // Marvin
+const session = require('express-session');                                       // Marvin
 const mongoose = require('mongoose');                                             // Marvin
+const passport = require('passport');
+const flash = require('express-flash');
 const bcrypt = require('bcrypt');                                                 // Jade
 const saltRounds = 10;                                                            // Jade
 const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
 const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
+
+require('./passport-config')(passport);
 const ObjectId = mongoose.Types.ObjectId;                                         // Jade
+
 
 
 // Connect to database trough Mongoose
@@ -29,17 +35,18 @@ db.on('error', console.error.bind(console, 'connection error:'));
 const Users = require('./routes/Schemas/users');                                   // Marvin
 
 // Function to create user instance in database
-const createUser = (email, password, firstName, lastName, age, gender) => {       // Marvin
+const createUser = (email, password, firstName, lastName, age, gender, picture) => {
   Users.create({
-    email: email,
-    password: password,
+    email,
+    password,
     profile: {
       name: {
-        firstName: firstName,
-        lastName: lastName
+        firstName,
+        lastName
       },
-      age: age,
-      gender: gender
+      age,
+      gender,
+      picture
     }
   });
 };
@@ -50,13 +57,22 @@ app
   .set('views', 'views')                                                          // Marvin
   .use(express.urlencoded({ extended: true }))                                    // Jade
   .use(express.static(__dirname + '/public'))                                     // Marvin
+  .use(express.urlencoded({ extended: true }))                                    // Marvin
+  .use(session({                                                                  // Marvin
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: true,
+    resave: true
+  }))
+  .use(passport.initialize())                                                     // Marvin
+  .use(passport.session())                                                        // Marvin
+  .use(flash())
   .use('/', require('./routes/index'))                                            // Inge
-  .use('/feed', require('./routes/feed'))                                         // Inge
+  .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/signup', require('./routes/signup'))                                     // Inge
   .use('/login', require('./routes/login'))                                       // Inge
   .listen(port, () => console.log(`Server is running on localhost:${port}`));     // Marvin
 
-// Export variables and arrays
+// Export variables
 exports.ObjectId = ObjectId;                                                      // Jade
 exports.db = db;                                                                  // Marvin
 

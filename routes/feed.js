@@ -21,8 +21,8 @@ let profiles = [];
 // };
 
 router.get('/', async (req, res) => {
-  // profiles = await Users.find();
-  res.render('feed.ejs', { profiles });
+  // profiles = await server.Users.find();
+  res.render('feed', { profiles });
 });
 
 
