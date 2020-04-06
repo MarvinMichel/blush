@@ -66,6 +66,11 @@ app
   .use(passport.initialize())                                                     // Marvin
   .use(passport.session())                                                        // Marvin
   .use(flash())
+  .use((req, res, next) => {
+    res.locals.succes = req.flash('succes');
+    res.locals.error = req.flash('error');
+    next();
+  })
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/signup1', require('./routes/signup1'))                                   // Inge

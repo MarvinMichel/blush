@@ -390,6 +390,24 @@ form[data-page="form"] {
 }
 
 /*****************************
+       LOGIN MESSAGES
+******************************/
+.msg {
+  display: flex;
+  width: 75%;
+  justify-content: center;
+  margin: 0 auto;
+
+  &--error {
+    color: $pinkishRed;
+  }
+
+  &--succes {
+    color: $checkGreen;
+  }
+}
+
+/*****************************
       FEED PROFILES
 ******************************/
 .profile {

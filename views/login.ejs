@@ -9,7 +9,7 @@
 
   <nav>
     <ul>
-      <li><img href"/index" id="logo" src="images/logo-blush.png" alt=""></li>
+      <li><img id="logo" src="images/logo-blush.png" alt=""></li>
       <li>"The best new datingsite 2020!" <span>- the Website of the Year Award</span></li>
     </ul>
   </nav>
@@ -17,6 +17,7 @@
   <form action="" method="post" data-page="form">
     <a href="/"><img class="backicon" src='images/close-darkblue.svg' alt=""></a>
     <legend>Log in</legend>
+    <%- include('./partials/errors') %>
     <fieldset>
       <label from='email'>E-mail</label>
       <input type="email" name="email" required> <br>
