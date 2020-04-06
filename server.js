@@ -1,7 +1,7 @@
 require('dotenv').config();                                                       // Marvin
 const express = require('express');                                               // Marvin
 const app = express();                                                            // Marvin
-const port = 8000;                                                                // Marvin
+const port = process.env.PORT || 8000;                                            // Inge
 const session = require('express-session');                                       // Marvin
 const mongoose = require('mongoose');                                             // Marvin
 const passport = require('passport');
@@ -68,10 +68,10 @@ app
   .use(flash())
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
-  .use('/signup', require('./routes/signup'))                                     // Inge
+  .use('/signup1', require('./routes/signup1'))                                   // Inge
+  .use('/signup2', require('./routes/signup2'))                                   // Inge
   .use('/login', require('./routes/login'))                                       // Inge
-  .listen(port, () => console.log(`Server is running on localhost:${port}`));     // Marvin
-
+  .listen(port, () => console.log(`Starting server at ${port}`));                 // Inge
 // Export variables
 exports.ObjectId = ObjectId;                                                      // Jade
 exports.db = db;                                                                  // Marvin

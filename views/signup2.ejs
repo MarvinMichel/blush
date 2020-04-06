@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+<!-- Inge -->
+
+<body data-page="banner-home">
+
+  <nav>
+    <ul>
+      <li><img href="" id="logo" src="images/logo-blush.png" alt=""></li>
+      <li>"The best new datingsite 2020!" <span>- the Website of the Year Award</span></li>
+    </ul>
+  </nav>
+
+  <form action="" method="POST" data-page="form" enctype="multipart/form-data">
+    <a href="/"><img class="backicon" src='images/close-darkblue.svg' alt=""></a>
+    <legend>Make a profile</legend>
+    <fieldset>
+      <label for='geslacht'>Gender</label>
+      <div class="geslacht">
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+      </div>
+      <br>
+      <label for='birthday'>Birthday</label>
+      <input name='birthday' id='birthday' type="date" required>
+      <br>
+      <label for='place'>Place</label>
+      <input type="text" name="place" placeholder="Where do you come from?" required>
+      <br>
+      <label for="file"> Upload Image</label>
+      <input name="file" type="file" accept="image/*" required>
+      <br>
+      <label for="biography">About me</label>
+      <textarea name="biography" placeholder="Tell us something about you"></textarea>
+      <br>
+    </fieldset>
+    <input type='submit' value='Add my profile and start dating!'>
+  </form>
+  <!-- End Inge -->
+
+  <script src="/scripts/index.js"></script>
+</body>
+
+</html>
