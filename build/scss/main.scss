@@ -67,15 +67,16 @@ h6 {
       NAV BAR
 ******************************/
 nav {
-    background-color: ghostwhite;
-    padding: 0.5em 1em 0.5em;
-    position: fixed;
-    top: 0;
-    left:0;
-    width: 100vw;
-    z-index: 10;
-    -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
-    box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+  background-color: ghostwhite;
+  padding: 0.5em 1em 0.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+  -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+  box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+
   ul {
     list-style: none;
     text-decoration: none;
@@ -89,19 +90,23 @@ nav {
     margin-right: 5vw;
     margin-left: 5vw;
   }
+
   li {
     margin-right: 1em;
     font-size: 0.8em;
   }
+
   li span {
     color: grey;
     font-style: italic;
     font-size: 0.8em;
   }
+
   li:first-child {
     margin-right: auto;
     margin-top: 0.2em;
   }
+
   a {
     background-color: $darkBlue;
     color: white;
@@ -113,6 +118,7 @@ nav {
     font-size: 1em;
     font-weight: bolder;
   }
+
   a.outline {
     color: $darkBlue;
     min-height: 40px;
@@ -124,6 +130,7 @@ nav {
     margin-top: 0.5em;
     font-weight: bolder;
   }
+
   a:hover {
     -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
     box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
@@ -132,7 +139,8 @@ nav {
     background-position: 5px;
     background-size: 2.5em;
   }
-  .uploadedImgHeader{
+
+  .uploadedImgHeader {
     min-width: 40px;
     min-height: 40px;
     max-width: 40px;
@@ -166,7 +174,7 @@ body[data-page="banner-home"] {
 /*****************************
     INTRO TEXT FIRST PAGE
 ******************************/
-section[data-page="intro-text"]{
+section[data-page="intro-text"] {
   max-width: 475px;
   max-height: 80vh;
   left: 7vw;
@@ -174,10 +182,12 @@ section[data-page="intro-text"]{
   margin-bottom: 0;
   padding-bottom: 0;
   position: absolute;
-  h6{
+
+  h6 {
     margin-top: 1em;
     margin-bottom: 3em;
   }
+
   a {
     background-color: $darkBlue;
     color: white;
@@ -189,7 +199,8 @@ section[data-page="intro-text"]{
     font-size: 1em;
     font-weight: bold;
   }
-  a:hover{
+
+  a:hover {
     -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
     box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
     background-image: url(../images/hart-icon.png);
@@ -214,6 +225,7 @@ form[data-page="form"] {
   background-color: rgba(255, 255, 255, 1);
   -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
   box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+
   fieldset {
     border: none;
     padding-top: 1em;
@@ -221,6 +233,7 @@ form[data-page="form"] {
     margin: 0;
     padding: 1em 2em 1em;
   }
+
   legend {
     padding: 0.1em 1.5em 0.3em;
     margin: 0;
@@ -233,12 +246,14 @@ form[data-page="form"] {
     font-size: 1.5em;
     border-bottom: 1px solid ghostwhite;
   }
+
   .backicon {
-      width: 25px;
-      top: 1.5em;
-      left: 2em;
-      position: absolute;
+    width: 25px;
+    top: 1.5em;
+    left: 2em;
+    position: absolute;
   }
+
   label {
     color: $darkBlue;
     font-size: 0.9em;
@@ -417,6 +432,7 @@ body[data-page=feed] {
     font-weight: bolder;
     border: none;
   }
+
   button:hover {
     -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
     box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);

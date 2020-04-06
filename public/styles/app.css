@@ -16,9 +16,10 @@ body {
   margin: 0; }
 
 h1 {
+  text-align: left;
   font-family: "Playfair Display", serif;
   font-weight: 700;
-  font-size: 2em;
+  font-size: 2.25em;
   color: #1e1e3a; }
 
 h2 {
@@ -28,6 +29,8 @@ h2 {
   color: #1e1e3a; }
 
 h3 {
+  text-align: left;
+  font-family: "Playfair Display", serif;
   font-size: 1.5em;
   color: #1e1e3a; }
 
@@ -44,7 +47,9 @@ h5 {
 h6 {
   font-size: 1em;
   text-align: left;
-  color: #1e1e3a; }
+  color: #1e1e3a;
+  font-weight: normal;
+  line-height: 1.5em; }
 
 /*****************************
       NAV BAR
@@ -69,16 +74,18 @@ nav {
     align-items: center;
     flex-wrap: wrap;
     align-self: center;
-    margin-right: 2em; }
+    margin-right: 5vw;
+    margin-left: 5vw; }
   nav li {
-    margin-right: 1em; }
+    margin-right: 1em;
+    font-size: 0.8em; }
   nav li span {
     color: grey;
     font-style: italic;
     font-size: 0.8em; }
   nav li:first-child {
     margin-right: auto;
-    margin-top: 0em; }
+    margin-top: 0.2em; }
   nav a {
     background-color: #1e1e3a;
     color: white;
@@ -87,7 +94,7 @@ nav {
     border-radius: 25px;
     text-decoration: none;
     margin-top: 0.5em;
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: bolder; }
   nav a.outline {
     color: #1e1e3a;
@@ -133,13 +140,45 @@ body[data-page="banner-home"] {
   padding: 3em; }
 
 /*****************************
+    INTRO TEXT FIRST PAGE
+******************************/
+section[data-page="intro-text"] {
+  max-width: 475px;
+  max-height: 80vh;
+  left: 7vw;
+  margin-top: 20vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: absolute; }
+  section[data-page="intro-text"] h6 {
+    margin-top: 1em;
+    margin-bottom: 3em; }
+  section[data-page="intro-text"] a {
+    background-color: #1e1e3a;
+    color: white;
+    min-height: 40px;
+    padding: 0.5em 4em;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 3em;
+    font-size: 1em;
+    font-weight: bold; }
+  section[data-page="intro-text"] a:hover {
+    -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+    box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+    background-image: url(../images/hart-icon.png);
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-size: 2.5em; }
+
+/*****************************
       FORMULIER SIGN-UP
 ******************************/
 form[data-page="form"] {
   min-width: 385px;
   min-height: 80vh;
   left: 0vw;
-  margin-top: 5vh;
+  margin-top: 8vh;
   margin-bottom: 0;
   padding-bottom: 0;
   position: absolute;
@@ -160,10 +199,15 @@ form[data-page="form"] {
     margin-bottom: 0.5em;
     text-align: center;
     font-family: 'Asap', sans-serif;
-    font-weight: 400;
-    color: #1cbfd8;
+    font-weight: bolder;
+    color: #1e1e3a;
     font-size: 1.5em;
     border-bottom: 1px solid ghostwhite; }
+  form[data-page="form"] .backicon {
+    width: 25px;
+    top: 1.5em;
+    left: 2em;
+    position: absolute; }
   form[data-page="form"] label {
     color: #1e1e3a;
     font-size: 0.9em;
