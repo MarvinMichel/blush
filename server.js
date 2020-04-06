@@ -68,7 +68,8 @@ app
   .use(flash())
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
-  .use('/signup', require('./routes/signup'))                                     // Inge
+  .use('/signup1', require('./routes/signup1'))                                   // Inge
+  .use('/signup2', require('./routes/signup2'))                                   // Inge
   .use('/login', require('./routes/login'))                                       // Inge
   .listen(port, () => console.log(`Starting server at ${port}`));                 // Inge
 

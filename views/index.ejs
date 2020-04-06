@@ -4,38 +4,23 @@
 <%- include('./partials/head') %>
 
 <!-- Inge -->
-<body data-page="banner-home" src="images/background-banner.png">
+<body data-page="banner-home">
   <nav>
     <ul>
       <li><img id="logo" src="images/logo-blush.png" alt=""></li>
-      <li>"De beste nieuwe datingsite van 2020!" <span>- de Website van het Jaar Award</span></li>
-      <!-- <li><a href="" class="outline" action="" method="post">Log in</a></li> -->
-      <!-- <li><a class="outline" href="" action="" method="post">Sign up</a></li> -->
+      <li>Everyone can sign up for free without obligation! <span>- Michael (Co-founder of Blush)</span></li>
+      <li><a href="/login" class="outline" action="" method="post">Log in</a></li>
     </ul>
   </nav>
 
-  <form action="" method="post" data-page="form">
-    <legend>Sign up</legend>
-    <fieldset>
-      <label for="firstName">Firstname</label>
-      <input type="text" name="firstName" required>
-      <br>
-      <label for="lastName">Lastname</label>
-      <input type="text" name="lastName" required>
-      <br>
-      <label from='email'>E-mail</label>
-      <input type="email" name="email" required>
-      <br>
-      <label from='password'>Password</label>
-      <input type="password" pattern=".{8,}" name="password" required title='8 characters minimum' required>
-      <p id='password-min8'>Use a minimal of 8 characters</p>
-      <br>
-      <p id='login'>Already have an account? <a href="/login">Login</a></p>
+  <section data-page="intro-text">
+    <h1> Date with a blush <br> on your face!</h1>
+    <h6>Blush is a new dating app to connect with people who are looking for the same thing as you! Sign up today and experience the blush too!</h4>
+    <a href="/signup1" action="" method="post">Sign up</a>
 
-    </fieldset>
-    <input type='submit' value='Sign me up!'>
-  </form>
-  <!-- End by Inge -->
+  </section>
+
+<!-- End by Inge -->
 
   <script src="/scripts/index.js"></script>
 </body>

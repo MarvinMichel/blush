@@ -25,7 +25,7 @@ h1 {
   text-align: left;
   font-family: $fontHeader1;
   font-weight: 700;
-  font-size: 2em;
+  font-size: 2.25em;
   color: $darkBlue;
 }
 
@@ -59,6 +59,8 @@ h6 {
   font-size: 1em;
   text-align: left;
   color: $darkBlue;
+  font-weight: normal;
+  line-height: 1.5em;
 }
 
 /*****************************
@@ -84,10 +86,12 @@ nav {
     align-items: center;
     flex-wrap: wrap;
     align-self: center;
-    margin-right: 2em;
+    margin-right: 5vw;
+    margin-left: 5vw;
   }
   li {
     margin-right: 1em;
+    font-size: 0.8em;
   }
   li span {
     color: grey;
@@ -96,7 +100,7 @@ nav {
   }
   li:first-child {
     margin-right: auto;
-    margin-top: 0em;
+    margin-top: 0.2em;
   }
   a {
     background-color: $darkBlue;
@@ -106,7 +110,7 @@ nav {
     border-radius: 25px;
     text-decoration: none;
     margin-top: 0.5em;
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: bolder;
   }
   a.outline {
@@ -136,7 +140,6 @@ nav {
     margin-top: 0.25em;
     object-fit: cover;
     border-radius: 50%;
-    // border: 2px solid $darkBlue;
     -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
     box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
   }
@@ -159,6 +162,43 @@ body[data-page="banner-home"] {
   padding: 3em;
 }
 
+
+/*****************************
+    INTRO TEXT FIRST PAGE
+******************************/
+section[data-page="intro-text"]{
+  max-width: 475px;
+  max-height: 80vh;
+  left: 7vw;
+  margin-top: 20vh;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: absolute;
+  h6{
+    margin-top: 1em;
+    margin-bottom: 3em;
+  }
+  a {
+    background-color: $darkBlue;
+    color: white;
+    min-height: 40px;
+    padding: 0.5em 4em;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 3em;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  a:hover{
+    -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+    box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
+    background-image: url(../images/hart-icon.png);
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-size: 2.5em;
+  }
+}
+
 /*****************************
       FORMULIER SIGN-UP
 ******************************/
@@ -166,7 +206,7 @@ form[data-page="form"] {
   min-width: 385px;
   min-height: 80vh;
   left: 0vw;
-  margin-top: 5vh;
+  margin-top: 8vh;
   margin-bottom: 0;
   padding-bottom: 0;
   position: absolute;
@@ -188,12 +228,17 @@ form[data-page="form"] {
     margin-bottom: 0.5em;
     text-align: center;
     font-family: 'Asap', sans-serif;
-    font-weight: 400;
-    color: $gradientLightblue;
+    font-weight: bolder;
+    color: $darkBlue;
     font-size: 1.5em;
     border-bottom: 1px solid ghostwhite;
   }
-
+  .backicon {
+      width: 25px;
+      top: 1.5em;
+      left: 2em;
+      position: absolute;
+  }
   label {
     color: $darkBlue;
     font-size: 0.9em;
