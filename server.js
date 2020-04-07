@@ -76,6 +76,7 @@ app
   .use('/signup1', require('./routes/signup1'))                                   // Inge
   .use('/signup2', require('./routes/signup2'))                                   // Inge
   .use('/login', require('./routes/login'))                                       // Inge
+  .use('/chats', require('./routes/chats'))                                       // Inge
   .use('/logout', require('./routes/logout'))
   .listen(port, () => console.log(`Starting server at ${port}`));                 // Inge
 
