@@ -5,10 +5,6 @@ const multer = require('multer');
 const cloudinary = require('cloudinary');
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const server = require('../server');
-const bcrypt = require('bcrypt');                                                 // Jade
-const saltRounds = 10;                                                            // Jade
-const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
-const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
 
 // Convert birthday to age
 const getAge = (birth) => {
@@ -30,35 +26,24 @@ const storage = cloudinaryStorage({
   allowedFormats: ['jpg', 'png'],
   transformation: [{ width: 500, height: 500, crop: 'limit' }]
 });
-
 const parser = multer({ storage: storage });
 
 router.get('/', async (req, res) => {
-  res.render('signup2');
+  res.render('signup');
 });
 
 router.post('/', parser.single('file'), (req, res) => {
   const age = getAge(new Date(req.body.birthday));
-  bcrypt.hash(req.session.user.password, saltRounds, function(err, hash) {
-    server.createUser(
-      req.session.user.email,
-      req.session.user.password,
-      req.session.user.firstName,
-      req.session.user.lastName,
-      age,
-      req.body.gender,
-      req.file.url
-    );
-  })
-  // bcrypt.genSalt(saltRounds, function(err, salt) {
-  //   bcrypt.hash(req.session.user.password, salt, function(err, hash) {
-  //     req.session.user.password = hash;
-      req.flash('succes', 'Profile created! You can now login.');
-      res.redirect('login');
-      // Store hash in your password DB.
-  //   });
-  // });
-})
-
+  server.createUser(
+    req.session.user.email,
+    req.session.user.password,
+    req.session.user.firstName,
+    req.session.user.lastName,
+    age,
+    req.body.gender,
+    req.file.url
+  );
+  res.redirect('feed');
+});
 
 module.exports = router;
