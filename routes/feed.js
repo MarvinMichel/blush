@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
         height: req.body.height
       }
     },
-    ((err, result) => {
+    ((err) => {
       if (err) {
         res.send(err);
       } else {

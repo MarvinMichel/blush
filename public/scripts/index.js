@@ -13,6 +13,12 @@ const titel = document.querySelector('h1');
 //   });
 // });
 
+sliders.forEach(slider => {
+  slider.querySelector('input').addEventListener('input', (e) => {
+    slider.querySelector('span').innerHTML = e.target.value;
+  });
+});
+
 section.classList.add('away');
 extraFilters.classList.add('away');
 basicFilters.classList.add('away');
@@ -29,14 +35,14 @@ filterButton.addEventListener('click', () => {
   console.log('yeaaahh');
 });
 
-showButton();
-
-function showButton() {
+const showButton = () => {
   const test = document.querySelector('input[id=man]');
   test.checked = true;
   const tesT = document.querySelector('input[id=neeroken]');
   tesT.checked = true;
   const tesTT = document.querySelector('input[id=maaktnietuitkinderen]');
   tesTT.checked = true;
-}
+};
+
+showButton();
 /* Made by Jade */
