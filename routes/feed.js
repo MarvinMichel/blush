@@ -16,7 +16,7 @@ router.get('/', ensureAuthenticated, async (req, res) => {
 
 // Function made by Jade. Function puts preferences in database
 router.post('/', (req, res) => {
-  const id = server.ObjectId('5e88a6f27a795bf6d07f694c');
+  const id = server.ObjectId('5e8c5bfe2ee43862de0e10d6');
   console.log(id);
   Users.findOneAndUpdate(
     { _id: id },
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
         distance: req.body.distance,
         smoke: req.body.smoke,
         kids: req.body.kids,
-        height: req.body.height
+        length: req.body.length
       }
     },
     ((err, result) => {
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
         res.send(err);
       } else {
         console.log('preferences zijn succesvol in database (veranderd)');
-        res.render('feed');
+        res.redirect('/filter-feed');
       }
     }));
 });
