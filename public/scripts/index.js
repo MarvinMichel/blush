@@ -6,12 +6,7 @@ const section = document.querySelector('section');
 const extraFilters = document.querySelector('.extra');
 const basicFilters = document.querySelector('.basics');
 const titel = document.querySelector('h1');
-
-// Array.prototype.forEach.call(sliders, (slider) => {
-//   slider.querySelector('input').addEventListener('input', (event) => {
-//     slider.querySelector('span').innerHTML = event.target.value;
-//   });
-// });
+const clickAway = document.querySelector('.clickaway')
 
 sliders.forEach(slider => {
   slider.querySelector('input').addEventListener('input', (e) => {
@@ -34,6 +29,20 @@ filterButton.addEventListener('click', () => {
   titel.classList.toggle('apear');
   console.log('yeaaahh');
 });
+
+clickAway.addEventListener('click', () => {
+  event.preventDefault();
+  section.classList.remove('apear');
+  section.classList.toggle('away');
+  filterButton.classList.remove('away')
+  extraFilters.classList.remove('apear');
+  extraFilters.classList.toggle('away');
+  basicFilters.classList.remove('apear');
+  basicFilters.classList.toggle('away');
+  titel.classList.remove('apear');
+  titel.classList.toggle('away');
+
+})
 
 const showButton = () => {
   const test = document.querySelector('input[id=man]');
