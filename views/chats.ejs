@@ -4,6 +4,16 @@
 <%- include('./partials/head') %>
 
 <body data-page="chats">
+  <nav>
+    <ul>
+      <li><img id="logo" src="images/logo-blush.png" alt="Blush logo"></li>
+      <li><img class="uploadedImgHeader" src="/images/no-profilephoto.jpg" alt=""></li>
+      <li>Ella van Damme</li>
+      <li><a href="/feed">Back to feed</a></li>
+      <li><a class="outline" href="/logout">Log out</a></li>
+    </ul>
+  </nav>
+
   <h1>Chats</h1>
 
   <section class="userContainer">
@@ -11,12 +21,24 @@
       <img class="profile--picture" src="/images/Mae.jpg" alt="Profile picture">
     </figure>
     <div>
-      <h3>Username</h3>
+      <h5>Username</h3>
       <p>
         This is a summary of the chat that's been going on...
       </p>
     </div>
   </section>
+  <section class="userContainer">
+    <figure>
+      <img class="profile--picture" src="/images/Mae.jpg" alt="Profile picture">
+    </figure>
+    <div>
+      <h5>Username</h3>
+      <p>
+        This is a summary of the chat that's been going on...
+      </p>
+    </div>
+  </section>
+
   <section class="chatbox">
     <div id="messages">
 

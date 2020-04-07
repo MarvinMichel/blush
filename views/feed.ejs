@@ -7,15 +7,15 @@
   <nav>
     <ul>
       <li><img id="logo" src="images/logo-blush.png" alt="Blush logo"></li>
-      <li>Ella van Damme</li>
       <li><img class="uploadedImgHeader" src="/images/no-profilephoto.jpg" alt=""></li>
+      <li>Ella van Damme</li>
+      <li><a href="/chats">Chat</a></li>
       <li><a class="outline" href="/logout">Log out</a></li>
     </ul>
   </nav>
 
   <button type="button" name="button">Filters</button>
   <section data-page="filter">
-    <button class="clickaway">X sluiten</button>
     <h1>Filters</h1>
     <div class="basics">
       <form class="filter" action="" method="POST">
@@ -85,10 +85,6 @@
 
     </form>
   </section>
-
-  <main>
-    <%- include('./partials/profile') %>
-  </main>
 
   <script type="text/javascript" src="/scripts/index.js"></script>
 </body>

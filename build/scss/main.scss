@@ -15,7 +15,7 @@ $breakpoint-mobile: 620px;
 }
 
 body {
-  background-color: $backgroundGrey;
+  background-color: #e6e5e1;
   width: 100vw;
   overflow-x: hidden;
   margin: 0;
@@ -50,7 +50,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: left;
   color: $darkBlue;
 }
@@ -61,6 +61,10 @@ h6 {
   color: $darkBlue;
   font-weight: normal;
   line-height: 1.5em;
+}
+p {
+  font-size: 0.9em;
+  color: $darkBlue;
 }
 
 /*****************************
@@ -88,7 +92,7 @@ nav {
     flex-wrap: wrap;
     align-self: center;
     margin-right: 5vw;
-    margin-left: 5vw;
+    margin-left: 4vw;
   }
 
   li {
@@ -221,7 +225,7 @@ form[data-page="form"] {
   margin-bottom: 0;
   padding-bottom: 0;
   position: absolute;
-  border-radius: 20px;
+  // border-radius: 20px;
   background-color: rgba(255, 255, 255, 1);
   -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
   box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
@@ -314,7 +318,7 @@ form[data-page="form"] {
     position: absolute;
     bottom: -1em;
     font-size: 1em;
-    border-radius: 0px 0px 20px 20px;
+    // border-radius: 0px 0px 20px 20px;
 
   }
 
@@ -410,48 +414,20 @@ form[data-page="form"] {
 /*****************************
       FEED PROFILES
 ******************************/
-body[data-page='feed'] {
-  main {
-    margin-top: 4%;
-    place-items: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 10px;
+.profile {
 
-    .profile {
-      height: 60vh;
-      min-width: 20rem;
-      width: 25vw;
-      border-radius: 1rem;
+  &--info {
+    background: #e9e9e9;
+    display: flex;
+    justify-content: space-between;
+    min-width: 20rem;
+    max-width: 20vw;
+  }
 
-      &--info {
-        background: $darkBlue;
-        display: flex;
-        justify-content: space-between;
-        min-width: 20rem;
-        max-width: 25vw;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+  &--matching {
 
-        h2 {
-          color: $ghostwhite;
-          padding: 2%;
-        }
-      }
-
-      &--matching {
-        transform: translateY(380%);
-        display: flex;
-        justify-content: space-between;
-
-        input[type="text"] {
-          display: none;
-        }
-
-        .btn {
-          padding: 0 5%;
-        }
-      }
+    input[type="text"] {
+      display: none;
     }
   }
 }
@@ -492,31 +468,16 @@ body[data-page=feed] {
     opacity: 0;
   }
 
-  button.clickaway {
-    background-color: white;
-    color: lightgrey;
-    padding: 0;
-    margin: 0 0 0 177px;
-  }
-
-  button.clickaway:hover {
-    color: black;
-    box-shadow: 0px 0px 0px 0px rgba(112, 112, 112, 0.3);
-    background-image: none;
-  }
-
   section.away {
     opacity: 0;
     margin-top: -3em;
     transform: translateX(1200px);
     transition: 600ms transform;
     transition-timing-function: ease-in-out;
-    display: none;
   }
 
   section.apear {
     transform: translateX(0);
-    display: block;
   }
 }
 
@@ -720,26 +681,41 @@ section[data-page=filter] {
         CHATS - PREVIEW
 ******************************/
 body[data-page="chats"] {
+  h1 {
+    margin-top: 17vh;
+    margin-left: 5vw;
+    margin-bottom: 1vh;
+  }
+
   section {
-    border: 1px solid $darkBlue;
-    background: $backgroundGrey;
-    margin: 2.5vw;
+    background: ghostwhite;
+    margin: 5vw 1vw 1vw 5vw;
+    -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+    box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
 
     &.userContainer {
       display: flex;
-      width: 40vw;
+      width: 35vw;
+      margin-bottom: 10px;
+      margin-top: 0em;
 
       figure {
         border-radius: 50%;
-        border: 1px solid $darkBlue;
-        width: 5rem;
-        height: 5rem;
+        min-width: 4rem;
+        min-height: 4rem;
+        max-width: 4rem;
+        max-height: 4rem;
         overflow: hidden;
-        margin: .8rem;
+        margin: auto;
+        margin-left: 1.5em;
+        margin-right: 0.5em;
 
         img {
           width: 100%;
           height: auto;
+          object-fit: fit;
+          -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+          box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
         }
       }
 
@@ -747,45 +723,67 @@ body[data-page="chats"] {
         display: flex;
         flex-direction: column;
         place-content: center;
+        padding: 1.2em;
 
-        h3 {
-          margin: 0;
+        h5 {
+          margin-bottom: 0.5em;
         }
 
         p {
-          margin: 1rem 0;
+          margin: 0;
         }
       }
     }
-
     &.chatbox {
-      height: 80vh;
-      width: 50vw;
+      height: 60vh;
+      width: 45vw;
       position: fixed;
-      right: 0;
-      top: 7.5vh;
+      right: 5vw;
+      top: 16vh;
+      padding: 1vw;
       display: flex;
       flex-direction: column;
       place-items: center;
 
       #messages {
-        height: 92%;
-        width: 90%;
+        height: 85%;
+        width: 100%;
       }
 
       form {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
         input[type="text"] {
-          width: 40vw;
-          height: 5vh;
-          font-size: 1em;
+          width: 28vw;
+          height: 30px;
+          padding: 0.4em 1em;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 0.9em;
+          background-color: $backgroundGrey;
+          border: none;
+          margin-right: 2vw;
         }
 
         button {
           border: none;
           background: $darkBlue;
-          color: #fff;
-          width: 8.5vw;
-          height: 5vh;
+          color: white;
+          width: 10vw;
+          height: 40px;
+          border-radius: 20px;
+          // padding: 0.5em 4em 0.5em 4em;
+          font-weight: bold;
+          font-size: 1em;
+          text-align: center;
+        }
+
+        button:hover{
+          -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+          box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+          background-image: url(../images/hart-icon.png);
+          background-repeat: no-repeat;
+          background-position: 5px;
+          background-size: 2em;
         }
       }
     }
