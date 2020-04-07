@@ -13,8 +13,8 @@ let userSchema = new Schema({
     gender: String,
     picture: String,
     pets: String,
-    smoke: Boolean,
-    kids: Boolean,
+    smoke: String,
+    kids: String,
   },
   preferences: {
     gender: String,
@@ -22,7 +22,7 @@ let userSchema = new Schema({
     distance: Number,
     smoke: String,
     kids: String,
-    hight: Number
+    height: Number
   },
   likes: Array
 }, {
