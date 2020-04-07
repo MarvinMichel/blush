@@ -17,29 +17,29 @@
   <section data-page="filter">
     <h1>Filters</h1>
     <div class="basics">
-      <form class="filter" action="" method="POST">
+      <form class="filter" action="/" method="POST">
         <h2>Basics</h2>
-        <label for="gender">Ik zoek</label>
+        <label for="gender">I'm looking for</label>
         <div class="options">
           <input type="radio" id="man" name="gender" value="man">
           <label for="man">man</label>
-          <input type="radio" id="vrouw" name="gender" value="vrouw">
-          <label for="vrouw">vrouw</label>
-          <input type="radio" id="anders" name="gender" value="man/vrouw">
-          <label for="anders">beide</label>
+          <input type="radio" id="vrouw" name="gender" value="woman">
+          <label for="vrouw">woman</label>
+          <input type="radio" id="anders" name="gender" value="both">
+          <label for="anders">both</label>
         </div>
 
         <div class="sliders">
-          <label for="leeftijd" id="leeftijd">leeftijd</label>
+          <label for="leeftijd" id="leeftijd">Age</label>
           <input type="range" min=18 max="100" name="age" value="25">
           <div class="aside">
             <span class="range-slider-value">25</span>
-            <p>jr.</p>
+            <p>y/o</p>
           </div>
         </div>
 
         <div class="sliders">
-          <label for="maximale afstand">Maximale afstand</label>
+          <label for="maximale afstand">Maximum distance</label>
           <input type="range" min="1" max="80" value="40" name="distance">
           <div class="aside">
             <span class="range-slider-value">40</span>
@@ -51,34 +51,34 @@
 
     <div class="extra">
       <h2>Extra</h2>
-      <label for="roken">Rookt</label>
+      <label for="roken">Smokes</label>
       <div class="options">
-        <input type="radio" id="jaroken" name="smoke" value="wel">
-        <label for="jaroken">ja</label>
-        <input type="radio" id="neeroken" name="smoke" value="niet">
-        <label for="neeroken">nee</label>
-        <input type="radio" id="maaktnietuitroken" name="smoke" value="mag">
-        <label for="maaktnietuitroken">alles prima</label>
+        <input type="radio" id="jaroken" name="smoke" value="yes">
+        <label for="jaroken">yes</label>
+        <input type="radio" id="neeroken" name="smoke" value="no">
+        <label for="neeroken">no</label>
+        <input type="radio" id="maaktnietuitroken" name="smoke" value="allowed">
+        <label for="maaktnietuitroken">allowed</label>
       </div>
-      <label for="kinderen">Kinderen</label>
+      <label for="kinderen">Kids</label>
       <div class="options">
-        <input type="radio" id="jakinderen" name="kids" value="ja">
-        <label for="jakinderen">ja</label>
-        <input type="radio" id="neekinderen" name="kids" value="nee">
-        <label for="neekinderen">nee</label>
-        <input type="radio" id="maaktnietuitkinderen" name="kids" value="mag">
-        <label for="maaktnietuitkinderen">alles prima</label>
+        <input type="radio" id="jakinderen" name="kids" value="yes">
+        <label for="jakinderen">yes</label>
+        <input type="radio" id="neekinderen" name="kids" value="no">
+        <label for="neekinderen">no</label>
+        <input type="radio" id="maaktnietuitkinderen" name="kids" value="allowed">
+        <label for="maaktnietuitkinderen">welcome</label>
       </div>
 
       <div class="sliders">
-        <label for="lengte" id="lengte">lengte</label>
+        <label for="lengte" id="lengte">Length</label>
         <input type="range" min="140" max="220" name="length" value="175">
         <div class="aside">
           <span class="range-slider-value">175</span>
           <p>cm</p>
         </div>
       </div>
-      <button>Zoek mijn match</button>
+      <button>Find my match</button>
 
     </div>
 

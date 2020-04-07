@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
         res.send(err);
       } else {
         console.log('preferences zijn succesvol in database (veranderd)');
-        res.redirect('/filter-feed');
+        res.redirect('feed');
       }
     }));
 });
