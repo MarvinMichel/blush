@@ -19,7 +19,8 @@ Would you like to try our dating app? You should follow the following steps:
 1. Clone the repo or download the `.zip` file
 2. Run `$ npm install` or `$ npm i`
 3. Request acces to the database.*
-4. Go to your browser and visit `localhost:8000`
+4. Run `$ npm start` to start the server.
+5. Go to your browser and visit `localhost:8000`
 >*To acces our database, you need the environment file and your IP-Adress needs to be whitelisted by us. You can request acces by sending an e-mail to marvin.sernee@hva.nl
 
 ## Development 🤖
