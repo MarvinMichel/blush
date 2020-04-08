@@ -22,7 +22,7 @@ let userSchema = new Schema({
     distance: Number,
     smoke: String,
     kids: String,
-    height: Number
+    length: Number
   },
   likes: Array
 }, {

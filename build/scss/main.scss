@@ -521,46 +521,50 @@ body[data-page=feed] {
 }
 
 section[data-page=filter] {
-  font-family: "Spartan", serif;
-  margin-top: 1em;
+  font-family: $fontRegular;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
   padding: 20px 60px;
   width: 280px;
-  height: 755px;
+  height: 640px;
   border-radius: 20px;
   box-shadow: 2px 3px 18px #888888;
 
   h1 {
     text-align: center;
-    font-family: "Playfair Display", serif;
-    color: #1cbfd8;
+    font-family: $fontRegular;
+    color: $darkBlue;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
   }
 
   h2 {
-    margin-top: 2.5em;
     padding-right: 2.5px;
     margin-bottom: -2em;
     text-align: right;
     font-size: 13px;
+    font-family: $fontRegular;
     color: #b0aca8;
   }
 
   button {
-    margin: 3em auto 2.5em auto;
-    display: block;
-    width: 150px;
-    padding: 1.5em;
-    background-color: black;
-    color: white;
-    font-weight: 900;
-    border-radius: 10px;
+    color: $darkBlue;
+    min-height: 40px;
+    background-color: transparent;
+    border: 2px solid $darkBlue;
+    padding: 0.5em 4em;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 1.5em 39px 2em 39px;
+    font-weight: bolder;
   }
 
   label {
+    font-family: "Open Sans", sans-serif;
     display: block;
-    padding: 1.5em 0 1em 0;
+    padding: 1.0em 0 0.5em 0;
     font-size: 13px;
     font-weight: bold;
   }
@@ -583,6 +587,8 @@ section[data-page=filter] {
   }
 
   input[type=range]::-webkit-slider-runnable-track {
+    margin-top: 0px;
+    padding-top: 0px;
     height: 5px;
     background: #dbdbdb;
     border-radius: 5px;
@@ -593,7 +599,7 @@ section[data-page=filter] {
     height: 15px;
     width: 15px;
     border-radius: 50px;
-    background: #FF2764;
+    background: $gradientLightblue;
     -webkit-appearance: none;
     margin-top: -5px;
   }
@@ -603,7 +609,7 @@ section[data-page=filter] {
     width: 97px;
     padding: 15px 0;
     background-color: #fff;
-    font-family: "Spartan", serif;
+    font-family: "Open Sans", sans-serif;
     border-radius: 5px;
     border: 0.5px solid lightgrey;
     box-shadow: 0px 0px 1.5px #888888;
@@ -612,14 +618,14 @@ section[data-page=filter] {
   }
 
   .options label:hover {
-    background-color: #ff2764;
+    background-color: $gradientLightblue;
     outline: none;
     color: white;
   }
 
   .options input[type=radio]:checked+label {
-    background-color: #ff2764;
-    color: white;
+    background-color: $backgroundGrey;
+    color: black;
   }
 
   .options {
@@ -628,7 +634,7 @@ section[data-page=filter] {
   }
 
   section[data-page=filter] .filters {
-    margin-top: 40px;
+    // margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -658,7 +664,7 @@ section[data-page=filter] {
     margin: 15px 2.3px;
     text-align: right;
     color: #ff2764;
-    font-family: "Spartan", serif;
+    font-family: "Open Sans", sans-serif;
   }
 
   .adjustFilters:hover {
@@ -669,9 +675,9 @@ section[data-page=filter] {
   button:focus,
   section[data-page=filter] button:hover,
   section[data-page=filter] button:checked {
-    background-color: #ff2764;
+    background-color: $backgroundGrey;
     outline: none;
-    color: white;
+    color: black;
   }
 
   .aside p {
@@ -696,13 +702,8 @@ section[data-page=filter] {
     opacity: 1;
   }
 
-  .extra.away {
-    opacity: 0;
-  }
-
-  .extra.apear {
-    transition: 7000ms;
-    opacity: 1;
+  .extra {
+    margin-top: 10px;
   }
 
   h1.away {
