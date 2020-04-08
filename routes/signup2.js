@@ -44,6 +44,7 @@ router.post('/', parser.single('file'), (req, res) => {
       console.log(req.session.user.password);
       req.session.user.password = hash;
       console.log(req.session.user.password = hash);
+      
       server.createUser(
         req.session.user.email,
         req.session.user.password,
