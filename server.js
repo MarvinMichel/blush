@@ -6,15 +6,13 @@ const session = require('express-session');                                     
 const mongoose = require('mongoose');                                             // Marvin
 const passport = require('passport');                                             // Marvin
 const flash = require('express-flash');                                           // Marvin
-const bcrypt = require('bcrypt');                                                 // Jade
-const saltRounds = 10;                                                            // Jade
-const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
-const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
+// const bcrypt = require('bcrypt');                                                 // Jade
+// const saltRounds = 10;                                                            // Jade
+// const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
+// const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
 
 require('./config/passport-config')(passport);
 const ObjectId = mongoose.Types.ObjectId;                                         // Jade
-
-
 
 // Connect to database trough Mongoose
 mongoose.connect(                                                                 // Marvin
@@ -76,8 +74,10 @@ app
   .use('/filter-feed', require('./routes/filter-feed'))                           // Jade
   .use('/signup1', require('./routes/signup1'))                                   // Inge
   .use('/signup2', require('./routes/signup2'))                                   // Inge
-  .use('/login', require('./routes/login'))                                       // Marvin
-  .use('/logout', require('./routes/logout'))                                     // Marvin
+  .use('/login', require('./routes/login'))                                       // Inge
+  .use('/chats', require('./routes/chats'))                                       // Inge
+  .use('/logout', require('./routes/logout'))
+
   .listen(port, () => console.log(`Starting server at ${port}`));                 // Inge
 
 // Export variables
