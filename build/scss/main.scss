@@ -50,7 +50,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: left;
   color: $darkBlue;
 }
@@ -62,12 +62,16 @@ h6 {
   font-weight: normal;
   line-height: 1.5em;
 }
+p {
+  font-size: 0.9em;
+  color: $darkBlue;
+}
 
 /*****************************
       NAV BAR
 ******************************/
 nav {
-  background-color: ghostwhite;
+  background-color: white;
   padding: 0.5em 1em 0.5em;
   position: fixed;
   top: 0;
@@ -221,7 +225,6 @@ form[data-page="form"] {
   margin-bottom: 0;
   padding-bottom: 0;
   position: absolute;
-  border-radius: 20px;
   background-color: rgba(255, 255, 255, 1);
   -webkit-box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
   box-shadow: 1px 3px 12px -1px rgba(112, 112, 112, 0.34);
@@ -314,7 +317,6 @@ form[data-page="form"] {
     position: absolute;
     bottom: -1em;
     font-size: 1em;
-    border-radius: 0px 0px 20px 20px;
 
   }
 
@@ -413,6 +415,8 @@ form[data-page="form"] {
 body[data-page='feed'] {
   main {
     margin-top: 4%;
+    margin-left: 4vw;
+    margin-right: 4vw;
     place-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -422,20 +426,20 @@ body[data-page='feed'] {
       height: 60vh;
       min-width: 20rem;
       width: 25vw;
-      border-radius: 1rem;
+      margin-top: 10%;
+      -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+      box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
 
       &--info {
-        background: $darkBlue;
+        background: white;
         display: flex;
         justify-content: space-between;
         min-width: 20rem;
         max-width: 25vw;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
 
-        h2 {
-          color: $ghostwhite;
-          padding: 2%;
+        h4 {
+          color: $darkBlue;
+          margin: 4% 6%;
         }
       }
 
@@ -720,26 +724,41 @@ section[data-page=filter] {
         CHATS - PREVIEW
 ******************************/
 body[data-page="chats"] {
+  h1 {
+    margin-top: 17vh;
+    margin-left: 5vw;
+    margin-bottom: 1vh;
+  }
+
   section {
-    border: 1px solid $darkBlue;
-    background: $backgroundGrey;
-    margin: 2.5vw;
+    background: ghostwhite;
+    margin: 5vw 1vw 1vw 5vw;
+    -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+    box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
 
     &.userContainer {
       display: flex;
-      width: 40vw;
+      width: 35vw;
+      margin-bottom: 10px;
+      margin-top: 0em;
 
       figure {
         border-radius: 50%;
-        border: 1px solid $darkBlue;
-        width: 5rem;
-        height: 5rem;
+        min-width: 4rem;
+        min-height: 4rem;
+        max-width: 4rem;
+        max-height: 4rem;
         overflow: hidden;
-        margin: .8rem;
+        margin: auto;
+        margin-left: 1.5em;
+        margin-right: 0.5em;
 
         img {
           width: 100%;
           height: auto;
+          object-fit: fit;
+          -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+          box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
         }
       }
 
@@ -747,45 +766,67 @@ body[data-page="chats"] {
         display: flex;
         flex-direction: column;
         place-content: center;
+        padding: 1.2em;
 
-        h3 {
-          margin: 0;
+        h5 {
+          margin-bottom: 0.5em;
         }
 
         p {
-          margin: 1rem 0;
+          margin: 0;
         }
       }
     }
-
     &.chatbox {
-      height: 80vh;
-      width: 50vw;
+      height: 60vh;
+      width: 45vw;
       position: fixed;
-      right: 0;
-      top: 7.5vh;
+      right: 5vw;
+      top: 16vh;
+      padding: 1vw;
       display: flex;
       flex-direction: column;
       place-items: center;
 
       #messages {
-        height: 92%;
-        width: 90%;
+        height: 85%;
+        width: 100%;
       }
 
       form {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
         input[type="text"] {
-          width: 40vw;
-          height: 5vh;
-          font-size: 1em;
+          width: 28vw;
+          height: 30px;
+          padding: 0.4em 1em;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 0.9em;
+          background-color: $backgroundGrey;
+          border: none;
+          margin-right: 2vw;
         }
 
         button {
           border: none;
           background: $darkBlue;
-          color: #fff;
-          width: 8.5vw;
-          height: 5vh;
+          color: white;
+          width: 10vw;
+          height: 40px;
+          border-radius: 20px;
+          // padding: 0.5em 4em 0.5em 4em;
+          font-weight: bold;
+          font-size: 1em;
+          text-align: center;
+        }
+
+        button:hover{
+          -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+          box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+          background-image: url(../images/hart-icon.png);
+          background-repeat: no-repeat;
+          background-position: 5px;
+          background-size: 2em;
         }
       }
     }
