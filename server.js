@@ -72,8 +72,8 @@ app
     next();
   })
   .use('/', require('./routes/index'))                                            // Inge
-  .use('/filter-feed', require('./routes/filter-feed'))                           // Jade
   .use('/feed', require('./routes/feed'))                                         // Marvin
+  .use('/filter-feed', require('./routes/filter-feed'))                           // Jade
   .use('/signup1', require('./routes/signup1'))                                   // Inge
   .use('/signup2', require('./routes/signup2'))                                   // Inge
   .use('/login', require('./routes/login'))                                       // Marvin
