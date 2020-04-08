@@ -59,7 +59,7 @@ p {
       NAV BAR
 ******************************/
 nav {
-  background-color: ghostwhite;
+  background-color: white;
   padding: 0.5em 1em 0.5em;
   position: fixed;
   top: 0;
@@ -412,7 +412,7 @@ section[data-page=filter] {
   margin-right: auto;
   padding: 20px 60px;
   width: 280px;
-  height: 640px;
+  height: 720px;
   border-radius: 20px;
   box-shadow: 2px 3px 18px #888888; }
   section[data-page=filter] h1 {
