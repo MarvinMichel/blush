@@ -4,15 +4,19 @@ const app = express();                                                          
 const port = process.env.PORT || 8000;                                            // Inge
 const session = require('express-session');                                       // Marvin
 const mongoose = require('mongoose');                                             // Marvin
-const passport = require('passport');                                             // Marvin
-const flash = require('express-flash');                                           // Marvin
-// const bcrypt = require('bcrypt');                                                 // Jade
-// const saltRounds = 10;                                                            // Jade
-// const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
-// const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
+const passport = require('passport');
+const favicon = require('serve-favicon');                                         // Inge
+const path = require('path');                                                     // Inge
+const flash = require('express-flash');
+const bcrypt = require('bcrypt');                                                 // Jade
+const saltRounds = 10;                                                            // Jade
+const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
+const someOtherPlaintextPassword = 'not_bacon';                                   // Jade
 
 require('./config/passport-config')(passport);
 const ObjectId = mongoose.Types.ObjectId;                                         // Jade
+
+
 
 // Connect to database trough Mongoose
 mongoose.connect(                                                                 // Marvin
@@ -63,18 +67,20 @@ app
   }))
   .use(passport.initialize())                                                     // Marvin
   .use(passport.session())                                                        // Marvin
-  .use(flash())                                                                   // Marvin
-  .use((req, res, next) => {                                                      // Marvin
+  .use(flash())
+  .use((req, res, next) => {
     res.locals.succes = req.flash('succes');
     res.locals.error = req.flash('error');
     next();
   })
+  .use(favicon(path.join(__dirname, '/public', 'images/favicon.ico')))            // Inge
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/signup1', require('./routes/signup1'))                                   // Inge
   .use('/signup2', require('./routes/signup2'))                                   // Inge
-  .use('/login', require('./routes/login'))                                       // Marvin
-  .use('/logout', require('./routes/logout'))                                     // Marvin
+  .use('/login', require('./routes/login'))                                       // Inge
+  .use('/chats', require('./routes/chats'))                                       // Inge
+  .use('/logout', require('./routes/logout'))
   .listen(port, () => console.log(`Starting server at ${port}`));                 // Inge
 
 // Export variables
