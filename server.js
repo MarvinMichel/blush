@@ -6,6 +6,8 @@ const session = require('express-session');                                     
 const mongoose = require('mongoose');                                             // Marvin
 const passport = require('passport');                                             // Marvin
 const flash = require('express-flash');                                           // Marvin
+const favicon = require('serve-favicon');                                         // Inge
+const path = require('path');                                                     // Inge
 // const bcrypt = require('bcrypt');                                                 // Jade
 // const saltRounds = 10;                                                            // Jade
 // const myPlaintextPassword = 's0/\/\P4$$w0rD';                                     // Jade
@@ -69,6 +71,7 @@ app
     res.locals.error = req.flash('error');
     next();
   })
+  .use(favicon(path.join(__dirname + '/public/images/favicon.ico')))              // Inge
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
   .use('/filter-feed', require('./routes/filter-feed'))                           // Jade
