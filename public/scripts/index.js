@@ -6,12 +6,13 @@ const section = document.querySelector('section');
 const extraFilters = document.querySelector('.extra');
 const basicFilters = document.querySelector('.basics');
 const titel = document.querySelector('h1');
+const clickAway = document.querySelector('.clickaway')
 
-// Array.prototype.forEach.call(sliders, (slider) => {
-//   slider.querySelector('input').addEventListener('input', (event) => {
-//     slider.querySelector('span').innerHTML = event.target.value;
-//   });
-// });
+sliders.forEach(slider => {
+  slider.querySelector('input').addEventListener('input', (e) => {
+    slider.querySelector('span').innerHTML = e.target.value;
+  });
+});
 
 section.classList.add('away');
 extraFilters.classList.add('away');
@@ -29,14 +30,28 @@ filterButton.addEventListener('click', () => {
   console.log('yeaaahh');
 });
 
-showButton();
+clickAway.addEventListener('click', () => {
+  event.preventDefault();
+  section.classList.remove('apear');
+  section.classList.toggle('away');
+  filterButton.classList.remove('away')
+  extraFilters.classList.remove('apear');
+  extraFilters.classList.toggle('away');
+  basicFilters.classList.remove('apear');
+  basicFilters.classList.toggle('away');
+  titel.classList.remove('apear');
+  titel.classList.toggle('away');
 
-function showButton() {
+})
+
+const showButton = () => {
   const test = document.querySelector('input[id=man]');
   test.checked = true;
   const tesT = document.querySelector('input[id=neeroken]');
   tesT.checked = true;
   const tesTT = document.querySelector('input[id=maaktnietuitkinderen]');
   tesTT.checked = true;
-}
+};
+
+showButton();
 /* Made by Jade */
