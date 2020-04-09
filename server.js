@@ -44,8 +44,7 @@ const createUser = (email, password, firstName, lastName, age, gender, picture) 
       age,
       gender,
       picture
-    },
-    preferences: {}
+    }
   });
 };
 
