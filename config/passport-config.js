@@ -1,8 +1,10 @@
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const Users = require('../routes/Schemas/users');
 
+// Made by Marvin
 module.exports = (passport) => {
   passport.use(
     new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
@@ -14,10 +16,18 @@ module.exports = (passport) => {
         if (!user) {
           return done(null, false, { message: 'No user with that email found' });
         }
-        if (user.password != password) {
-          return done(null, false, { message: 'Incorrect password' });
-        }
-        return done(null, user);
+
+        // Bcrypt part made by Jade
+        bcrypt.compare(password, user.password, (err, isMatch) => {
+          if(err) throw err;
+
+          if(isMatch) {
+            return done(null, user);
+          } else {
+            return done(null, false, { message: 'Incorrect password' });
+          }
+        })
+        // end by Jade
       });
     })
   );

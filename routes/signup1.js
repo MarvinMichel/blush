@@ -5,7 +5,7 @@ router.get('/', (req, res) => {                                                 
   res.render('signup1');
 });
 
-router.post('/', (req, res) => {                                                  // Inge
+router.post('/', (req, res) => {
   req.session.user = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
