@@ -24,7 +24,7 @@ const renderProfiles = (user) => {
 
 router.get('/', ensureAuthenticated, async (req, res) => {
   profiles = await renderProfiles(req.user);
-  res.render('feed', { profiles: profiles });
+  res.render('feed', { profiles: profiles, user: req.user });
 });
 
 // router.post('/', ensureAuthenticated, async (req, res) => {
