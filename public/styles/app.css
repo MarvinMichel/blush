@@ -334,6 +334,7 @@ body[data-page='feed'] main {
   gap: 1rem; }
   body[data-page='feed'] main .profile {
     height: 60vh;
+    position: relative;
     min-width: 20rem;
     width: 25vw;
     margin-top: 10%;
@@ -349,9 +350,11 @@ body[data-page='feed'] main {
         color: #1e1e3a;
         margin: 4% 6%; }
     body[data-page='feed'] main .profile--matching {
-      transform: translateY(380%);
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      position: absolute;
+      bottom: 1rem;
+      width: 20rem; }
       body[data-page='feed'] main .profile--matching input[type="text"] {
         display: none; }
       body[data-page='feed'] main .profile--matching .btn {

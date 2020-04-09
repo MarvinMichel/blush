@@ -425,6 +425,7 @@ body[data-page='feed'] {
 
     .profile {
       height: 60vh;
+      position: relative;
       min-width: 20rem;
       width: 25vw;
       margin-top: 10%;
@@ -445,9 +446,11 @@ body[data-page='feed'] {
       }
 
       &--matching {
-        transform: translateY(380%);
         display: flex;
         justify-content: space-between;
+        position: absolute;
+        bottom: 1rem;
+        width: 20rem;
 
         input[type="text"] {
           display: none;
