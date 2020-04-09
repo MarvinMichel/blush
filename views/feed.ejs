@@ -7,9 +7,9 @@
   <nav>
     <ul>
       <li><img id="logo" src="images/logo-blush.png" alt="Blush logo"></li>
-      <li><img class="uploadedImgHeader" src="/images/no-profilephoto.jpg" alt=""></li>
-      <li>Ella van Damme</li>
-      <li><a href="/chats">Chat</a></li>
+      <li><img class="uploadedImgHeader" src="<%= user.profile.picture %>" alt="Profile picture"></li>
+      <li><%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %></li>
+      <li><a href="/chats">Chats</a></li>
       <li><a class="outline" href="/logout">Log out</a></li>
     </ul>
   </nav>
