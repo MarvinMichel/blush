@@ -44,7 +44,8 @@ const createUser = (email, password, firstName, lastName, age, gender, picture) 
       age,
       gender,
       picture
-    }
+    },
+    preferences: {}
   });
 };
 
@@ -71,7 +72,6 @@ app
   .use(favicon(path.join(__dirname + '/public/images/favicon.ico')))              // Inge
   .use('/', require('./routes/index'))                                            // Inge
   .use('/feed', require('./routes/feed'))                                         // Marvin
-  .use('/filter-feed', require('./routes/filter-feed'))                           // Jade
   .use('/signup1', require('./routes/signup1'))                                   // Inge
   .use('/signup2', require('./routes/signup2'))                                   // Inge
   .use('/login', require('./routes/login'))                                       // Inge

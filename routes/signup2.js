@@ -41,10 +41,8 @@ router.post('/', parser.single('file'), (req, res) => {
   const age = getAge(new Date(req.body.birthday));
   bcrypt.genSalt(saltRounds, (err, salt) => {
     bcrypt.hash(req.session.user.password, salt, (err, hash) => {
-      console.log(req.session.user.password);
       req.session.user.password = hash;
-      console.log(req.session.user.password = hash);
-      
+
       server.createUser(
         req.session.user.email,
         req.session.user.password,

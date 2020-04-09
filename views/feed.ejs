@@ -7,9 +7,9 @@
   <nav>
     <ul>
       <li><img id="logo" src="images/logo-blush.png" alt="Blush logo"></li>
-      <li><img class="uploadedImgHeader" src="/images/no-profilephoto.jpg" alt=""></li>
-      <li>Ella van Damme</li>
-      <li><a href="/chats">Chat</a></li>
+      <li><img class="uploadedImgHeader" src="<%= user.profile.picture %>" alt="Profile picture"></li>
+      <li><%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %></li>
+      <li><a href="/chats">Chats</a></li>
       <li><a class="outline" href="/logout">Log out</a></li>
     </ul>
   </nav>
@@ -19,13 +19,13 @@
     <button class="clickaway">X sluiten</button>
     <h1>Filters</h1>
     <div class="basics">
-      <form class="filter" action="/filter-feed" method="POST">
+      <form class="filter" action="/feed/filter" method="POST">
         <h2>Basics</h2>
         <label for="gender">I'm looking for</label>
         <div class="options">
-          <input type="radio" id="man" name="gender" value="man">
+          <input type="radio" id="man" name="gender" value="male">
           <label for="man">man</label>
-          <input type="radio" id="vrouw" name="gender" value="woman">
+          <input type="radio" id="vrouw" name="gender" value="female">
           <label for="vrouw">woman</label>
           <input type="radio" id="anders" name="gender" value="both">
           <label for="anders">both</label>

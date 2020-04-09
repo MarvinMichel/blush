@@ -181,8 +181,8 @@ section[data-page="intro-text"] {
 form[data-page="form"] {
   min-width: 385px;
   min-height: 80vh;
-  left: 0vw;
-  margin-top: 8vh;
+  left: 0;
+  top: 8vh;
   margin-bottom: 0;
   padding-bottom: 0;
   position: absolute;
@@ -330,8 +330,8 @@ body[data-page='feed'] main {
   margin-right: 4vw;
   place-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 10px; }
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1rem; }
   body[data-page='feed'] main .profile {
     height: 60vh;
     min-width: 20rem;
