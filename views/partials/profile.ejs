@@ -7,7 +7,7 @@
     <h4 class="profile--info__age"><%= profiles[i].profile.age %></h4>
   </header>
   <form class="profile--matching" action="" method="POST">
-    <input name="id" type="text" value="<%= profiles[i].id %>">
+    <input name="id" type="text" value="<%= profiles[i].id %>" data-id>
     <input class="btn" type="image" src="/images/btn_not.svg" alt="Dislike" data-dislike />
     <input class="btn" type="image" src="/images/btn_hot.svg" alt="Like" data-like />
   </form>
