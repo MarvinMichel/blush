@@ -421,12 +421,12 @@ body[data-page='feed'] {
     place-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 1rem;
+    gap: 1%;
 
     .profile {
       height: 60vh;
       position: relative;
-      min-width: 20rem;
+      min-width: 18em;
       width: 25vw;
       margin-top: 10%;
       -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
@@ -436,7 +436,7 @@ body[data-page='feed'] {
         background: white;
         display: flex;
         justify-content: space-between;
-        min-width: 20rem;
+        min-width: 18em;
         max-width: 25vw;
 
         h4 {
@@ -449,8 +449,8 @@ body[data-page='feed'] {
         display: flex;
         justify-content: space-between;
         position: absolute;
-        bottom: 1rem;
-        width: 20rem;
+        bottom: 1em;
+        width: 100%;
 
         input[type="text"] {
           display: none;
