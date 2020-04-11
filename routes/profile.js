@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
       if (err) {
         res.send(err);
       } else {
-        res.redirect('/profile');
+        res.redirect('/feed');
       }
     }));
 })
