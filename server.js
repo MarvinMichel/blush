@@ -75,6 +75,7 @@ app
   .use('/signup2', require('./routes/signup2'))                                   // Inge
   .use('/login', require('./routes/login'))                                       // Inge
   .use('/chats', require('./routes/chats'))                                       // Inge
+  .use('/profile', require('./routes/profile'))                                   // Jade
   .use('/logout', require('./routes/logout'))
 
   .listen(port, () => console.log(`Starting server at ${port}`));                 // Inge

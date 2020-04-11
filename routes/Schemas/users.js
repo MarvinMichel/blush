@@ -12,9 +12,9 @@ let userSchema = new Schema({
     age: Number,
     gender: String,
     picture: String,
-    pets: String,
     smoke: String,
     kids: String,
+    length: Number,
   },
   preferences: {
     gender: String,
