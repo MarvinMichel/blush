@@ -32,7 +32,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 const Users = require('./routes/Schemas/users');                                   // Marvin
 
 // Function to create user instance in database
-const createUser = (email, password, firstName, lastName, age, gender, picture) => {
+const createUser = (email, password, firstName, lastName, age, gender, picture, place, about ) => {
   Users.create({
     email,
     password,
@@ -43,7 +43,9 @@ const createUser = (email, password, firstName, lastName, age, gender, picture) 
       },
       age,
       gender,
-      picture
+      picture,
+      place,
+      about
     }
   });
 };

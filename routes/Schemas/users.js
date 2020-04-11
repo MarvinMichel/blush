@@ -12,6 +12,8 @@ let userSchema = new Schema({
     age: Number,
     gender: String,
     picture: String,
+    place: String,
+    about: String,
     smoke: String,
     kids: String,
     length: Number,
