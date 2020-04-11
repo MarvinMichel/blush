@@ -6,7 +6,7 @@ const section = document.querySelector('section');
 const extraFilters = document.querySelector('.extra');
 const basicFilters = document.querySelector('.basics');
 const titel = document.querySelector('h1');
-const clickAway = document.querySelector('.clickaway')
+const clickAway = document.querySelector('.clickaway');
 
 sliders.forEach(slider => {
   slider.querySelector('input').addEventListener('input', (e) => {
@@ -41,8 +41,7 @@ clickAway.addEventListener('click', () => {
   basicFilters.classList.toggle('away');
   titel.classList.remove('apear');
   titel.classList.toggle('away');
-
-})
+});
 
 const showButton = () => {
   const test = document.querySelector('input[id=man]');
@@ -55,3 +54,26 @@ const showButton = () => {
 
 showButton();
 /* Made by Jade */
+
+/* Made by Marvin */
+const matchBtns = document.querySelector('.profile--matching');
+const likeBtn = document.querySelectorAll('[data-like]');
+const dislikeBtn = document.querySelectorAll('[data-dislike]');
+
+for (let el of likeBtn) {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    const id = el.parentElement.firstElementChild;
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', "/feed", true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send(`like=true&id=${id.value}`);
+  });
+};
+
+for (let el of dislikeBtn) {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+  });
+};
+/* Made by Marvin */

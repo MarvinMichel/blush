@@ -27,10 +27,12 @@ router.get('/', ensureAuthenticated, async (req, res) => {
   res.render('feed', { profiles: profiles, user: req.user });
 });
 
-// router.post('/', ensureAuthenticated, async (req, res) => {
-//   profiles = await renderProfiles(req.user);
-//   res.render('feed', { profiles: profiles });
-// });
+router.post('/', ensureAuthenticated, async (req, res) => {
+  if (req.body.like === "true") {
+    console.log(req.body.id)
+    await Users.findOneAndUpdate({ _id: req.user.id }, { $push: { likes: req.body.id } });
+  }
+});
 
 router.post('/filter', (req, res) => {
   Users.findOneAndUpdate(
