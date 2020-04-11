@@ -6,7 +6,7 @@ const Users = require('./Schemas/users');
 let profiles = [];
 
 const renderProfiles = (user) => {
-  if (user.preferences) {
+  if (user.preferences.gender) {
     return Users.find({
       _id: { $ne: user.id },
       "profile.gender": user.preferences.gender
