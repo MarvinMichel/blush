@@ -7,7 +7,7 @@
   <nav>
     <ul>
       <li><img id="logo" src="images/logo-blush.png" alt="Blush logo"></li>
-      <li><img class="uploadedImgHeader" src="<%= user.profile.picture %>" alt="Profile picture"></li>
+      <li><a class="profilePage" href="/profile"><img class="uploadedImgHeader" src="<%= user.profile.picture %>" alt="Profile picture"></a></li>
       <li><%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %></li>
       <li><a href="/feed">Back to feed</a></li>
       <li><a class="outline" href="/logout">Log out</a></li>
