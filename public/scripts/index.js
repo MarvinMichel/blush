@@ -56,13 +56,21 @@ showButton();
 /* Made by Jade */
 
 /* Made by Marvin */
-const matchBtns = document.querySelector('.profile--matching');
 const likeBtn = document.querySelectorAll('[data-like]');
 const dislikeBtn = document.querySelectorAll('[data-dislike]');
+const profiles = document.querySelectorAll('.profile');
+
+for (let el of profiles) {
+  el.addEventListener('click', () => {
+    console.log('Event triggered');
+    el.classList.toggle('click');
+  });
+};
 
 for (let el of likeBtn) {
   el.addEventListener('click', (e) => {
     e.preventDefault();
+    e.stopPropagation();
     const id = el.parentElement.firstElementChild;
     const xhr = new XMLHttpRequest();
     xhr.open('POST', "/feed", true);
@@ -74,6 +82,7 @@ for (let el of likeBtn) {
 for (let el of dislikeBtn) {
   el.addEventListener('click', (e) => {
     e.preventDefault();
+    e.stopPropagation();
   });
 };
 /* Made by Marvin */
