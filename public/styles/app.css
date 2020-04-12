@@ -334,40 +334,63 @@ form[data-page="form"] {
       FEED PROFILES
 ******************************/
 body[data-page='feed'] main {
-  margin-top: 4%;
-  margin-left: 4vw;
-  margin-right: 4vw;
+  margin: 4vw;
   place-items: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 1%; }
-  body[data-page='feed'] main .profile {
+  gap: 3%; }
+  body[data-page='feed'] main .profile-container {
+    perspective: 800px;
     height: 60vh;
-    position: relative;
     min-width: 18em;
-    width: 25vw;
-    margin-top: 10%;
-    -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
-    box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3); }
-    body[data-page='feed'] main .profile--info {
-      background: white;
-      display: flex;
-      justify-content: space-between;
-      min-width: 18em;
-      max-width: 25vw; }
-      body[data-page='feed'] main .profile--info h4 {
-        color: #1e1e3a;
-        margin: 4% 6%; }
-    body[data-page='feed'] main .profile--matching {
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      bottom: 1em;
-      width: 100%; }
-      body[data-page='feed'] main .profile--matching input[type="text"] {
-        display: none; }
-      body[data-page='feed'] main .profile--matching .btn {
-        padding: 0 5%; }
+    width: 25vw; }
+    body[data-page='feed'] main .profile-container .profile {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      -webkit-transition: transform 1.5s;
+      transition: transform 1.5s; }
+      body[data-page='feed'] main .profile-container .profile.click {
+        -ms-transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg); }
+      body[data-page='feed'] main .profile-container .profile figure {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
+        box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3); }
+      body[data-page='feed'] main .profile-container .profile .profile-front {
+        height: 100%; }
+        body[data-page='feed'] main .profile-container .profile .profile-front--info {
+          background: white;
+          display: flex;
+          justify-content: space-between;
+          min-width: 18em;
+          max-width: 25vw; }
+          body[data-page='feed'] main .profile-container .profile .profile-front--info h4 {
+            color: #1e1e3a;
+            margin: 4% 6%; }
+        body[data-page='feed'] main .profile-container .profile .profile-front--matching {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 85%;
+          width: 100%; }
+          body[data-page='feed'] main .profile-container .profile .profile-front--matching input[type="text"] {
+            display: none; }
+          body[data-page='feed'] main .profile-container .profile .profile-front--matching .btn {
+            padding: 0 5%; }
+      body[data-page='feed'] main .profile-container .profile .profile-back {
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -ms-transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg); }
 
 /*****************************
            FILTER
