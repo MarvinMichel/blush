@@ -61,9 +61,6 @@ const likeBtn = document.querySelectorAll('[data-like]');
 const dislikeBtn = document.querySelectorAll('[data-dislike]');
 const profiles = document.querySelectorAll('.profile');
 
-// const heart = document.querySelectorAll('#heart');       // Inge
-// const cross = document.querySelectorAll('#cross');       // Inge
-
 for (let el of profiles) {
   el.addEventListener('click', () => {
     console.log('Event triggered');
@@ -78,7 +75,12 @@ for (let el of likeBtn) {
     const id = el.parentElement.firstElementChild;
     const likeImg = el.parentElement.parentElement.querySelector('.heart');           // Inge
     console.log(likeImg);                                                             // Inge
-    likeImg.classList.toggle('heartGone');                                            // Inge
+    likeImg.classList.toggle('heartVisible');                                         // Inge
+    // if (likeImg.classList === 'heartVisible'){
+    //   dislike.classList.remove('crossVisible');
+    // } else {
+    //
+    // }
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/feed', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -92,7 +94,21 @@ for (let el of dislikeBtn) {
     e.stopPropagation();
     const dislikeImg = el.parentElement.parentElement.querySelector('.cross');        // Inge
     console.log(dislikeImg);                                                          // Inge
-    dislikeImg.classList.toggle('crossGone');                                         // Inge
+    dislikeImg.classList.toggle('crossVisible');                                      // Inge
   });
 }
 /* Made by Marvin */
+
+/* Made by Inge */
+const checkIcons = (likeImg, dislikeImg) =>  {
+  if(dislikeImg.classList === 'crossVisible') {
+    likeImg.classList.remove('heartVisible');
+    console.log('Hart is zichtbaar.');
+  } else if (likeImg.classList === 'heartVisible') {
+    dislikeImg.classList.remove('crossVisible');
+    console.log('Kruis is zichtbaar.');
+  }
+};
+
+checkIcons();
+/* End by Inge */

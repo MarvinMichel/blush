@@ -1138,12 +1138,12 @@ body[data-page="chats"] {
   visibility: hidden;
 }
 
-.heartGone {
+.heartVisible {
   visibility: visible;
-  animation: heartBeat 1s linear 4 forwards;
+  animation: heartBeat 1s linear 5 forwards;
 }
 
-.crossGone {
+.crossVisible {
   visibility: visible;
   animation: cross 0.5s linear;
 }
