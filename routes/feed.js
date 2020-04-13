@@ -31,30 +31,33 @@ router.get('/', ensureAuthenticated, async (req, res) => {
 // Post function made by Marvin
 router.post('/', ensureAuthenticated, async (req, res) => {
   if (req.body.like === "true") {
-    console.log(req.body.id);
-    console.log("inserted into array");
-    await Users.findOneAndUpdate({ _id: req.user.id }, { $push: { likes: req.body.id } });
-    const likedUser = await Users.findById(req.body.id);
-    if (likedUser.likes.length > 0) {
-      for (let el of likedUser.likes) {
-        if (el === req.user.id) {
-          Matches.create({
-            user1: req.user.id,
-            user2: likedUser._id,
-            messages: []
-          });
-          return;
-          // Show match notification
+    if (req.user.likes.includes(req.body.id)) {
+      console.log('User already liked this profile...');
+    } else {
+      await Users.findOneAndUpdate({ _id: req.user.id }, { $push: { likes: req.body.id } });
+      console.log('Profile liked!');
+      const likedUser = await Users.findById(req.body.id);
+      if (likedUser.likes.length > 0) {
+        for (let el of likedUser.likes) {
+          if (el === req.user.id) {
+            Matches.create({
+              user1: req.user.id,
+              user2: likedUser._id,
+              messages: []
+            });
+            // Show match notification
+          };
         };
       };
-    };
-  } else
-    // if statement made by Jade
-    if (req.body.dislike === "true") {
-      console.log(req.body.id);
-      console.log("removed from array");
+    }
+  } else if (req.body.dislike === "true") {
+    if (req.user.likes.includes(req.body.id)) {
       await Users.findOneAndUpdate({ _id: req.user.id }, { $pull: { likes: req.body.id } });
+      console.log('Removed like from profile...');
+    } else {
+      console.log('Disliked profile!');
     };
+  };
 });
 
 // Function made by Jade, stores filter preferences in db
