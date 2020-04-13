@@ -15,6 +15,7 @@
   </nav>
 
   <button type="button" name="button">Filters</button>
+
   <section data-page="filter">
     <button class="clickaway">X sluiten</button>
     <h1>Filters</h1>
@@ -87,9 +88,16 @@
   </section>
 
   <main>
+
     <%- include('./partials/profile') %>
   </main>
 
+  <div class="notification">
+    <h1>You've got a match!</h1>
+    <img src="../images/hartje.png" alt="hartje">
+    <p>(Naam persoon 1)</p>
+    <p>(Eigen naam)</p>
+  </div>
   <script type="text/javascript" src="/scripts/index.js"></script>
 </body>
 

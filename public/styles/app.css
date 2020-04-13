@@ -397,6 +397,32 @@ body[data-page='feed'] main {
 ******************************/
 body[data-page=feed] {
   background-color: #e6e5e1; }
+  body[data-page=feed] .notification {
+    position: fixed;
+    top: 180px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+    height: 360px;
+    padding: 6px;
+    background: white;
+    text-align: center;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    visibility: hidden;
+    opacity: 1.0;
+    transition: opacity 0.9s, top 0.9s, visibility 0.9s; }
+  body[data-page=feed] .notification-visible {
+    top: 20px;
+    opacity: 1.0;
+    visibility: visible; }
+  body[data-page=feed] .notification img {
+    width: 190px; }
+  body[data-page=feed] .notification h1 {
+    text-align: center;
+    padding: 10px; }
   body[data-page=feed] button {
     padding: 20px;
     transition: 400ms;

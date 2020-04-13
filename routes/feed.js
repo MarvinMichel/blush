@@ -43,7 +43,11 @@ router.post('/', ensureAuthenticated, async (req, res) => {
             user2: likedUser._id,
             messages: []
           });
+
           // Show match notification
+
+          console.log("je hebt een match");
+          return;
         };
       };
     };

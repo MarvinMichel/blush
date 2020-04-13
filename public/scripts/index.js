@@ -53,7 +53,7 @@ const showButton = () => {
 };
 
 showButton();
-/* Made by Jade */
+/* End made by Jade */
 
 /* Made by Marvin */
 const likeBtn = document.querySelectorAll('[data-like]');
@@ -90,4 +90,24 @@ for (let el of dislikeBtn) {
     xhr.send(`dislike=true&id=${id.value}`);
   });
 };
-/* Made by Marvin */
+/* end made by Marvin */
+
+/* function for notification */
+const notification = {
+  init() {
+    this.hideTimeout = null;
+
+    this.el = document.createElement('div');
+    this.el.className = 'toast';
+    document.body.appendChild(this.el);
+  },
+
+  show(message, state) {
+    clearTimeout(this.hideTimeout);
+
+    this.el.textContent = message;
+    this.el.className = 'notification notification--visible';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => notification.init());
