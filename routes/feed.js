@@ -43,17 +43,18 @@ router.post('/', ensureAuthenticated, async (req, res) => {
             user2: likedUser._id,
             messages: []
           });
+          return;
           // Show match notification
         };
       };
     };
   } else
-  // if statement made by Jade
-  if (req.body.dislike === "true") {
-    console.log(req.body.id);
-    console.log("removed from array");
-    await Users.findOneAndUpdate({ _id: req.user.id }, { $pull: { likes: req.body.id } });
-  };
+    // if statement made by Jade
+    if (req.body.dislike === "true") {
+      console.log(req.body.id);
+      console.log("removed from array");
+      await Users.findOneAndUpdate({ _id: req.user.id }, { $pull: { likes: req.body.id } });
+    };
 });
 
 // Function made by Jade, stores filter preferences in db
