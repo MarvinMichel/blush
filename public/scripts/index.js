@@ -74,10 +74,11 @@ for (let el of profiles) {
 for (let el of likeBtn) {
   el.addEventListener('click', (e) => {
     e.preventDefault();
+    e.stopPropagation();
     const id = el.parentElement.firstElementChild;
-    const likeImg = el.parentElement.parentElement.querySelector('.heart');
-    console.log(likeImg);
-    likeImg.classList.toggle('heartGone');                            // Inge
+    const likeImg = el.parentElement.parentElement.querySelector('.heart');           // Inge
+    console.log(likeImg);                                                             // Inge
+    likeImg.classList.toggle('heartGone');                                            // Inge
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/feed', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -90,9 +91,8 @@ for (let el of dislikeBtn) {
     e.preventDefault();
     e.stopPropagation();
     const dislikeImg = el.parentElement.parentElement.querySelector('.cross');        // Inge
-    console.log(dislikeImg);
-    dislikeImg.classList.toggle('heartGone');
-    // el.classList.toggle('crossGone');                 // Inge
+    console.log(dislikeImg);                                                          // Inge
+    dislikeImg.classList.toggle('crossGone');                                         // Inge
   });
 }
 /* Made by Marvin */
