@@ -83,6 +83,11 @@ for (let el of dislikeBtn) {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
+    const id = el.parentElement.firstElementChild;
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', "/feed", true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send(`dislike=true&id=${id.value}`);
   });
 };
 /* Made by Marvin */
