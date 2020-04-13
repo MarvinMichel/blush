@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/oath');
 const Users = require('./Schemas/users');
+const Matches = require('./Schemas/matches');
 
 let profiles = [];
 
@@ -29,12 +30,24 @@ router.get('/', ensureAuthenticated, async (req, res) => {
 
 router.post('/', ensureAuthenticated, async (req, res) => {
   if (req.body.like === "true") {
-    console.log(req.body.id)
     await Users.findOneAndUpdate({ _id: req.user.id }, { $push: { likes: req.body.id } });
-  }
+    const likedUser = await Users.findById(req.body.id);
+    if (likedUser.likes.length > 0) {
+      for (let el of likedUser.likes) {
+        if (el === req.user.id) {
+          Matches.create({
+            user1: req.user.id,
+            user2: likedUser._id,
+            messages: []
+          });
+          // Show match notification
+        };
+      };
+    };
+  };
 });
 
-router.post('/filter', (req, res) => {
+router.post('/filter', ensureAuthenticated, (req, res) => {
   Users.findOneAndUpdate(
     { _id: req.user.id },
     {
