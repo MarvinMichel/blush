@@ -606,7 +606,7 @@ body[data-page="profile"] section {
   body[data-page="profile"] section.userContainer {
     display: flex;
     width: 520px;
-    height: 250px;
+    height: 300px;
     padding-top: 30px; }
     body[data-page="profile"] section.userContainer figure {
       border-radius: 50%;
@@ -623,7 +623,6 @@ body[data-page="profile"] section {
         -webkit-box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3);
         box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3); }
     body[data-page="profile"] section.userContainer div {
-      place-content: center;
       padding: 1em 0em; }
       body[data-page="profile"] section.userContainer div h3 {
         font-family: "Open Sans", sans-serif;
@@ -636,20 +635,22 @@ body[data-page="profile"] section {
       body[data-page="profile"] section.userContainer div p {
         margin: 0;
         padding: 4px; }
-      body[data-page="profile"] section.userContainer div input[type=text] {
+      body[data-page="profile"] section.userContainer div input[type=text],
+      body[data-page="profile"] section.userContainer div textarea {
         padding: 4px 0;
         font-weight: normal;
         font-size: 14px;
-        margin: 0 5px 0 5px;
+        margin: 0 5px;
         border: none; }
-      body[data-page="profile"] section.userContainer div .ageField {
-        width: 20px; }
-      body[data-page="profile"] section.userContainer div input[type=text]:hover, body[data-page="profile"] section.userContainer div input[type=text]:focus {
+      body[data-page="profile"] section.userContainer div label {
+        font-weight: bold;
+        display: block; }
+      body[data-page="profile"] section.userContainer div input[type=text]:hover,
+      body[data-page="profile"] section.userContainer div input[type=text]:focus,
+      body[data-page="profile"] section.userContainer div textarea:hover,
+      body[data-page="profile"] section.userContainer div textarea:focus {
         font-style: italic;
         color: #1cbfd8; }
-      body[data-page="profile"] section.userContainer div .textAbout {
-        padding-bottom: 20px;
-        width: 150px; }
   body[data-page="profile"] section.chatbox {
     width: 550px;
     height: 380px;
