@@ -75,7 +75,7 @@ for (let el of likeBtn) {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     const id = el.parentElement.firstElementChild;
-    const likeImg = el.parentElement.parentElement.parentElement.nextSibling.nextSibling;        // Inge
+    const likeImg = el.parentElement.parentElement.querySelector('.heart');
     console.log(likeImg);
     likeImg.classList.toggle('heartGone');                            // Inge
     const xhr = new XMLHttpRequest();
@@ -89,7 +89,7 @@ for (let el of dislikeBtn) {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const dislikeImg = el.parentElement.parentElement.parentElement.nextSibling.nextSibling.nextSibling;        // Inge
+    const dislikeImg = el.parentElement.parentElement.querySelector('.cross');        // Inge
     console.log(dislikeImg);
     dislikeImg.classList.toggle('heartGone');
     // el.classList.toggle('crossGone');                 // Inge

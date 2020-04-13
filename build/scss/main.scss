@@ -1037,7 +1037,7 @@ body[data-page="chats"] {
 /*****************************
       LIKE AND DISLIKE
 ******************************/
-#heart {
+.heart {
   width: 60%;
   position: absolute;
   top: 100px;
@@ -1048,7 +1048,7 @@ body[data-page="chats"] {
   visibility: hidden;
 }
 
-#cross {
+.cross {
   width: 60%;
   position: absolute;
   top: 100px;
