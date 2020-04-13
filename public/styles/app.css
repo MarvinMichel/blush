@@ -856,11 +856,11 @@ body[data-page="chats"] section {
 
 .heartVisible {
   visibility: visible;
-  animation: heartBeat 1s linear 5 forwards; }
+  animation: heartBeat linear 1s infinite; }
 
 .crossVisible {
   visibility: visible;
-  animation: cross 0.5s linear; }
+  animation: cross 0.5s 2 infinite; }
 
 @keyframes heartBeat {
   0% {
