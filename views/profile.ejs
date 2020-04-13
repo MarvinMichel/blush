@@ -18,22 +18,27 @@
 
   <div class="container">
   <section class="userContainer">
+
     <figure>
       <img src="<%= user.profile.picture %>" alt="Profile picture">
     </figure>
+    <form action=" " method="POST">
     <div>
       <h3> <%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %> </h3>
-      <p><b>Age:</b> <%= user.profile.age %> jaar </p>
-      <p><b>Gender:</b> <%= user.profile.gender %> </p>
-      <p><b>Place:</b> <%= user.profile.place %> </p>
-      <p><b>About:</b> <%= user.profile.about %> </p>
+      <p class="explain">Adjust the properties by clicking them</p>
+      <p><b>Age:</b> <input class="ageField" type="text" name="age" value="<%= user.profile.age %>"> jaar </p>
+      <p><b>Gender:</b> <input type="text" name="gender" value="<%= user.profile.gender %>">  </p>
+      <p><b>Place:</b> <input type="text" name="place" value="<%= user.profile.place %>"> </p>
+      <p><b>About:</b> <input type="text" name="about" value="<%= user.profile.about %>"> </p>
       <p></p>
     </div>
   </section>
 
+
+
   <section class="chatbox">
     <div id="messages">
-      <form action=" " method="POST">
+
       <h3>More about me</h3>
 
       <div class="extra">
@@ -41,7 +46,7 @@
         <div class="options">
           <input type="radio" id="jaroken" name="smoke" value="yes">
           <label for="jaroken">yes</label>
-          <input type="radio" id="neeroken" name="smoke" value="no">
+          <input type="radio" id="neeroken" name="smoke" value="no" checked>
           <label for="neeroken">no</label>
           <input type="radio" id="maaktnietuitroken" name="smoke" value="allowed">
           <label for="maaktnietuitroken">partysmoker</label>
@@ -52,11 +57,11 @@
           <label for="jakinderen">yes</label>
           <input type="radio" id="neekinderen" name="kids" value="no">
           <label for="neekinderen">no</label>
-          <input type="radio" id="maaktnietuitkinderen" name="kids" value="allowed">
+          <input type="radio" id="maaktnietuitkinderen" name="kids" value="allowed" checked>
           <label for="maaktnietuitkinderen">want them</label>
       </div>
       <label for="lengte" id="lengte">What is my length?</label>
-      <input type="text" placehoder="length in cm" name="length">
+      <input type="text" placeholder="<%= user.profile.length %>" name="length" value="<%= user.profile.length %>">
 
     </div>
     <button type="submit">update my profile</button>

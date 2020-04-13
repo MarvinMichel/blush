@@ -594,7 +594,9 @@ body[data-page="profile"] h1 {
 body[data-page="profile"] .container {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 5vw; }
+  justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw; }
 
 body[data-page="profile"] section {
   background: white;
@@ -603,8 +605,8 @@ body[data-page="profile"] section {
   box-shadow: 1px 1px 5px -1px rgba(112, 112, 112, 0.3); }
   body[data-page="profile"] section.userContainer {
     display: flex;
-    width: 500px;
-    height: 230px;
+    width: 520px;
+    height: 250px;
     padding-top: 30px; }
     body[data-page="profile"] section.userContainer figure {
       border-radius: 50%;
@@ -625,11 +627,29 @@ body[data-page="profile"] section {
       padding: 1em 0em; }
       body[data-page="profile"] section.userContainer div h3 {
         font-family: "Open Sans", sans-serif;
-        margin-bottom: 0.5em;
         padding: 3px; }
+      body[data-page="profile"] section.userContainer div .explain {
+        font-size: 11px;
+        font-style: italic;
+        padding-top: 0;
+        margin-bottom: 0.7em; }
       body[data-page="profile"] section.userContainer div p {
         margin: 0;
         padding: 4px; }
+      body[data-page="profile"] section.userContainer div input[type=text] {
+        padding: 4px 0;
+        font-weight: normal;
+        font-size: 14px;
+        margin: 0 5px 0 5px;
+        border: none; }
+      body[data-page="profile"] section.userContainer div .ageField {
+        width: 20px; }
+      body[data-page="profile"] section.userContainer div input[type=text]:hover, body[data-page="profile"] section.userContainer div input[type=text]:focus {
+        font-style: italic;
+        color: #1cbfd8; }
+      body[data-page="profile"] section.userContainer div .textAbout {
+        padding-bottom: 20px;
+        width: 150px; }
   body[data-page="profile"] section.chatbox {
     width: 550px;
     height: 380px;

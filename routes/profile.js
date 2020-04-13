@@ -11,20 +11,20 @@ router.post('/', (req, res) => {
   console.log("goed hij doet het");
   Users.findOneAndUpdate(
     { _id: req.user.id },
-      { profile : {
-          name: {
-            firstName: req.session.user.firstName,
-            lastName: req.session.user.lastName
-          },
-          age: req.user.profile.age,
-          gender: req.user.profile.gender,
-          picture: req.user.profile.picture,
-          place: req.user.profile.place,
-          about: req.user.profile.about,
-          smoke: req.body.smoke,
-          kids: req.body.kids,
-          length: req.body.length
-        }
+    { profile : {
+        name: {
+          firstName: req.user.profile.name.firstName,
+          lastName: req.user.profile.name.lastName
+        },
+        age: req.body.age,
+        gender: req.body.gender,
+        picture: req.user.profile.picture,
+        place: req.body.place,
+        about: req.body.about,
+        smoke: req.body.smoke,
+        kids: req.body.kids,
+        length: req.body.length
+      }
     },
     (async (err) => {
       if (err) {
