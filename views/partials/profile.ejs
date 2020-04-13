@@ -1,15 +1,28 @@
 <!-- Marvin -->
 <% for (let i = 0; i < profiles.length; i++) { %>
-<artcile class="profile" role="image"
-  style="background: url('<%= profiles[i].profile.picture %>') no-repeat center; background-size: cover;">
-  <header class="profile--info">
-    <h4 class="profile--info__name"><%= profiles[i].profile.name.firstName %></h4>
-    <h4 class="profile--info__age"><%= profiles[i].profile.age %></h4>
-  </header>
-  <form class="profile--matching" action="" method="POST">
-    <input name="id" type="text" value="<%= profiles[i].id %>" data-id>
-    <input class="btn" type="image" src="/images/btn_not.svg" alt="Dislike" data-dislike />
-    <input class="btn" type="image" src="/images/btn_hot.svg" alt="Like" data-like />
-  </form>
-</artcile>
+<div class="profile-container">
+  <article class="profile">
+    <figure class="profile-front" role="image"
+      style="background: url('<%= profiles[i].profile.picture %>') no-repeat center; background-size: cover;">
+      <header class="profile-front--info">
+        <h4 class="profile-front--info__name"><%= profiles[i].profile.name.firstName %></h4>
+        <h4 class="profile-front--info__age"><%= profiles[i].profile.age %></h4>
+      </header>
+
+      <img id="heart" src="images/heartbeat.png" alt="Like heart">
+      <img id="cross" src="images/cross.png" alt="Dislike cross">
+
+      <form class="profile-front--matching" action="" method="POST">
+        <input name="id" type="text" value="<%= profiles[i].id %>">
+        <input class="btn" type="image" src="/images/btn_not.svg" alt="Dislike" data-dislike />
+        <input class="btn" type="image" src="/images/btn_hot.svg" alt="Like" data-like />
+      </form>
+    </figure>
+    <figure class="profile-back">
+      <p>
+        <%= profiles[i].profile.about %>
+      </p>
+    </figure>
+  </article>
+</div>
 <% } %>
