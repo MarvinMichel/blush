@@ -27,13 +27,22 @@ router.get('/', ensureAuthenticated, async (req, res) => {
   res.render('feed', { profiles: profiles, user: req.user });
 });
 
+// Post function made by Marvin
 router.post('/', ensureAuthenticated, async (req, res) => {
   if (req.body.like === "true") {
-    console.log(req.body.id)
+    console.log(req.body.id);
+    console.log("inserted into array");
     await Users.findOneAndUpdate({ _id: req.user.id }, { $push: { likes: req.body.id } });
+  } else
+  // second if statement made by Jade
+  if (req.body.dislike === "true") {
+    console.log(req.body.id);
+    console.log("removed from array");
+    await Users.findOneAndUpdate({ _id: req.user.id }, { $pull: { likes: req.body.id } });
   }
 });
 
+// Function made by Jade, stores filter preferences in db
 router.post('/filter', (req, res) => {
   Users.findOneAndUpdate(
     { _id: req.user.id },
