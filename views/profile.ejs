@@ -7,7 +7,8 @@
   <nav>
     <ul>
       <li><img id="logo" src="images/logo-blush.png" alt="Blush logo"></li>
-      <li><a class="profilePage" href=""><img class="uploadedImgHeader" src="<%= user.profile.picture %>" alt="Profile picture"></a></li>
+      <li><a class="profilePage" href=""><img class="uploadedImgHeader" src="<%= user.profile.picture %>"
+            alt="Profile picture"></a></li>
       <li><%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %></li>
       <li><a href="/feed">Back to feed</a></li>
       <li><a class="outline" href="/logout">Log out</a></li>
@@ -17,52 +18,65 @@
   <h1>Profile</h1>
 
   <div class="container">
-  <section class="userContainer">
-    <figure>
-      <img src="<%= user.profile.picture %>" alt="Profile picture">
-    </figure>
-    <div>
-      <h3> <%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %> </h3>
-      <p><b>Age:</b> <%= user.profile.age %> jaar </p>
-      <p><b>Gender:</b> <%= user.profile.gender %> </p>
-      <p><b>Place:</b> <%= user.profile.place %> </p>
-      <p><b>About:</b> <%= user.profile.about %> </p>
-      <p></p>
-    </div>
-  </section>
+    <section class="userContainer">
 
-  <section class="chatbox">
-    <div id="messages">
+      <figure>
+        <img src="<%= user.profile.picture %>" alt="Profile picture">
+      </figure>
       <form action=" " method="POST">
-      <h3>More about me</h3>
-
-      <div class="extra">
-        <label for="roken">Do i smoke?</label>
-        <div class="options">
-          <input type="radio" id="jaroken" name="smoke" value="yes">
-          <label for="jaroken">yes</label>
-          <input type="radio" id="neeroken" name="smoke" value="no">
-          <label for="neeroken">no</label>
-          <input type="radio" id="maaktnietuitroken" name="smoke" value="allowed">
-          <label for="maaktnietuitroken">partysmoker</label>
+        <div>
+          <h3> <%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %> </h3>
+          <p class="explain">Adjust the properties by clicking them</p>
+          <label for="age"> Age:
+            <input class="ageField" type="text" name="age" value="<%= user.profile.age %>">
+          </label>
+          <label for="gender"> Gender:
+            <input type="text" name="gender" value="<%= user.profile.gender %>">
+          </label>
+          <label for="place"> Place:
+            <input type="text" name="place" value="<%= user.profile.place %>">
+          </label>
+          <label for="about"> About:
+            <textarea name="about" cols="30" rows="4"><%= user.profile.about %></textarea>
+          </label>
+          <p></p>
         </div>
-        <label for="kinderen">Do i have kids?</label>
-        <div class="options">
-          <input type="radio" id="jakinderen" name="kids" value="yes">
-          <label for="jakinderen">yes</label>
-          <input type="radio" id="neekinderen" name="kids" value="no">
-          <label for="neekinderen">no</label>
-          <input type="radio" id="maaktnietuitkinderen" name="kids" value="allowed">
-          <label for="maaktnietuitkinderen">want them</label>
-      </div>
-      <label for="lengte" id="lengte">What is my length?</label>
-      <input type="text" placehoder="length in cm" name="length">
+    </section>
 
-    </div>
-    <button type="submit">update my profile</button>
-    </form>
-    </div>
-  </section>
+
+
+    <section class="chatbox">
+      <div id="messages">
+
+        <h3>More about me</h3>
+
+        <div class="extra">
+          <label for="roken">Do i smoke?</label>
+          <div class="options">
+            <input type="radio" id="jaroken" name="smoke" value="yes">
+            <label for="jaroken">yes</label>
+            <input type="radio" id="neeroken" name="smoke" value="no" checked>
+            <label for="neeroken">no</label>
+            <input type="radio" id="maaktnietuitroken" name="smoke" value="allowed">
+            <label for="maaktnietuitroken">partysmoker</label>
+          </div>
+          <label for="kinderen">Do i have kids?</label>
+          <div class="options">
+            <input type="radio" id="jakinderen" name="kids" value="yes">
+            <label for="jakinderen">yes</label>
+            <input type="radio" id="neekinderen" name="kids" value="no">
+            <label for="neekinderen">no</label>
+            <input type="radio" id="maaktnietuitkinderen" name="kids" value="allowed" checked>
+            <label for="maaktnietuitkinderen">want them</label>
+          </div>
+          <label for="lengte" id="lengte">What is my length?</label>
+          <input type="text" placeholder="<%= user.profile.length %>" name="length" value="<%= user.profile.length %>">
+
+        </div>
+        <button type="submit">update my profile</button>
+        </form>
+      </div>
+    </section>
   </div>
 </body>
 

@@ -786,7 +786,9 @@ body[data-page="profile"] {
   .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding-left: 5vw;
+    padding-right: 5vw;
   }
 
   section {
@@ -797,8 +799,8 @@ body[data-page="profile"] {
 
     &.userContainer {
       display: flex;
-      width: 500px;
-      height: 230px;
+      width: 520px;
+      height: 300px;
       padding-top: 30px;
 
       figure {
@@ -820,18 +822,45 @@ body[data-page="profile"] {
       }
 
       div {
-        place-content: center;
         padding: 1em 0em;
 
         h3 {
           font-family: $fontRegular;
-          margin-bottom: 0.5em;
           padding: 3px;
+        }
+
+        .explain {
+          font-size: 11px;
+          font-style: italic;
+          padding-top: 0;
+          margin-bottom: 0.7em;
         }
 
         p {
           margin: 0;
           padding: 4px;
+        }
+
+        input[type=text],
+        textarea {
+          padding: 4px 0;
+          font-weight: normal;
+          font-size: 14px;
+          margin: 0 5px;
+          border: none;
+        }
+
+        label {
+          font-weight: bold;
+          display: block;
+        }
+
+        input[type=text]:hover,
+        input[type=text]:focus,
+        textarea:hover,
+        textarea:focus {
+          font-style: italic;
+          color: #1cbfd8;
         }
       }
     }
