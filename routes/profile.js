@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Users = require('./Schemas/users');
+const { ensureAuthenticated } = require('../config/oath');
 
-router.get('/', (req, res) => {
+router.get('/', ensureAuthenticated, (req, res) => {
   res.render('profile', { user: req.user });
 });
 
@@ -21,6 +22,7 @@ router.post('/', (req, res) => {
         picture: req.user.profile.picture,
         place: req.body.place,
         about: req.body.about,
+
         smoke: req.body.smoke,
         kids: req.body.kids,
         length: req.body.length
