@@ -11,12 +11,9 @@ const renderProfiles = (user) => {
   if (user.preferences.gender) {
     return Users.find({
       _id: { $ne: user.id },
-      "profile.gender": user.preferences.gender
-      // ,
-      // "profile.age": user.prefrences.age,
-      // "profile.pets": user.prefrences.pets,
-      // "profile.smoke": user.prefrences.smoke,
-      // "profile.kids": user.prefrences.kids
+      "profile.gender": user.preferences.gender,
+      "profile.smoke": user.preferences.smoke,
+      "profile.kids": user.preferences.kids
     });
   } else {
     return Users.find({ _id: { $ne: user.id } });
