@@ -7,13 +7,14 @@
   <nav>
     <ul>
       <li><img id="logo" src="images/logo-blush.png" alt="Blush logo"></li>
-      <li><img class="uploadedImgHeader" src="<%= user.profile.picture %>" alt="Profile picture"></li>
+      <li><a class="profilePage" href="/profile"><img class="uploadedImgHeader" src="<%= user.profile.picture %>" alt="Profile picture"></a></li>
       <li><%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %></li>
       <li><a href="/chats">Chats</a></li>
       <li><a class="outline" href="/logout">Log out</a></li>
     </ul>
   </nav>
 
+  <!-- made by Jade -->
   <button type="button" name="button">Filters</button>
   <section data-page="filter">
     <button class="clickaway">X sluiten</button>
@@ -91,6 +92,7 @@
   </main>
 
   <script type="text/javascript" src="/scripts/index.js"></script>
+    <!-- end made by Jade -->
 </body>
 
 </html>

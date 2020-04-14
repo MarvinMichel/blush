@@ -50,7 +50,9 @@ router.post('/', parser.single('file'), (req, res) => {
         req.session.user.lastName,
         age,
         req.body.gender,
-        req.file.url
+        req.file.url,
+        req.body.place,
+        req.body.about,
       );
       req.flash('succes', 'Profile created! You can now login.');
       res.redirect('login');

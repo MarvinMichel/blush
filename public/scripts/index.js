@@ -56,7 +56,6 @@ showButton();
 /* Made by Jade */
 
 /* Made by Marvin */
-const matchBtns = document.querySelector('.profile--matching');
 const likeBtn = document.querySelectorAll('[data-like]');
 const dislikeBtn = document.querySelectorAll('[data-dislike]');
 const profiles = document.querySelectorAll('.profile');
@@ -66,7 +65,7 @@ for (let el of profiles) {
     console.log('Event triggered');
     el.classList.toggle('click');
   });
-}
+};
 
 for (let el of likeBtn) {
   el.addEventListener('click', (e) => {
@@ -90,6 +89,11 @@ for (let el of dislikeBtn) {
     const dislikeImg = el.parentElement.parentElement.querySelector('.cross');        // Inge
     console.log(dislikeImg);                                                          // Inge
     dislikeImg.classList.toggle('crossVisible');                                      // Inge
+    const id = el.parentElement.firstElementChild;
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', "/feed", true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send(`dislike=true&id=${id.value}`);
   });
 }
 /* Made by Marvin */
