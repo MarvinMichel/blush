@@ -34,7 +34,7 @@ clickAway.addEventListener('click', () => {
   event.preventDefault();
   section.classList.remove('apear');
   section.classList.toggle('away');
-  filterButton.classList.remove('away')
+  filterButton.classList.remove('away');
   extraFilters.classList.remove('apear');
   extraFilters.classList.toggle('away');
   basicFilters.classList.remove('apear');
@@ -72,22 +72,28 @@ for (let el of likeBtn) {
     e.preventDefault();
     e.stopPropagation();
     const id = el.parentElement.firstElementChild;
+    const likeImg = el.parentElement.parentElement.querySelector('.heart');           // Inge
+    console.log(likeImg);                                                             // Inge
+    likeImg.classList.toggle('heartVisible');                                         // Inge
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', "/feed", true);
+    xhr.open('POST', '/feed', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send(`like=true&id=${id.value}`);
   });
-};
+}
 
 for (let el of dislikeBtn) {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
+    const dislikeImg = el.parentElement.parentElement.querySelector('.cross');        // Inge
+    console.log(dislikeImg);                                                          // Inge
+    dislikeImg.classList.toggle('crossVisible');                                      // Inge
     const id = el.parentElement.firstElementChild;
     const xhr = new XMLHttpRequest();
     xhr.open('POST', "/feed", true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.send(`dislike=true&id=${id.value}`);
   });
-};
+}
 /* Made by Marvin */
