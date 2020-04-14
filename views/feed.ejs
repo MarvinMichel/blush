@@ -7,7 +7,8 @@
   <nav>
     <ul>
       <li><img id="logo" src="images/logo-blush.png" alt="Blush logo"></li>
-      <li><a class="profilePage" href="/profile"><img class="uploadedImgHeader" src="<%= user.profile.picture %>" alt="Profile picture"></a></li>
+      <li><a class="profilePage" href="/profile"><img class="uploadedImgHeader" src="<%= user.profile.picture %>"
+            alt="Profile picture"></a></li>
       <li><%= `${user.profile.name.firstName} ${user.profile.name.lastName}` %></li>
       <li><a href="/chats">Chats</a></li>
       <li><a class="outline" href="/logout">Log out</a></li>
@@ -92,12 +93,15 @@
     <%- include('./partials/profile') %>
   </main>
 
+  <% if (notification === true) { %>
   <div class="notification">
     <h1>You've got a match!</h1>
     <img src="../images/hartje.png" alt="hartje">
     <p>(Naam persoon 1)</p>
     <p>(Eigen naam)</p>
   </div>
+  <% } %>
+
   <script type="text/javascript" src="/scripts/index.js"></script>
 </body>
 

@@ -533,16 +533,15 @@ body[data-page=feed] {
     border: 1px solid #aaaaaa;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    visibility: hidden;
     opacity: 1.0;
     transition: opacity 0.9s, top 0.9s, visibility 0.9s;
   }
 
-  .notification-visible {
-    top: 20px;
-    opacity: 1.0;
-    visibility: visible;
-  }
+  // .notification-visible {
+  //   top: 20px;
+  //   opacity: 1.0;
+  //   display: block;
+  // }
 
   .notification img {
     width: 190px;

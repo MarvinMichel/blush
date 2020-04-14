@@ -5,6 +5,7 @@ const Users = require('./Schemas/users');
 const Matches = require('./Schemas/matches');
 
 let profiles = [];
+let notification = false;
 
 // Made by Marvin
 const renderProfiles = (user) => {
@@ -25,7 +26,7 @@ const renderProfiles = (user) => {
 
 router.get('/', ensureAuthenticated, async (req, res) => {
   profiles = await renderProfiles(req.user);
-  res.render('feed', { profiles: profiles, user: req.user });
+  res.render('feed', { profiles: profiles, user: req.user, notification: notification });
 });
 
 // Post function made by Marvin
@@ -43,8 +44,8 @@ router.post('/', ensureAuthenticated, async (req, res) => {
             user2: likedUser._id,
             messages: []
           });
-
-          // Show match notification
+          notification = true;
+          res.render('feed', { profiles: profiles, user: req.user, notification: notification })
 
           console.log("je hebt een match");
           return;
@@ -52,12 +53,12 @@ router.post('/', ensureAuthenticated, async (req, res) => {
       };
     };
   } else
-  // if statement made by Jade
-  if (req.body.dislike === "true") {
-    console.log(req.body.id);
-    console.log("removed from array");
-    await Users.findOneAndUpdate({ _id: req.user.id }, { $pull: { likes: req.body.id } });
-  };
+    // if statement made by Jade
+    if (req.body.dislike === "true") {
+      console.log(req.body.id);
+      console.log("removed from array");
+      await Users.findOneAndUpdate({ _id: req.user.id }, { $pull: { likes: req.body.id } });
+    };
 });
 
 // Function made by Jade, stores filter preferences in db
